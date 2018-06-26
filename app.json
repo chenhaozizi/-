@@ -11,9 +11,7 @@
     "pages/edit_addr/edit_addr",
     "pages/ent_info/ent_info",
     "pages/ent/ent",
-    "pages/cutInside/cutInside",
-    "pages/test",
-    "pages/test/test"
+    "pages/cutInside/cutInside"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +23,7 @@
     {
       "root": "packageTwoLeval",
       "pages": [
-        "/pages/usercenter/usercenter"
+        "pages/usercenter/usercenter"
       ]
     }
   ]

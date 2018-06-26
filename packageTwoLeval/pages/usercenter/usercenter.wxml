@@ -1,2 +1,75 @@
-<!--packageTwoLeval/pages/usercenter/usercenter.wxml-->
-<text>packageTwoLeval/pages/usercenter/usercenter.wxml</text>
+<view>
+<!-- 头像  -->
+  <view class='top_head pos-rel'>
+      <view class='head_top'></view>
+      <view class='head_bottom'>
+          <view class='head_main pos-ab'>
+              <image class='logo pos-ab' src='{{headUrl}}'></image>
+              <view class='ml20' style='height:100%'>
+                <view class='font-md2 mt16 color-00'>吐司喵喵喵</view>
+                <view class='font-sm mt12 color-66'>经销商用户</view>
+                <view class='pos-ab  r40 color-00 font-md tpcenter'>
+                <navigator url=''>
+                  实名认证<i class="iconfont pos-rel icon-zuojiantou " ></i>
+                </navigator>
+                </view>
+              </view>
+          </view>
+      </view>
+  </view>
+
+<!-- 快捷菜单 -->
+<view class='flex bgf'>
+  <navigator class='self-nav' hover-class="none">
+    <view class='nav-icon mb10' ><image src='/images/icon01.png'></image></view>
+    <text class='color-66 font-sm '>二维码扫描</text>
+  </navigator>
+ <navigator  hover-class="none" class='border-r  border-l self-nav'>
+ <view class='nav-icon mb10'><image src='/images/icon02.png'></image></view>
+ <text class='color-66 font-sm '>我的二维码</text></navigator>
+  <navigator class='self-nav' hover-class="none">
+    <view class='nav-icon mb10'><image src='/images/icon03.png'></image></view>
+    <text class='color-66 font-sm'>我的手艺</text>
+  </navigator>
+</view>
+
+<!-- 功能列表  -->
+<view class='list mt20'>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon-2.png'></image></i>
+    <view class='item-lable font-md color-66  pos-rel'>申请提现<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-3.png'></image></i>
+    <view class='item-lable color-66 font-md border-t pos-rel'>绑定银行<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-1.png'></image></i>
+    <view class='item-lable color-66 font-md border-t pos-rel'>成为经销商<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+</view>
+
+<view class='list mt5'>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon-4.png'></image></i>
+    <view class='item-lable font-md color-66  pos-rel'>我的酒窖<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-5.png'></image></i>
+    <view class='item-lable color-66 font-md border-t pos-rel'>历史定制订单<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-6.png'></image></i>
+    <view class='item-lable color-66 font-md border-t pos-rel'>查看授权<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+</view>
+<view class='list mt5'>
+  <navigator class='item pos-rel'  hover-class="none">
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon-7.png'></image></i>
+    <view class='item-lable font-md color-66  pos-rel'>朋友圈<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+  </view>
+  <view class='loginout color-ff'>
+    退出登录
+  </view>
+</view>

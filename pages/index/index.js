@@ -42,8 +42,9 @@ Page({
               })
               wx.getUserInfo({
                 success: res => {
+                  app.globalData.userInfo = res.userInfo
                   // 可以将 res 发送给后台解码出 unionId
-                  //console.log("授权后，取数据成功：" + JSON.stringify(res));
+                 // console.log("授权后，取数据成功：" + JSON.stringify(res));
                   console.log("授权后，取数据成功iv：" + res.iv);
                   wx.setStorageSync('nickname', res.userInfo.nickName);
                   wx.setStorageSync('sex', res.userInfo.gender);
@@ -52,6 +53,7 @@ Page({
                   wx.setStorageSync('face', res.userInfo.avatarUrl);
                   wx.setStorageSync('iv', res.iv);
                   wx.setStorageSync('encryptedData', res.encryptedData);
+                  wx.setStorageSync('headimg', res.avatarUrl)
                   console.log('缓存用户授权信息成功');
                   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                   // 所以此处加入 callback 以防止这种情况
@@ -100,22 +102,36 @@ Page({
     })
     if (wx.getStorageSync("memberId")) {
     } else {that.move();return}
-    if (e.target.dataset.num == 1) {
+    if (e.target.dataset.num == 1) {//开始定制
       wx.navigateTo({
         url: "../parameter/parameter"
       })
-    } else if (e.target.dataset.num == 4) {
+    } else if (e.target.dataset.num == 4) {//历史定制
       wx.navigateTo({
         url: "../ent/ent"
       })
-    } else if (e.target.dataset.num == 2) {
+    } else if (e.target.dataset.num == 2) {//个人中心
       wx.navigateTo({
         url: "/packageTwoLeval/pages/usercenter/usercenter"
       })
+    } else if (e.target.dataset.num == 5) {//开启权限
+      that.scan()
     }
   },
+  scan:function() {
+    wx.scanCode({
+      success: (res) => {
+        console.log("扫码结果");
+        console.log(res);
+        
+      },
+      fail: (res) => {
+        console.log(res);
+      }
+    })
+  } , 
   move: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../user_info/user_info',
     })
   },

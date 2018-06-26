@@ -36,7 +36,6 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
-  overflow: ;
 }
 
 .userinfo-nickname {
@@ -44,7 +43,7 @@
 }
 
 .list-top {
-  margin-top: 550rpx;
+  margin-top:490rpx;
   width: 660rpx;
 }
 

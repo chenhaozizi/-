@@ -1,18 +1,25 @@
 // packageTwoLeval/pages/usercenter/usercenter.js
+//获取应用实例
+var app = getApp();
+let self;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+      headUrl:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    self = this;
+    self.setData({
+      headUrl: app.globalData.userInfo.avatarUrl
+    })
+    console.log(app.globalData.userInfo)
   },
 
   /**
