@@ -11,8 +11,9 @@
     "pages/edit_addr/edit_addr",
     "pages/ent_info/ent_info",
     "pages/ent/ent",
-    "pages/cutInside/cutInside"
-   
+    "pages/cutInside/cutInside",
+    "pages/test",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,12 +21,12 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "#FFF"
   },
-  "subPackages":[
+  "subPackages": [
     {
-      "root":"packageTwoLeval",
+      "root": "packageTwoLeval",
       "pages": [
         "/pages/usercenter/usercenter"
       ]
     }
-    ]
+  ]
 }
