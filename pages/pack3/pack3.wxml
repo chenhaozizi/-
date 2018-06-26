@@ -1,0 +1,92 @@
+<!--pages/pack/pack.wxml-->
+<import src="../../lib/we-cropper/we-cropper.wxml"/>
+<view class='container'>
+  <view class='pack_top'>
+    <view class='show_box'>
+      <image src='{{pack_show}}' class='show_img' ></image>
+    </view>
+    <!--预览图  -->
+    <view class='preview' bindtap='change_cover'>
+      <image src='{{tempfp}}'  style="{{tempfp=='/images/add.png'?'height:36%;width:60%;margin-top:55%':''}}"></image>
+    </view>
+    <view class='blessing' bindtap="submit">{{blessing}}</view>
+    <view class='ts' bindtap='change_cover'>点击换图片</view>
+    <view class='ts2' hidden='hidden'>
+      <view>背面</view>
+      <view>正面</view>
+    </view>
+  </view>
+  <!--功能选择  -->
+  <view class='pack_bottom' style='height: {{bottom1}}'>
+    <view class='gn_box zt'>
+      <view bindtap='zt_xz'>
+        <image src='/images/icon1.png' />
+        <p>底纹选项</p>
+      </view>
+      <view bindtap='change_cover'>
+        <image src='/images/icon2.png' />
+        <p>上传图片</p>
+      </view>
+      <view bindtap="submit">
+        <image src='/images/icon3.png' />
+        <p>想说的话</p>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button hover-class='button-hover' class='next_step' bindtap='next_step'>下一步 ></button>
+    </view>
+  </view>
+  <!--纸套选择  -->
+  <view class='pack_bottom' style='height: {{bottom2}}'>
+    <view class='gn_box gn_box2'>
+      <!--水平滚动-->
+      <scroll-view class="scroll-view" scroll-x>
+        <view wx:for="{{style_imgs}}" wx:key="index">
+          <image src='{{item.pack}}' data-nums="{{index}}"  class="{{_num==index?'activee':''}}" bindtap='img_src' />
+        </view>
+      </scroll-view>
+    </view>
+    <view class="btn-area">
+      <button hover-class='button-hover' class='next_step' bindtap="zt_ok">确定</button>
+    </view>
+  </view>
+</view>
+<!--祝福语弹出层  -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
+</view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <text class='mt_title'>想说的话</text>
+  <input placeholder='自定义:#写出你的话(少于30字哟)#' value="{{self_word}}" class='zdy_text' bindblur='zd_blessing'></input>
+  <view class='zfy'>
+    <scroll-view style='height:400rpx;' scroll-y="true">
+      <text bindtap='blessing' data-num="1" class="{{zy==1?'act':''}}" data-text="我愿提起笔墨，描绘出如诗一般对你的爱意">我愿提起笔墨，描绘出如诗一般对你的爱意</text>
+      <text bindtap='blessing' data-num="2" class="{{zy==2?'act':''}}" data-text="立足新起点，迈上新征程，开创新辉煌">立足新起点，迈上新征程，开创新辉煌</text>
+      <text bindtap='blessing' data-num="3" class="{{zy==3?'act':''}}"  data-text="希望你们像朵朵桃花开十里一般，一花一叶，道真谛">希望你们像朵朵桃花开十里一般，一花一叶，道真谛</text>
+    </scroll-view>
+    <i>∨</i>
+  </view>
+  <button hover-class='button-hover' class='next_step' bindtap="go">确定</button>
+</view>
+<!--上传图片  -->
+<view class='cropper-wrapper' hidden='{{hide_canvas}}' id='cover-preview'>
+<template  is="we-cropper" data="{{...cropperOpt}}"/>
+ <view class="cropper-buttons">
+        <!-- <view
+                class="upload"
+                bindtap="uploadTap">
+            上传图片
+        </view> -->
+        <view
+                class="getCropperImage"
+                bindtap="getCropperImage">
+            生成图片
+        </view>
+    </view>
+</view>
+
+ <view class='contact-box'>
+  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+  </contact-button>
+   <image class='con-img' src='/images/msg.png'  />
+  <view class='cont-text'>客服</view>
+</view>

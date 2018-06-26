@@ -1,0 +1,18 @@
+<import src="../../lib/we-cropper/we-cropper.wxml"/>
+
+
+<view class="cropper-wrapper">
+    <template is="we-cropper" data="{{...cropperOpt}}"/>
+    <view class="cropper-buttons">
+        <view
+                class="upload"
+                bindtap="uploadTap">
+            重新上传
+        </view>
+        <view
+                class="getCropperImage"
+                bindtap="getCropperImage">
+            生成图片
+        </view>
+    </view>
+</view>

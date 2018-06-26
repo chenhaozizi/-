@@ -1,0 +1,281 @@
+/* pages/order/order.wxss */
+
+page {
+  background: white;
+  color: #4e4e4e;
+}
+
+.container {
+  align-items: flex-start;
+  height: auto;
+}
+
+/*商品详情 */
+
+.goods_info {
+  padding: 40rpx 0;
+  margin: 0 auto;
+  width: 94%;
+  overflow: hidden;
+  font-size: 29rpx;
+  line-height: 44rpx;
+ 
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200rpx;
+  height: 200rpx;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+}
+
+.img image {
+  width: 90%;
+  height: 90%;
+}
+
+/* 数量计算 */
+
+/*主容器*/
+
+.stepper {
+  display: inline-block;
+  width: 90px;
+  /*给主容器设一个边框*/
+  border: 1rpx solid #dedbde;
+  margin: 0 auto;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 25%;
+  line-height: 27px;
+  text-align: center;
+  float: left;
+  background: #ecebec;
+}
+
+/*数值*/
+
+.stepper input {
+  width: calc(50% - 2px);
+  height: 27px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+.bt {
+  overflow: hidden;
+}
+
+.bt text {
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+.bt_box {
+  width: 440rpx;
+  height: 200rpx;
+  float: left;
+  overflow: hidden;
+  padding-left: 20rpx;
+}
+
+.sl {
+  padding: 0 14rpx;
+  height: 100%;
+  line-height: 26px;
+  background: #dedbde;
+  border: 2rpx solid #dedbde;
+}
+
+.sl_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+}
+
+.addr_box {
+  width: 100%;
+  background: #eee;
+  padding: 20rpx 0;
+}
+
+.add_addr {
+  display: flex;
+  padding: 20rpx 30rpx;
+  background: white;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.add_addr image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 30rpx;
+}
+
+.dzts {
+  color: #cfcccc;
+}
+
+.dispatch {
+  padding: 20rpx 40rpx;
+  margin: 0 auto;
+  background: #fff
+}
+ .pp{font-size: 32rpx !important;} 
+
+.dispatch text {
+  width: 180rpx;
+  display: inline-block;
+  padding: 10rpx 0;
+  border: 1px solid #cfcccc;
+  border-radius: 6rpx;
+  text-align: center;
+  margin: 30rpx 30rpx 0 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: right;
+}
+
+.footer view {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+}
+
+.total_price i {
+  color: #d74a3c;
+}
+
+.pay {
+  background: #d74a3c;
+  color: white;
+  letter-spacing: 2rpx;
+}
+
+/*收货人信息  */
+.add{padding: 10rpx 0}
+.addr {
+  width: 90%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.addr .add i {
+}
+
+.addr_bg {
+  width: 100%;
+  padding: 20rpx 0;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAoCAYAAAAVBmHYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzcwNTExMTM1RjM0MTFFOEIwQkNGRkJEMEM0NzhCRkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzcwNTExMTQ1RjM0MTFFOEIwQkNGRkJEMEM0NzhCRkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDNkZEMUM3ODVGMzQxMUU4QjBCQ0ZGQkQwQzQ3OEJGRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDNkZEMUM3OTVGMzQxMUU4QjBCQ0ZGQkQwQzQ3OEJGRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pgdy8ioAAAGaSURBVHjatFbdbYNADL6cGOBGoC880w2SDWCDZAOYADoBbNBukGzQ24C8wksYgRHqq3wSbVNsH2DJigTos/P588+h73ujlJpUoCVJ8u87Df4JnqodTCOwC3DeA9yZo+Yd3WwN7s1l321Fk37yLMYAxR7g3hrw6xqaNPE+W0OTA88JnXuaqhDwG/gr+J34tkbJGiktIwaoie+P4A/8FXP+Bn4iaDL4D6qQglrwF6SLpGkYhliqlgkLXTJo6iBAFiLFFmsxEjRdIUAjBVeoIhfgg/iugADdnCbNVJWj6YK+VOx0TtMBloW0N1KcnlTXnnRAV3ua2rWzZclKanSsAfc9cd8DnBwFoeANZ4hFQtAYFwillBZODisBzxgL/LsfAPjGzdwgDWeGRHMAHrm0cBvG0VBKClowrrEJsy25BfUHUsbQuANmN9ERlzEFXDM21o/MK8YO9UvEcuQV+WHPWLqWcYb8AX8wzoUal7fIIgJ4xAVhQ2bEkhT9sWRDJ5sOndVcWn7TkDNOO3Hm3JtRDL4JDc9o2TTbuX0JMABi321dhmU9VgAAAABJRU5ErkJggg==) no-repeat;
+  background-size: 30rpx 60rpx;
+  background-position: right 10rpx center;
+}
+
+.xxx {
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.xxx view {
+  display: inline-flex;
+  flex: auto (1 1 auto);
+}
+
+.tel {
+  float: right;
+  margin-right: 30rpx;
+}
+
+.small-stips {
+  padding-left: 30rpx;
+}
+/* 特别说明 */
+.caption_info {
+  text-align: left;
+  font-size: 32rpx;
+  position: relative;
+  margin-top: 30rpx;
+  display: inline-block;
+  height: 460rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: auto;
+  background-size: 20rpx 60rpx;
+  background-position: right bottom;
+}
+.caption_info p{display: block;line-height: 50rpx;margin-bottom: 10rpx}
+.caption_text{color:#d74a3c }
+.modalDlg{background: #fff}
+.caption_info{height: 562rpx}
+
+checkbox .wx-checkbox-input{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx; /* 背景的宽 */
+   height: 40rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+/* checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+ background: #ffb700;
+} */
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   background: transparent;
+    font-size:40rpx; /* 对勾大小 30rpx */
+   font-weight: 600
+   
+}
+
+checkbox-group {
+  margin: 30rpx auto ;
+}
+.checkbox {
+  font-size: 28rpx;
+}
+.checkbox_box{
+  display: inline-block;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  padding: 4rpx 0 0 4rpx;
+}

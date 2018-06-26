@@ -1,0 +1,150 @@
+/* pages/pack/pack.wxss */
+
+
+.show_box {
+  width: 560rpx;
+  margin: 0 auto;
+  margin-top: 101rpx;
+  text-align: center;
+}
+
+.show_img {
+  position: relative;
+  z-index: 9;
+  width: 560rpx;
+  height: 587rpx;
+   -webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent) , to(rgba(250, 250, 250, 0.1)))
+}
+
+.ts {
+  position: absolute;
+  right: 40rpx;
+  top: 44%;
+  writing-mode: tb-rl;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.ts2 {
+  text-align: center;
+}
+
+.ts2 view {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.pack_bottom {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: all 400ms ease-in;
+}
+
+.gn_box {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #ededed;
+  background: #d74a3c;
+  overflow: hidden;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+
+.gn_box p {
+  display: block;
+}
+
+.gn_box2 {
+  background: none;
+}
+
+.gn_box view {
+  text-align: center;
+  display: inline-block;
+  width: 28%;
+}
+
+.gn_box view image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 6rpx;
+}
+
+.next_step {
+  bottom: 80rpx;
+}
+
+
+.scroll-view view {
+  background: #fff;
+  width: 144rpx;
+  height: 134rpx;
+  display: inline-block;
+  margin: 0 5rpx;
+}
+
+.scroll-view view image {
+  width: 98%;
+  height: 98%;
+  transition: all 200ms;
+  border: 1px solid #403332;
+}
+
+
+/*上传图片*/
+
+.preview {
+width:229rpx;
+height:386rpx;
+position:absolute;
+top:127rpx;
+left:137rpx;
+background:#fff;
+z-index:9999;
+
+
+}
+
+.blessing {
+  width:47rpx;
+height:153rpx;
+position:absolute;
+bottom:175rpx;
+right:138rpx;
+border:1rpx dashed #b0844a;
+font-size:15rpx;
+z-index:99;
+color:#fff;
+text-align:left;
+text-indent:20rpx;
+writing-mode:vertical-rl
+  
+}
+
+.preview image {
+width:100%;
+height:100%;
+
+
+
+}
+
+/*祝语被选中以后  */
+
+.act {
+  color: #d74a3c !important;
+  border-color: #d74a3c !important;
+  box-shadow: 0 0 3rpx yellowgreen;
+}
+
+/*纸套被选中  */
+
+.activee {
+  border-color: #d74a3c !important;
+}

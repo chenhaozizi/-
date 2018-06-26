@@ -1,0 +1,90 @@
+<!--pages/ent_info/ent_info.wxml-->
+<view class="container">
+  <view class='bg bg_top'>
+    <view class='top'>
+      <view>
+        <icon type="success" color='red' size='20'></icon>
+      </view>
+      <view wx:if="{{orderInfo.shipStatus==1}}">卖家未发货</view>
+      <view wx:elif="{{orderInfo.shipStatus==2}}">卖家已发货</view> 
+      <view wx:else>待付款</view>
+    </view>
+  </view>
+  <view class='bg bg1'>
+    <view class='addr_bg addr_bg1' wx:if="{{orderInfo.shipStatus==2}}">
+      <view class='addr'>
+        <view class='add'>快递方式：<i>{{orderInfo.shipName}}</i></view>
+        <view class='add'>快递订单号：<i>{{orderInfo.shipOrder}}</i></view>
+        <view class='add'>
+          <i class="time">发货时间：{{shipTime}}</i>
+        </view>
+      </view>
+    </view>
+    <view class='addr_bg addr_bg2'>
+      <view class='addr'>
+        <view class='xx'>
+          <view>收货人:
+            <i>{{orderInfo.esMemberAddress.name}}</i>
+          </view>
+          <view class='tel'>{{orderInfo.esMemberAddress.mobile}}</view>
+        </view>
+        <view class='add'>收货地址：
+          <i>{{orderInfo.esMemberAddress.province + orderInfo.esMemberAddress.city +orderInfo.esMemberAddress.province +orderInfo.esMemberAddress.region +orderInfo.esMemberAddress.addr}}</i>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bg bg2'>
+    <view class='goods_list'>
+      <view class='goods_box'>
+        <view class='title'>
+          <text wx:if="{{orderInfo.brand==1}}">全兴大曲名酒定制</text>
+          <text wx:elif="{{orderInfo.brand==2}}"> 五粮液名酒定制</text>
+          <text wx:elif="{{orderInfo.brand==3}}"> 茅台名酒定制</text>
+        </view>
+        <view class='goods_info'>
+          <view class='img'>
+            <block wx:if="{{orderInfo.brand==1}}">
+                <image src='/images/logo1.png'></image>
+              </block>
+              <block wx:if="{{orderInfo.brand==2}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
+              </block>
+              <block wx:if="{{orderInfo.brand==3}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
+              </block>
+          </view>
+          <view class='bt_box'>
+            <view class='bt'>
+              <text>{{orderInfo.name}}</text>
+              <text>箱装</text>
+            </view>
+            <view class='x'>
+              <i wx:if="{{orderInfo.flavor==1}}">浓香型</i>
+              <i wx:elif="{{orderInfo.flavor==2}}">酱香型</i> 
+              {{orderInfo.alcohol}}°
+            </view>
+            <view class='gg'>{{orderInfo.netContent}}ml</view>
+            <view class='hh'>
+              <view class='price'> ¥{{orderInfo.price}}</view>
+              <view class='sl'>×{{orderInfo.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bg'>
+    <view class='order_info'>
+      <view>订单编号：{{orderInfo.sn}}</view>
+      <view>下单时间：{{orderTime}}</view>
+    </view>
+  </view>
+
+</view>
+<view class='contact-box'>
+  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+  </contact-button>
+   <image class='con-img' src='/images/msg.png'  />
+  <view class='cont-text'>客服</view>
+</view>

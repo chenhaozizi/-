@@ -1,0 +1,42 @@
+<!--pages/edit_addr/edit_addr.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='bg'>
+    <text>收货人:</text>
+    <input type='text' bindblur='userNameInput' value='{{namee}}' placeholder='请填写收货人姓名'></input>
+  </view>
+  <view class='bg'>
+    <text>手机号码:</text>
+    <input type="number" maxlength="11" bindblur="mobileInput" value="{{tell}}" placeholder='请填写手机号'></input>
+  </view>
+  <view class='bg'>
+    <text>所在地区:</text>
+    <view class="section">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}} {{region[1]}} {{region[2]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='bg'>
+    <text>详细地址:</text>
+    <input type='text' bindblur='addrInput' value='{{addrr}}' placeholder='请填写详细地址'></input>
+  </view>
+  <view class='bg bg1' hidden='true' style='display:none'>
+    <text style='width:240rpx'>设为默认地址:</text>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value='1'/>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='footer'>
+    <view class='new_addr' bindtap="saveaddr">保存地址</view>
+  </view>
+</form>
+<view class='contact-box'>
+  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+  </contact-button>
+   <image class='con-img' src='/images/msg.png'  />
+  <view class='cont-text'>客服</view>
+</view>

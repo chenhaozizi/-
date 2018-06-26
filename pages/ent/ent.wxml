@@ -1,0 +1,164 @@
+<!--pages/ent/ent.wxml-->
+<view class='container'>
+  <view class='top'>
+
+    <view wx:for="{{tab}}" class="{{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="swichNav">{{item}}</view>
+    
+  </view>
+  <view class='top1'></view>
+  <!--待付款  -->
+  <block hidden='{{currentTab !=0}}' wx:for="{{unpayArr}}" wx:for-index="id" wx:for-item="item" wx:key="nopay" >
+    <view class='goods_list'  hidden='{{currentTab !=0}}' >
+      <view class='goods_box'>
+        <view class='title'>
+          <text wx:if="{{item.brand==1}}">全兴大曲名酒定制</text>
+          <text wx:elif="{{item.brand==2}}"> 五粮液名酒定制</text>
+          <text wx:elif="{{item.brand==3}}"> 茅台名酒定制</text>
+          <text class='zt'>待付款</text>
+        </view>
+        <view class='goods_info'>
+          <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
+            <view class='img'>
+              <block wx:if="{{item.brand==1}}">
+                <image src='/images/logo1.png'></image>
+              </block>
+              <block wx:if="{{item.brand==2}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
+              </block>
+              <block wx:if="{{item.brand==3}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
+              </block>
+
+            </view>
+            <view class='bt_box'>
+              <view class='bt'>
+                <text>{{item.name}}</text>
+                <text>箱装</text>
+                <!-- <text class='price'>¥{{item.price}}</text> -->
+              </view>
+              <view class='xx'>
+                <i wx:if="{{item.flavor==1}}">浓香型</i>
+                <i wx:elif="{{item.flavor==2}}">酱香型</i>
+                {{item.alcohol}}°</view>
+              <view class='gg'>{{item.netContent}}ml</view>
+            </view>
+            <view class='total'>
+              <view>共{{item.num}}件商品</view>
+              <view>实付款: ¥{{item.totalAmount}}</view>
+            </view>
+          </navigator>
+          <view class='edit'>
+            <view data-current="{{item.cuzOrderId}}" bindtap="delOrder">删除订单</view>
+            <view data-current="{{item.cuzOrderId}}" bindtap="confirmPay" class='active'>确认付款</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </block>
+
+
+  <!--待发货  -->
+  <view hidden="{{currentTab !=1}}" wx:for="{{pay}}" wx:key="pay" wx:for-index="id" wx:for-item="item" class='goods_list' >
+    <view class='goods_box'  hidden='{{currentTab !==1}}'>
+      <view class='title'>
+        <text wx:if="{{item.brand==1}}">全兴大曲名酒定制</text>
+         <text wx:elif="{{item.brand==2}}"> 五粮液名酒定制</text>
+          <text wx:elif="{{item.brand==3}}"> 茅台名酒定制</text>
+        <text class='zt'>买家已付款</text>
+      </view>
+      <view class='goods_info'>
+        <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
+            <view class='img'>
+              <block wx:if="{{item.brand==1}}">
+                <image src='/images/logo1.png'></image>
+              </block>
+              <block wx:if="{{item.brand==2}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
+              </block>
+              <block wx:if="{{item.brand==3}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
+              </block>
+
+            </view>
+          <view class='bt_box'>
+            <view class='bt'>
+              <text>{{item.name}}</text>
+              <text>箱装</text>
+              <text class='price'>¥{{item.price}}</text>
+            </view>
+            <view class='xx'>
+              <i wx:if="{{item.flavor==1}}">浓香型</i>
+              <i wx:elif="{{item.flavor==2}}">酱香型</i>
+              {{item.alcohol}}°
+            </view>
+            <view class='gg'>{{item.netContent}}ml</view>
+          </view>
+        </navigator>
+        <view class='total' style='border:none'>
+          <view>共{{item.num}}件商品</view>
+          <view>实付款: ¥{{item.totalAmount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!--已发货  -->
+  <view hidden="{{currentTab!=2}}" wx:for="{{send}}" wx:key="paied" wx:for-index="id" wx:for-item="item" class='goods_list' >
+    <view class='goods_box'  hidden='{{currentTab !=2}}'>
+      <view class='title'>
+        <text wx:if="{{item.brand==1}}">全兴大曲名酒定制</text>
+         <text wx:elif="{{item.brand==2}}"> 五粮液名酒定制</text>
+          <text wx:elif="{{item.brand==3}}"> 茅台名酒定制</text>
+        <text class='zt'>卖家已发货</text>
+      </view>
+      <view class='goods_info'>
+        <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
+         <view class='img'>
+              <block wx:if="{{item.brand==1}}">
+                <image src='/images/logo1.png'></image>
+              </block>
+              <block wx:if="{{item.brand==2}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
+              </block>
+              <block wx:if="{{item.brand==3}}">
+                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
+              </block>
+
+            </view>
+          <view class='bt_box'>
+            <view class='bt'>
+              <text>{{item.name}}</text>
+              <text>箱装</text>
+              <text class='price'>¥{{item.price}}</text>
+            </view>
+            <view class='xx'>
+              <i wx:if="{{item.flavor==1}}">浓香型</i>
+              <i wx:elif="{{item.flavor==2}}">酱香型</i>
+              {{item.alcohol}}°
+            </view>
+            <view class='gg'>{{item.netContent}}ml</view>
+          </view>
+        </navigator>
+        <view class='total'>
+          <view>共{{item.num}}件商品</view>
+          <view>实付款: ¥{{item.totalAmount}}</view>
+        </view>
+        <view class='edit'>
+          <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
+            <view>查看物流</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='contact-box'>
+  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+  </contact-button>
+   <image class='con-img' src='/images/msg.png'  />
+  <view class='cont-text'>客服</view>
+</view>

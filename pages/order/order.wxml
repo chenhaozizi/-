@@ -1,0 +1,104 @@
+<!--pages/order/order.wxml-->
+<view class='container'>
+  <view class='goods_info'>
+    <view class='img'>
+      <image src="{{logo}}"></image>
+    </view>
+    <view class='bt_box' style='height:230rpx'>
+      <view class='bt'>
+        <text>{{brand}}</text>
+        <text>箱装</text>
+        <text>¥{{price}}/瓶*6瓶</text>
+      </view>
+      <view class='xx'>{{flavour}} {{degree}}°</view>
+      <view class='gg'>{{netwt}}ml
+        <text class='small-stips'>3箱起订</text>
+      </view>
+      <view class='sl_box'>
+        <text class='sl'>定制数量(单位:箱)</text>
+        <!-- 数量调整 -->
+        <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <!-- 数值 -->
+          <input type="number" bindchange="bindManual" value="{{num}}" min="1" />
+          <!-- 加号 -->
+          <text class="normal" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class='addr_box' bindtap='add_addr'>
+    <view class='addr_bg' wx:if="{{!name==''}}">
+      <view class='addr' data-id="{{addrId}}">
+        <view class='xxx'>
+          <view>收货人:
+            <i>{{name}}</i>
+          </view>
+          <view class='tel'>{{tel}}</view>
+        </view>
+        <view class='add'>收货地址：
+          <i>{{addr}}</i>
+        </view>
+      </view>
+    </view>
+    <view class='add_addr' wx:if="{{isaddr==false}}">
+      <image src='/images/add_addr.jpg'></image>
+      <text class='dzts'> 请先添加收货地址</text>
+    </view>
+  </view>
+  <view class='dispatch' hidden='hidden'>
+    <view>配送方式</view>
+    <text>快递</text>
+    <!-- <text>存酒窖</text> -->
+  </view>
+  <view class='addr_box' style='padding-top:0px'>
+    <view class='dispatch'>
+      <view style='color:#d74a3c;text-align:'>特别说明:</view>
+      <p class="pp">  感谢您对合润汇名酒定制中心的认可及厚爱！您参与本次定制购买的活动，按照定制流程将您需要上传的图片及想说的话表达出来...
+        <i bindtap='caption' style="color:#d74a3c">点击查看全部</i>
+      </p>
+      <view class='check_box'>
+        <checkbox-group bindchange="ok">
+          <label class="checkbox" for='sport'>
+            <view class='checkbox_box'>
+              <checkbox value='ok' checked="checked" id="sport" color='#d74a3c' />
+            </view>
+            我已阅读以上信息，同意参与本次产品定制
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <!-- <text>存酒窖</text> -->
+  </view>
+  <view class='footer'>
+    <view class='total_price'>合计：
+      <i>¥{{total_price}}</i>
+    </view>
+    <view class='pay' bindtap='pick_up'>确认付款</view>
+  </view>
+</view>
+<view class='contact-box'>
+  <contact-button type="default-light" class='cont-btn' size="20">
+  </contact-button>
+  <image class='con-img' src='/images/msg.png' />
+  <view class='cont-text'>客服</view>
+</view>
+<!--祝福语弹出层  -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
+</view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <text class='mt_title'>私人订制特别说明</text>
+  <view class='zfy'>
+    <scroll-view style='' scroll-y="true">
+      <view class='caption_info'>
+        <view>
+          <p wx:for="{{captions}}" wx:for-index="index" wx:for-item="item">{{item.cnt}}</p>
+        </view>
+      </view>
+    </scroll-view>
+    <i>∨</i>
+  </view>
+  <button hover-class='button-hover' class='next_step' bindtap="go">确定</button>
+</view>

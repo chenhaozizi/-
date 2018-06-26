@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user_info/user_info",
+    "pages/parameter/parameter",
+    "pages/order/order",
+    "pages/pack/pack",
+    "pages/pack2/pack2",
+    "pages/pack3/pack3",
+    "pages/add_addr/add_addr",
+    "pages/edit_addr/edit_addr",
+    "pages/ent_info/ent_info",
+    "pages/ent/ent",
+    "pages/cutInside/cutInside"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#DB4A3C",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "#FFF"
+  },
+  "subPackages":[
+    {
+      "root":"packageTwoLeval",
+      "pages": [
+        "/pages/usercenter/usercenter"
+      ]
+    }
+    ]
+}

@@ -1,0 +1,34 @@
+<!--pages/add_addr/add_addr.wxml-->
+<view class='container'>
+  <view class='addr_bg' wx:for="{{addr_list}}" wx:for-item="item" wx:for-index="index" wx:key="key" >
+    <view class='addr' data-id="{{item.addrId}}" bindtap='add_choose'>
+      <view class='xx'>
+        <view>收货人:
+          <i>{{item.name}}</i>
+        </view>
+        <view class='tel'>{{item.mobile}}</view>
+      </view>
+      <view class='add'>收货地址：
+        <i>{{item.province}}{{item.city}}{{item.region}}{{item.town}}{{item.addr}}</i>
+      </view>
+      <view class='edit_box'>
+        <!-- <checkbox-group bindchange="" class="check">
+          <label class="checkbox" >
+            <checkbox value="{{index}}" checked="{{item.defAddr==1?'true':'false'}}" />设为默认
+          </label>
+        </checkbox-group> -->
+        <view catchtap='del_addr' data-did="{{item.addrId}}"><image src='/images/icon_05.jpg'></image>删除</view>
+        <view catchtap='edit_addr' data-name="{{item.name}}" data-tel="{{item.mobile}}" data-province="{{item.province}}" data-city="{{item.city}}" data-region="{{item.region}}" data-town="{{item.town}}" data-addr="{{item.addr}}" data-eid="{{item.addrId}}"><image src='/images/icon_03.jpg'></image>编辑</view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='new_addr' bindtap='add_new_addr'>新建地址</view>
+  </view>
+</view>
+<view class='contact-box'>
+  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+  </contact-button>
+   <image class='con-img' src='/images/msg.png'  />
+  <view class='cont-text'>客服</view>
+</view>

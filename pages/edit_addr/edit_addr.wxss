@@ -1,0 +1,23 @@
+/* pages/edit_addr/edit_addr.wxss */
+/*新建地址  */
+page{
+  background: #fff
+}
+.bg{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  padding: 40rpx 20rpx;
+}
+.bg text{display: inline-block;width: 180rpx;}
+.footer {position: fixed; bottom: 0; left: 0; right: 0;text-align:center;color: white;background: #ffb700}
+.footer view {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+}
+.bg1{justify-content: space-between}
+.mr{}

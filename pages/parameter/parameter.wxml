@@ -1,0 +1,62 @@
+<!--pages/parameter/parameter.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title" data-show="1" bindtouchstart="xz">选择品牌</view>
+    <view class='radio_box' style='height:{{show1}}'>
+      <radio-group name="brand" class="brand">
+        <label>
+          <radio value="3" checked/>
+          <image data-num="3" src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png' bindtap='menuClick' class="list-menu3 {{_num==3?' light':''}}"></image>
+        </label>
+        <label>
+          <radio value="2" />
+          <image data-num="2" src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png' bindtap='menuClick' class="list-menu2 {{_num==2?' light':' '}}"></image>
+        </label>
+        <label>
+          <radio value="1" />
+          <image data-num="1" src='/images/logo1.png' bindtap='menuClick' class="list-menu1 {{_num==1?' light':' '}}"></image>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section__title" data-show="2" bindtouchstart="xz">香 型</view>
+    <view class='radio_box' style='height:{{show2}}'>
+      <radio-group name="flavour">
+        <label wx:for="{{ parameter.flavour}}" wx:key="flavour">
+          <radio value="{{item}}" checked='checked' />
+          <block wx:if='{{item==1}}'>浓香</block>
+          <block wx:if='{{item==2}}'>酱香</block>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section__title" data-show="3" bindtouchstart="xz">酒精度</view>
+    <view class='radio_box' style='height:{{show3}}'>
+      <radio-group name="degree">
+      
+        <label wx:for="{{ parameter.degree}}" wx:key="degree" data-nummm=''>
+          <radio value="{{item}}" checked='{{parameter.degree.length==1}}'/>{{item}}°</label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="section" hidden='hidden'>
+    <view class="section__title" data-show="4" bindtouchstart="xz">净含量</view>
+    <view class='radio_box' style='height:{{show4}}'>
+      <radio-group name="netwt">
+        <label>
+          <radio value="500" checked='checked' />500ml</label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="btn-area">
+    <button formType="submit" hover-class='button-hover' class='next_step' disabled='{{next_step}}'>下一步 ></button>
+  </view>
+</form>
+<view class='contact-box'>
+  <contact-button type="default-light" class='cont-btn' size="20">
+  </contact-button>
+  <image class='con-img' src='/images/msg.png' />
+  <view class='cont-text'>客服</view>
+</view>

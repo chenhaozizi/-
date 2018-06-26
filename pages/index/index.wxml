@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='background:#d74a3c;color:#fff'>登陆</button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block> -->
+  </view>
+  <view class="list-wrapper">
+    <view class="list-top">
+      <view data-num="1" class="list-menu list-menu1 {{_num==1?'cur':''}}" bindtap="menuClick">开始定制</view>
+      <view data-num="4" class="list-menu list-menu4 {{_num==4?'cur':''}}" bindtap="menuClick">历史定制</view>
+      <view data-num="2" class="list-menu list-menu2 {{_num==2?'cur':''}}" bindtap="menuClick">个人中心</view>
+      <view data-num="3" class="list-menu list-menu3 {{_num==3?'cur':''}}" bindtap="menuClick">商 城</view>
+    </view>
+  </view>
+</view>
