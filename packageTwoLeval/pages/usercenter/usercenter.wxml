@@ -68,6 +68,7 @@
     <view class='item-lable font-md color-66  pos-rel'>朋友圈<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   </view>
+  
   <view class='loginout color-ff font-md2'>
     退出登录
   </view>
