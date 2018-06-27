@@ -13,7 +13,7 @@
     "pages/ent/ent",
     "pages/cutInside/cutInside",
     "pages/checkAuthorization/checkAuthorization"
-    
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,7 +28,8 @@
         "pages/usercenter/usercenter",
         "pages/member-auth/index",
         "pages/myInMoney/index",
-        "pages/bindbank/index"
+        "pages/bindbank/index",
+        "pages/addbank/addbank"
       ]
     }
   ]

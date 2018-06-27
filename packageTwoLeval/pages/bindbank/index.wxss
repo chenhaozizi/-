@@ -1,5 +1,13 @@
 @import '/lib/common.wxss';
 page{background: #EBEBEB}
-.list{padding: 33rpx 50rpx;box-sizing: border-box}
+.list{padding: 33rpx 50rpx;box-sizing: border-box;width: 86%;border-radius: 15rpx;box-shadow:6px 0px 8px rgba(23,23,23,0.08);}
+
 .bg1{background: -webkit-linear-gradient(left, #DC4A3D 65% ,rgb(232, 105, 88)) }
+.bg2{background: -webkit-linear-gradient(left,#FFC821 65% ,#FF9600)}
 .first-text{height: 50rpx;line-height: 50rpx}
+.addbank{background:rgb(255,183,0);
+height:90rpx;
+border-radius:15rpx;
+box-shadow:6rpx 0px 8rpx rgba(23,23,23,0.08);
+width: 86%;margin: 0 auto;margin-top: 40rpx;line-height: 90rpx
+}

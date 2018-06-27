@@ -1,10 +1,28 @@
 <!--packageTwoLeval/pages/bindbank/index.wxml-->
 <view>
-<view class='list  bg1'>
+<view class='list  bg1 mt35'>
   <view class=' color-ff '>
     <view class='text-right first-text font-md'><text class='font-44  float-l'>中国银行</text><text class='font-sm mr10'>设置为默认提现</text>|<text class='font-sm ml10'>删除</text></view>
-    <view class='mt40 mb40'>**** **** **** 2300</view>
-    <view class='text-left font-sm'><text >开户行：中国建设银行</text><text class='float-r'>开户行：李大钊</text></view>
+    <view class='mt40 mb40 font-40' style='letter-spacing:10rpx'>**** **** **** 2300</view>
+    <view class='text-left font-sm color-ff6'><text >开户行：中国建设银行</text><text class='float-r'>开户行：李大钊</text></view>
   </view>
   </view>
+  <view class='list  bg2 mt35'>
+  <view class=' color-ff '>
+    <view class='text-right first-text font-md'><text class='font-44  float-l'>中国银行</text><text class='font-sm mr10'>设置为默认提现</text>|<text class='font-sm ml10'>删除</text></view>
+    <view class='mt40 mb40 font-40' style='letter-spacing:10rpx'>**** **** **** 2300</view>
+    <view class='text-left font-sm color-ff6'><text >开户行：中国建设银行</text><text class='float-r'>开户行：李大钊</text></view>
+  </view>
+  </view>
+  <view class='list  bg1 mt35'>
+  <view class=' color-ff '>
+    <view class='text-right first-text font-md'><text class='font-44  float-l'>中国银行</text><text class='font-sm mr10'>设置为默认提现</text>|<text class='font-sm ml10'>删除</text></view>
+    <view class='mt40 mb40 font-40' style='letter-spacing:10rpx'>**** **** **** 2300</view>
+    <view class='text-left font-sm color-ff6'><text >开户行：中国建设银行</text><text class='float-r'>开户行：李大钊</text></view>
+  </view>
+  </view>
+
+  <navigator class=' addbank pd0 color-ff font-md text-center'  url= "/packageTwoLeval/pages/addbank/addbank" hover-class="none" >
+    <i class="iconfont icon-add mr10"></i>添加银行卡
+  </navigator>
 </view>
