@@ -1,0 +1,33 @@
+<view class='headjw'>
+  <view class='title'>累计总收益</view>
+  <view class='sum'>￥20000.0</view>
+  <view class='both'>
+    <view>余额：￥16000.0</view>
+    <view>提现：￥4000.0</view>
+  </view>
+</view>
+<view class='history-sel'>
+  <view class='left'>
+    <view class='icon-shu'></view>
+    <view>历史纪录</view>
+  </view>
+  <view class='right'>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        {{array[index]}}<text class='iconfont icon-xiajiantou'></text>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='list-content'>
+  <view class='everyone' wx:for="{{a}}">
+    <view class='up'>
+      <view class='one'>￥100.0</view>
+      <view class='two'>提成</view>
+    </view>
+    <view class='up'>
+      <view class='three'>收益来源:（***dad 订单号：510122200）</view>
+      <view class='four'>2018/06/15</view>
+    </view>
+</view>
+</view>

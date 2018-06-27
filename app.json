@@ -13,7 +13,6 @@
     "pages/ent/ent",
     "pages/cutInside/cutInside",
     "pages/checkAuthorization/checkAuthorization"
-   
   ],
   "window": {
     "backgroundTextStyle": "light",
