@@ -1,0 +1,54 @@
+page{background: #EBEBEB}
+.border{border: 1px solid #F4B318;}
+.fz20{
+  font-size: 20rpx;
+  color: #282828;
+  text-align: center;
+}
+.fz30{
+  font-size: 30rpx;
+  color: #282828;
+  font-weight: bold;
+  text-align: center;
+}
+.marg{
+  margin: 20rpx 0 86rpx;
+}
+.first{
+  width: 700rpx;
+  /* height: 662rpx; */
+  margin: 21rpx auto 0;
+  background-color: white;
+  overflow: hidden
+}
+.secend{
+  width: 640rpx;
+  /* height: 517rpx; */
+  margin: 74rpx auto 71rpx;
+}
+.third{
+  width: 616rpx;
+  /* height: 489rpx; */
+  margin: 15rpx auto 15rpx;
+}
+.title{
+  color: #DC4A3D;
+  font-size: 40rpx;
+  margin: 51rpx auto 35rpx;
+  text-align: center;
+}
+.stateA{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 66rpx;
+}
+.nameState{
+  margin-bottom: 23rpx;
+  text-align: left;
+  padding-left: 52rpx;
+}
+.reason{
+  margin-bottom: 50rpx;
+  text-align: left;
+  padding-left: 52rpx;
+}

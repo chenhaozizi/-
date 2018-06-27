@@ -1,0 +1,15 @@
+<view class='first'>
+  <view class='secend border'>
+    <view class='third border'>
+      <view class='title'>授权成为一级经销商</view>
+      <view class='stateA'>
+        <view class='fz20'>授权状态：已授权</view>
+        <view class='fz20'>授权日期：2018-06-15</view>
+      </view>
+      <view class='fz30'>提成比例为：15%</view>
+      <view class='fz30 marg'>销售业绩累计返利：每20000返利200</view>
+      <view class='fz20 nameState'>是否实名认证：已实名</view>
+      <view class='fz20 reason'>审核失败原因：1、未进行实名认证  2、未能协商返利比例</view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/checkAuthorization/checkAuthorization",
     "pages/index/index",
     "pages/user_info/user_info",
     "pages/parameter/parameter",
