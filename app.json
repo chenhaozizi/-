@@ -12,7 +12,7 @@
     "pages/edit_addr/edit_addr",
     "pages/ent_info/ent_info",
     "pages/ent/ent",
-    "pages/cutInside/cutInside" 
+    "pages/cutInside/cutInside"
   ],
   "window": {
     "backgroundTextStyle": "light",

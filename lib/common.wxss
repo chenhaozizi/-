@@ -1,0 +1,59 @@
+@import './iconfont.wxss';
+/*字体大小  */
+.font-xs{font-size: 20rpx}
+
+.font-sm{font-size: 24rpx}
+.font-md{font-size: 28rpx}
+.font-md2{font-size: 32rpx}
+.font-44{font-size: 44rpx}
+.font-bold{font-weight: bold}
+/*字体颜色  */
+.color-y{color: #ff5a1a !important}
+.color-66{color:#555 !important}
+.color-00{color: #000 !important}
+.color-54{color:rgba(0,0,0,.54)}
+.bgf{background: #fff !important}
+/*边线  */
+.border-t{border-top:1px solid #f2f2f2 !important}
+.border-b{border-bottom:1px solid #f2f2f2 !important}
+.border-l{border-left:1px solid #f2f2f2 !important}
+.border-r{border-right:1px solid #f2f2f2 !important}
+.border-b-y{border-bottom:1px solid #ff5a1a }
+.border{border: 1px solid #f2f2f2}
+.radius{border-radius: 10rpx}
+
+/*定位  */
+.pos-rel{position: relative}
+.pos-ab{position: absolute}
+
+/*padding  margin  */
+.pd20{padding: 20rpx}
+.pd40{padding: 40rpx}
+.pt10{padding-top: 10rpx}
+.pb10{padding-bottom: 10rpx}
+.pt20{padding-top: 20rpx}
+.pb20{padding-bottom: 20rpx}
+.pl30{padding-left: 30rpx}
+.pl20{padding-left: 20rpx}
+.pr20{padding-right: 20rpx}.pd0{padding-bottom: 0 !important}.pr40{padding-right: 40rpx}
+.pt5{padding-top: 10rpx}
+.mt16{margin-top: 16rpx}.mt12{margin-top: 12rpx}
+.mt5{margin-top:10rpx !important}.mt20{margin-top: 20rpx !important}.mr10{margin-right: 10rpx}.mb10{margin-bottom: 10rpx}
+.mb20{margin-bottom: 20rpx !important}
+mr40{margin-right: 40rpx}
+.ml20{margin-left: 20rpx}.mr20{margin-right: 20rpx}.mb100{margin-bottom: 100rpx !important}
+.mt40{margin-top:40rpx}
+ .pb5{padding-bottom: 10rpx}
+ /*按钮大小  */
+.btn-sm{padding: 6rpx 15rpx;display: inline-block;line-height: 44rpx;font-size:28rpx;border-color:#fff}
+.full-btn {width: 100%;border-radius: 0;border-color:#ff5a1a;font-size: 28rpx;height: 80rpx;line-height: 80rpx}
+/*按钮颜色  */
+.btn-y{background:#ff5a1a;color:#fff }
+/*定位距离  */
+.bt0{bottom:0} .r0{right:0}
+.right{right:10rpx}.tpcenter{top: 40%}.r40{right: 40rpx}
+.flex{  display:flex;justify-content:space-around;padding:22rpx 0 30rpx;}
+/*item 图标  */
+.list{width: 92%;margin:0 auto;background: #fff;border-radius: 6rpx}
+.item{min-height: 100rpx;padding-left: 120rpx;line-height: 100rpx;box-sizing:border-box }
+.item-icon{diaplay:inline-block;width: 50rpx;height: 50rpx;background-position: center;background-repeat: no-repeat;background-size: cover;left: 40rpx;top: 10rpx}.item-icon image{width: 100%;height: 100%}

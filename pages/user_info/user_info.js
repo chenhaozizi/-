@@ -82,6 +82,7 @@ Page({
         wx.setStorageSync('face', res.userInfo.avatarUrl);
         wx.setStorageSync('iv', res.iv);
         wx.setStorageSync('encryptedData', res.encryptedData);
+        wx.setStorageSync('headimg', res.avatarUrl);
         //向服务器提交注册数据
         that.regster(code);
       },
