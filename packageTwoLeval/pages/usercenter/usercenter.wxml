@@ -29,47 +29,46 @@
  <text class='color-66 font-sm '>我的二维码</text></navigator>
   <navigator class='self-nav' hover-class="none">
     <view class='nav-icon mb10'><image src='/images/icon03.png'></image></view>
-    <text class='color-66 font-sm'>我的手艺</text>
+    <text class='color-66 font-sm'>我的收益</text>
   </navigator>
 </view>
-
 <!-- 功能列表  -->
 <view class='list mt20'>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon-2.png'></image></i>
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon1.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>申请提现<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-3.png'></image></i>
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon2.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>绑定银行<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-1.png'></image></i>
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon3.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>成为经销商<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
 </view>
 
 <view class='list mt5'>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon-4.png'></image></i>
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon4.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>我的酒窖<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-5.png'></image></i>
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon5.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>历史定制订单<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon-6.png'></image></i>
+    <i class="item-icon pos-ab icon02"><image src='/images/icon/icon6.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>查看授权<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
 </view>
 <view class='list mt5'>
   <navigator class='item pos-rel'  hover-class="none">
-    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon-7.png'></image></i>
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon7.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>朋友圈<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   </view>
-  <view class='loginout color-ff'>
+  <view class='loginout color-ff font-md2'>
     退出登录
   </view>
 </view>
