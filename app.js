@@ -11,6 +11,8 @@ App({
     })
   },
   globalData: {
+    subDomain: "tz", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
+    Domain: "https://mjapi.pandahot.cn",
     userInfo:null,
     userInfoNew:[],//用户信息
     parameter:[],//定制酒参数

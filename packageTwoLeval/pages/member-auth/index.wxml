@@ -1,0 +1,47 @@
+<view class="containers ">
+  <form class="form-panel" bindsubmit="onSave">
+   <view class="form-item">
+      <label>身份证姓名：</label>
+      <input name="name"  placeholder='请输入身份证姓名' value="{{result.name}}" ></input>
+   </view>
+   <view class="form-item">
+      <label>身份证号码：</label>
+      <input name="idcardNo" type="idcard" value="{{result.idcardNo}}" placeholder='请输入身份证号码'></input>
+   </view>
+   <view class="form-item">
+      <label>手机号码：</label>
+      <input name="tel" type="number" value="{{result.tel}}" placeholder='请输入手机号码'></input>
+   </view>
+   <view class="form-item">
+      <label>认证状态：</label>
+      <view class="auth" wx:if="{{result.status == 3}}">已认证  </view>
+<view class="auth" wx:elif="{{result.status == 2}}"> 认证失败-{{result.remark}} </view>
+<view class="auth" wx:else > 待认证 </view>
+    
+     <view hidden="true">
+      <input name="status" value="{{result.status}}"></input>
+      </view>
+   </view>
+   <view class="form-row">
+      <label>正面：</label>
+      <view hidden="true">
+           <input name="idcardFront" value="{{result.idcardFront}}" hidden="true"></input>
+      </view>
+      <view class="imageupload" data-type="1" wx:if="{{!update1}}" bindtap="uploadImage">点击上传</view>
+      <view class="card-imageview" data-type="1" wx:if="{{update1}}" bindtap="uploadImage" style="background-image:url({{result.idcardFront}})"></view>
+   </view>
+   <view class="form-row">
+      <label>背面：</label>
+      <view hidden="true">
+           <input name="idcardBack"  value="{{result.idcardBack}}"  ></input>
+      </view>
+      <view class="imageupload" data-type="2" wx:if="{{!update2}}" bindtap="uploadImage">点击上传</view>
+      <view class="card-imageview" data-type="2" wx:if="{{update2}}" bindtap="uploadImage" style="background-image:url({{result.idcardBack}})"></view>
+   </view>
+   <button class="success" form-type="submit">保存资料</button>
+   <button class="canel" bindtap="toBack">返回</button>
+    <view hidden="true">
+           <input name="idcardId" value="{{result.idcardId}}"  ></input>
+      </view>
+   </form>
+</view>

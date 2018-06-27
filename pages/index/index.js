@@ -103,33 +103,20 @@ Page({
     if (wx.getStorageSync("memberId")) {
     } else {that.move();return}
     if (e.target.dataset.num == 1) {//开始定制
-      wx.navigateTo({
+      wx.reLaunch({
         url: "../parameter/parameter"
       })
     } else if (e.target.dataset.num == 4) {//历史定制
-      wx.navigateTo({
+      wx.reLaunch({
         url: "../ent/ent"
       })
     } else if (e.target.dataset.num == 2) {//个人中心
       wx.navigateTo({
         url: "/packageTwoLeval/pages/usercenter/usercenter"
       })
-    } else if (e.target.dataset.num == 5) {//开启权限
-      that.scan()
-    }
+    } 
   },
-  scan:function() {
-    wx.scanCode({
-      success: (res) => {
-        console.log("扫码结果");
-        console.log(res);
-        
-      },
-      fail: (res) => {
-        console.log(res);
-      }
-    })
-  } , 
+  
   move: function () {
     wx.redirectTo({
       url: '../user_info/user_info',
@@ -156,6 +143,7 @@ Page({
       },
       success: function (res) {
         if (res.data.message == "ok") {
+          app.globalData.userInfo = res.data.data ;
           wx.setStorageSync('memberId', res.data.data.memberId);
           wx.setStorageSync('wxUnionid', res.data.data.wxUnionid);
           wx.setStorageSync('wxOpenid', res.data.data.wxOpenid);

@@ -6,10 +6,10 @@
           <view class='head_main pos-ab'>
               <image class='logo pos-ab' src='{{headUrl}}'></image>
               <view class='ml20' style='height:100%'>
-                <view class='font-md2 mt16 color-00'>吐司喵喵喵</view>
+                <view class='font-md2 mt16 color-00'>{{nickname}}</view>
                 <view class='font-sm mt12 color-66'>经销商用户</view>
                 <view class='pos-ab  r40 color-00 font-md tpcenter'>
-                <navigator url=''>
+                <navigator hover-class="none" url='/packageTwoLeval/pages/member-auth/index'>
                   实名认证<i class="iconfont pos-rel icon-zuojiantou " ></i>
                 </navigator>
                 </view>
@@ -38,7 +38,7 @@
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon1.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>申请提现<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
-  <navigator class='item pos-rel'  hover-class="none">
+  <navigator class='item pos-rel' url='/packageTwoLeval/pages/bindbank/index'  hover-class="none">
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon2.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>绑定银行<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
@@ -63,7 +63,7 @@
   </navigator>
 </view>
 <view class='list mt5'>
-  <navigator class='item pos-rel'  hover-class="none">
+  <navigator class='item pos-rel' url='/packageTwoLeval/pages/myInMoney/index'  hover-class="none">
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon7.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>朋友圈<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
