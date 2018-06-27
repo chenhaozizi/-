@@ -1,0 +1,34 @@
+@import '/lib/common.wxss';
+page{height: 100%;background: #fff}
+.imageupload{
+  text-align: center;
+  display: block;
+  position: relative;
+  width: 300rpx;
+  height: 300rpx;
+  line-height: 300rpx;
+  border: 1rpx solid #ddd;
+  margin-bottom: 25rpx;
+  margin-left:25rpx;
+}
+.imageupload:hover{
+  background: #efe;
+  border: 1rpx solid #ccc;
+}
+.card-imageview{
+  display: inline-block;
+  width: 100%;
+  height: 500rpx;
+  border: 1rpx solid #ddd;
+  margin-bottom: 25rpx;
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+.form-panel .form-item .auth{
+  font-size: 26rpx;
+  display: inline-flex;
+  width: 100%;
+  color:red;
+}
+

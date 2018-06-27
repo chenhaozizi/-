@@ -1,0 +1,10 @@
+<!--packageTwoLeval/pages/bindbank/index.wxml-->
+<view>
+<view class='list  bg1'>
+  <view class=' color-ff '>
+    <view class='text-right first-text font-md'><text class='font-44  float-l'>中国银行</text><text class='font-sm mr10'>设置为默认提现</text>|<text class='font-sm ml10'>删除</text></view>
+    <view class='mt40 mb40'>**** **** **** 2300</view>
+    <view class='text-left font-sm'><text >开户行：中国建设银行</text><text class='float-r'>开户行：李大钊</text></view>
+  </view>
+  </view>
+</view>

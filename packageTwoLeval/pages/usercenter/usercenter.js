@@ -1,73 +1,31 @@
-// packageTwoLeval/pages/usercenter/usercenter.js
+import HttpUtil from '../../../lib/httputil.js'
+// import goPage from '../../../lib/page.js'
 //获取应用实例
 var app = getApp();
-let self;
-Page({
+let self,comp;
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-      headUrl:""
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+/**
+ * 页面控制器
+ */
+class PageController {
+  constructor() {
+    comp = this;
+   
+  }
+  data={
+    headUrl:'',
+    nickname:''
+  }
+  onShow=function(){
+    
+  }
+  onLoad=function(){
     self = this;
     self.setData({
-      headUrl: app.globalData.userInfo.avatarUrl
+      headUrl: app.globalData.userInfo.face,
+      nickname: app.globalData.userInfo.nickname
     })
     console.log(app.globalData.userInfo)
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
-})
+}
+Page(new PageController());

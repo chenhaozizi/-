@@ -1,0 +1,5 @@
+@import '/lib/common.wxss';
+page{background: #EBEBEB}
+.list{padding: 33rpx 50rpx;box-sizing: border-box}
+.bg1{background: -webkit-linear-gradient(left, #DC4A3D 65% ,rgb(232, 105, 88)) }
+.first-text{height: 50rpx;line-height: 50rpx}
