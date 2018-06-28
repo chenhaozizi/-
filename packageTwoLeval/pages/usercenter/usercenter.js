@@ -14,18 +14,53 @@ class PageController {
   }
   data={
     headUrl:'',
-    nickname:''
+    nickname:'',
+    userInfo: '',
   }
   onShow=function(){
-    
+    this.getUserInfo();
+  }
+  // 获取用户信息
+  getUserInfo=function (cb) {
+    var that = this
+    wx.login({
+      success: function () {
+        wx.getUserInfo({
+          success: function (res) {
+            that.setData({
+              userInfo: res.userInfo
+            });
+          }
+        })
+      }
+    })
   }
   onLoad=function(){
     self = this;
-    self.setData({
-      headUrl: app.globalData.userInfo.face,
-      nickname: app.globalData.userInfo.nickname
+  }
+  scan=function(){
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+        this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
+        self.setData({
+          show: this.show
+        })
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '失败',
+          icon: 'success',
+          duration: 2000
+        })
+
+  }
     })
-    console.log(app.globalData.userInfo)
   }
 }
 Page(new PageController());
