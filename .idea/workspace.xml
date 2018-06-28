@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="86e63bfc-006e-4e0b-b846-1e178ca81454" name="默认" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
+      <change beforePath="$PROJECT_DIR$/lib/common.wxss" afterPath="$PROJECT_DIR$/lib/common.wxss" />
+      <change beforePath="$PROJECT_DIR$/lib/iconfont.wxss" afterPath="$PROJECT_DIR$/lib/iconfont.wxss" />
+      <change beforePath="$PROJECT_DIR$/packageTwoLeval/pages/usercenter/usercenter.js" afterPath="$PROJECT_DIR$/packageTwoLeval/pages/usercenter/usercenter.js" />
+      <change beforePath="$PROJECT_DIR$/packageTwoLeval/pages/usercenter/usercenter.wxml" afterPath="$PROJECT_DIR$/packageTwoLeval/pages/usercenter/usercenter.wxml" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +27,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -51,7 +58,7 @@
     <option name="totallyTimeSpent" value="691000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

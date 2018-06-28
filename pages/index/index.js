@@ -107,7 +107,7 @@ Page({
         url: "../parameter/parameter"
       })
     } else if (e.target.dataset.num == 4) {//历史定制
-      wx.reLaunch({
+      wx.navigateTo({
         url: "../ent/ent"
       })
     } else if (e.target.dataset.num == 2) {//个人中心
