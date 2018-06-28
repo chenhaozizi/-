@@ -1,7 +1,7 @@
 <view class='box'>
   <view class='name'>
-    <open-data type="userAvatarUrl"></open-data>
-    <open-data type="userNickName"></open-data>
+    <image class='head' src='{{userInfo.avatarUrl}}'></image>
+    <view class='user-name'>{{userInfo.nickName}}</view>
   </view>
   <view class='code'></view>
 </view>

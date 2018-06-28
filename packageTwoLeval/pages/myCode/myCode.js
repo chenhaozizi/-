@@ -1,76 +1,41 @@
-// packageTwoLeval/pages/myCode/myCode.js
-Page({
+import HttpUtil from '../../../lib/httputil.js'
+// import goPage from '../../../lib/page.js'
+//获取应用实例
+var app = getApp();
+let self,comp;
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    // wx.getSetting({
-    //   success: function (res) {
-    //     if (res.authSetting['scope.userInfo']) {
-    //       wx.getUserInfo({
-    //         success: function (res) {
-    //           console.log(res.userInfo)
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+/**
+ * 页面控制器
+ */
+class PageController {
+  constructor() {
+    comp = this;
+   
   }
-})
+  data={
+    userInfo: '',
+  }
+  onShow=function(){
+    this.getUserInfo();
+  }
+  // 获取用户信息
+  getUserInfo=function (cb) {
+    var that = this
+    wx.login({
+      success: function () {
+        wx.getUserInfo({
+          success: function (res) {
+            console.log(res)
+            that.setData({
+              userInfo: res.userInfo
+            });
+          }
+        })
+      }
+    })
+  }
+  onLoad=function(){
+    self = this;
+  }
+}
+Page(new PageController());

@@ -10,7 +10,11 @@
   display: flex;
 }
 .head{
-  width: 140rpx;
-  height: 140rpx;
-  margin: 0 20rpx 20rpx 0;
+  width: 132rpx;
+  height: 132rpx;
+  margin: 0 40rpx 20rpx 0;
+}
+.user-name{
+  height: 132rpx;
+  line-height: 132rpx;
 }

@@ -10,7 +10,7 @@
                 <view class='font-sm mt12 color-66'>经销商用户</view>
                 <view class='pos-ab  r40 color-00 font-md tpcenter'>
                 <navigator hover-class="none" url='/packageTwoLeval/pages/member-auth/index'>
-                  实名认证<i class="iconfont pos-rel icon-zuojiantou " ></i>
+                  实名认证<i class="iconfont pos-rel icon-zuojiantou"></i>
                 </navigator>
                 </view>
               </view>
@@ -23,20 +23,12 @@
   <view class='self-nav' bindtap='scan'>
     <view class='nav-icon mb10' ><image src='/images/icon01.png'></image></view>
     <text class='color-66 font-sm '>二维码扫描</text>
-<<<<<<< HEAD
-  </navigator>
-  <navigator  hover-class="none" class='border-r  border-l self-nav' url="../myCode/myCode">
+  </view>
+  <navigator hover-class="none" class='border-r border-l self-nav' url='../myCode/myCode'>
     <view class='nav-icon mb10'><image src='/images/icon02.png'></image></view>
     <text class='color-66 font-sm '>我的二维码</text>
   </navigator>
-  <navigator class='self-nav' hover-class="none" url="../myMoney/myMoney">
-=======
-  </view>
- <navigator  hover-class="none" class='border-r  border-l self-nav'>
- <view class='nav-icon mb10'><image src='/images/icon02.png'></image></view>
- <text class='color-66 font-sm '>我的二维码</text></navigator>
-  <navigator class='self-nav' hover-class="none">
->>>>>>> a92e0ed06e8d3f6d34aa01485fa68275f2ab2644
+  <navigator class='self-nav' hover-class="none" url='../myMoney/myMoney'>
     <view class='nav-icon mb10'><image src='/images/icon03.png'></image></view>
     <text class='color-66 font-sm'>我的收益</text>
   </navigator>
