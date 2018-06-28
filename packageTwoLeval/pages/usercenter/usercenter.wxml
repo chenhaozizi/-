@@ -34,7 +34,7 @@
 </view>
 <!-- 功能列表  -->
 <view class='list mt20'>
-  <navigator class='item pos-rel'  hover-class="none">
+  <navigator class='item pos-rel' url='/packageTwoLeval/pages/withdraw/index'  hover-class="none">
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon1.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>申请提现<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>

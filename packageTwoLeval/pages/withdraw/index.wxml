@@ -1,8 +1,8 @@
 <view class="containers ">
   <form class="form-panel" bindsubmit="onSave">
    <view class="form-item color-28">
-      <label class='font-md'>卡号：</label>
-      <input name="name"  placeholder='请输入银行卡号' ></input>
+      <label class='font-md'>提现金额：</label>
+      <input name="name"  placeholder='请输入提现金额'  type='number'></input>
    </view>
    <view class="form-item font-md mt40">
       <label>支持银行:</label>
@@ -14,20 +14,11 @@
   </picker>
       <i class="iconfont icon-xiajiantou pos-ab right" style="top:12rpx;color:#777"></i></view>
    </view>
-   <view class="form-item font-md mt40">
-      <label>开户行:</label>
-      <input name="tel" type="number"  placeholder='请输入开户行'></input>
-   </view>
-    <view class="form-item font-md mt40">
-      <label>开户行姓名:</label>
-      <input name="tel" type="number"  placeholder='请输入开户行姓名'></input>
-   </view>
+  
   
     <view class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
-    确认
+    下一步
   </view>
-  <view class=' addbank pd0 color-ff font-md text-center' >
-   返回
-  </view>
+ 
    </form>
 </view>
