@@ -1,0 +1,16 @@
+.box{
+  width: 80%;
+  height: 70%;
+  background: white;
+  margin:20% auto 10%;
+  padding: 5%;
+  box-sizing: border-box;
+}
+.name{
+  display: flex;
+}
+.head{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 0 20rpx 20rpx 0;
+}

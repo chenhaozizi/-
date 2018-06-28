@@ -1,0 +1,59 @@
+page{background: #EBEBEB}
+.inline-block{display: inline-block;}
+.p-top{
+  position:relative;
+  top:-6rpx;
+}
+.everyone{
+  background: white;
+  width: 700rpx;
+  margin: 32rpx auto 62rpx;
+  box-sizing: border-box;
+  padding: 50rpx 45rpx 50rpx 32rpx;  
+}
+.up{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.one{
+  color: #282828;
+  font-size: 60rpx;
+}
+.two{
+  color:#DC4A3D;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.three{
+  color: #787878;
+  font-size: 20rpx;
+  padding-left: 15rpx; 
+}
+.four{
+  color: #DC4A3D;
+  font-size:  24rpx;
+}
+.state{
+  color: #646464;
+  font-size: 28rpx;
+}
+.state>view{
+  margin-left: 98rpx;
+}
+.cicle{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  background: #989898;
+  margin-left: -14.5rpx;
+  margin-right: 40rpx;
+}
+.doing{
+  border-left: 1px solid #DC4A3D;
+  height: 280rpx;
+  line-height: 280rpx;
+  padding-left: 52rpx;
+  font-size: 24rpx;
+}
+.do>.cicle{background: #DC4A3D}

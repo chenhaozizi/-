@@ -24,10 +24,11 @@
     <view class='nav-icon mb10' ><image src='/images/icon01.png'></image></view>
     <text class='color-66 font-sm '>二维码扫描</text>
   </navigator>
- <navigator  hover-class="none" class='border-r  border-l self-nav'>
- <view class='nav-icon mb10'><image src='/images/icon02.png'></image></view>
- <text class='color-66 font-sm '>我的二维码</text></navigator>
-  <navigator class='self-nav' hover-class="none">
+  <navigator  hover-class="none" class='border-r  border-l self-nav' url="../myCode/myCode">
+    <view class='nav-icon mb10'><image src='/images/icon02.png'></image></view>
+    <text class='color-66 font-sm '>我的二维码</text>
+  </navigator>
+  <navigator class='self-nav' hover-class="none" url="../myMoney/myMoney">
     <view class='nav-icon mb10'><image src='/images/icon03.png'></image></view>
     <text class='color-66 font-sm'>我的收益</text>
   </navigator>
@@ -57,7 +58,7 @@
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon5.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>历史定制订单<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
-  <navigator class='item pos-rel'  hover-class="none">
+  <navigator class='item pos-rel'  hover-class="none" url="../checkAuthorization/checkAuthorization">
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon6.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>查看授权<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
