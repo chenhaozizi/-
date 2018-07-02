@@ -1,0 +1,21 @@
+<navigator class='everyone'>
+    <view class='up'>
+      <view class='one'>￥100.0</view>
+      <view class='two'>提成</view>
+    </view>
+    <view class='up'>
+      <view class='three'>收益来源:（***dad 订单号：510122200）</view>
+      <view class='four'>2018/06/15</view>
+    </view>
+</navigator>
+<view class='state'>
+  <view class='do'>
+    <view class='cicle inline-block'></view>
+    <view class='inline-block p-top'>提现申请</view>
+  </view>
+  <view class='doing'>正在处理，如未能及时到账，请联系客服</view>
+  <view class='done'>
+    <view class='cicle inline-block'></view>
+    <view class='inline-block p-top'>处理完成</view>    
+  </view>
+</view>

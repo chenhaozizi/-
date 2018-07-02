@@ -20,7 +20,7 @@
   </view>
 </view>
 <view class='list-content'>
-  <view class='everyone' wx:for="{{a}}">
+  <navigator class='everyone' wx:for="{{a}}" wx:key="index" url="../myMoneyDetails/myMoneyDetails">
     <view class='up'>
       <view class='one'>￥100.0</view>
       <view class='two'>提成</view>
@@ -29,5 +29,5 @@
       <view class='three'>收益来源:（***dad 订单号：510122200）</view>
       <view class='four'>2018/06/15</view>
     </view>
-</view>
+  </navigator>
 </view>

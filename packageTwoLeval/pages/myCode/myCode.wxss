@@ -1,0 +1,20 @@
+.box{
+  width: 80%;
+  height: 70%;
+  background: white;
+  margin:20% auto 10%;
+  padding: 5%;
+  box-sizing: border-box;
+}
+.name{
+  display: flex;
+}
+.head{
+  width: 132rpx;
+  height: 132rpx;
+  margin: 0 40rpx 20rpx 0;
+}
+.user-name{
+  height: 132rpx;
+  line-height: 132rpx;
+}

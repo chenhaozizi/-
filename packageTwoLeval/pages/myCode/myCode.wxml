@@ -1,0 +1,7 @@
+<view class='box'>
+  <view class='name'>
+    <image class='head' src='{{userInfo.avatarUrl}}'></image>
+    <view class='user-name'>{{userInfo.nickName}}</view>
+  </view>
+  <view class='code'></view>
+</view>
