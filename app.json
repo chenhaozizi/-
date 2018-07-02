@@ -27,7 +27,7 @@
       "pages": [
         "pages/usercenter/usercenter",
         "pages/member-auth/index",
-        "pages/myInMoney/index",
+        "pages/CircleFriends/index",
         "pages/bindbank/index",
         "pages/addbank/addbank",
         "pages/withdraw/index"

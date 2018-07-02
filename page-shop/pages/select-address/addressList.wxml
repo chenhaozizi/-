@@ -1,0 +1,13 @@
+<view class="address-list">
+        <view class="a-address" id="list"  wx:for="{{result}}" wx:key="{{index}}">
+             <view class="left-text {{item.isDefault? 'active':''}}" bindtap="selectTap" data-id="{{item.addrId}}">
+                 <view class="name-tel">
+                    {{item.name}}  {{item.mobile}}
+                 </view>
+                 <view class="address-box">
+                    {{item.addr}}
+                 </view>     
+             </view>   
+             <view class="right-edit" bindtap="editAddess" data-id="{{item.addrId}}"></view> 
+        </view>
+</view>

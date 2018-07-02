@@ -1,0 +1,13 @@
+ <view class="goods-des-info" >
+        <view class="label-title">商品规格</view>
+        <view class="goods-text"  wx:for="{{spec}}" wx:for-item="a"  wx:key="index">
+            {{a.specName}} 
+
+       <view >    
+        <view class='spec-button {{selected[a.specId][b.specValueId]}}' bindtap="onTap"  wx:for="{{a.detail}}" wx:for-item="b" wx:key="x" data-specId="{{a.specId}}" data-spacValueId="{{b.specValueId}}">
+            {{b.specValue}} 
+        </view>
+       </view>      
+            
+       </view>
+</view>

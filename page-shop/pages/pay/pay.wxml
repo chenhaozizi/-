@@ -1,0 +1,41 @@
+<view class="container">
+    <view class="sec-wrap">
+        <view class="order-status">
+            <view class="icon-box">
+                <image wx:if="{{result.status==1}}" class="icon" src="/images/order-details/icon-ddfk.png"></image>
+          
+                <image wx:if="{{result.status==6}}" class="icon" src="/images/order-details/icon-jycg.png"></image>
+            </view>
+            <view class="right-text" hidden="{{result.status!=6}}"> 
+                <view class="status red">已完成</view>
+                <view class="des" >感谢你购买本商品</view>
+            </view>
+            <view class="right-text" hidden="{{result.status!=1}}">
+                <view class="status red">
+                   <button bindtap="payTap" wx:if="{{!result.isComp}}" data-id="{{result.orderId}}" class="pay-button">微信支付</button>
+                   <button bindtap="toIndex" wx:if="{{result.isComp}}" class="pay-button">支付完成，返回首页</button>
+                   
+                </view>
+                
+            </view>
+
+        </view>
+       
+        
+    </view>
+    
+   
+        
+        <view class="goods-info">
+            <view class="row-box">
+                <view class="row-label">订单</view>
+                <view class="right-text">{{result.sn}}</view>
+            </view>
+            <view class="row-box">
+                <view class="row-label">应付总额</view>
+                <view class="right-text">¥ {{result.needPayMoney}}</view>
+            </view>
+        </view>
+        
+       
+</view>

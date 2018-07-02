@@ -1,0 +1,7 @@
+<view class="container">
+    <addressList id="list"></addressList>
+    <view class="bottom-box">
+        <view class="add-btn" bindtap="addAddess">新增收货地址</view>
+    </view>
+
+</view>

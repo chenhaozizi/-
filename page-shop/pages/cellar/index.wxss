@@ -1,0 +1,31 @@
+page{background: rgb(235, 235, 235)}
+.container {
+  background-color: #F2f2f2;
+  min-height: 100%;
+}
+view{display: block;}
+.toptitle{height: 80rpx;width: 100%;line-height:80rpx}
+.toptitle .item{width: 50%;float: left;text-align: center}
+.toptitle .item.active{height: 40rpx;margin-top:20rpx;line-height: 40rpx
+}
+.item.active:after{
+  content: "";
+  display: block;
+  width: 25%;
+  height: 1px;
+  border-bottom: 1px solid #ff5a1a;
+  position: absolute;bottom:-1px;left: 12%;
+
+}
+.sub-box{width: 100%}
+.rinumbox{bottom: 20rpx;right:20rpx}
+.munbox{width:200rpx;height: 60rpx;line-height: 60rpx;text-align: center;border:1px solid #eee;}
+.des,.add{background:#fafafa}
+.addinp{color: #ff5a1a;font-weight: 600}
+.checkbox-fiflter{position: absolute;width: 60rpx;height: 60rpx;border-radius: 50%; top: -140rpx;right: 0;background:red}
+.my-checkbox{position: absolute;right: 84rpx;top: -108rpx;z-index: 888;opacity: 1}
+.my-checkbox .all-selected.active{background:url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
+background-size:40rpx auto;background-position: 0
+}
+.my-checkbox .all-selected{width: 40rpx;height:40rpx; background:url(https://cdn.it120.cc/images/weappshop/gou.png)no-repeat 30rpx center;background-size: 40rpx auto;background-position: 0}
+.nubox{height: 88rpx;top:143rpx}

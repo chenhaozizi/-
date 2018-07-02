@@ -1,0 +1,51 @@
+<view class="container pos-rel">
+
+      <view class=" toptitle bgf border-t border-b pos-rel">
+          <view class='item font-md color-y active border-r'><text>我的藏酒</text>
+          </view>
+          <view class='item font-md'>
+          <navigator url="../../pages/cellar-type/cellar-type">
+          藏酒提取状态
+          </navigator></view>
+      </view>
+      <view class='sub-box pl30 bgf pt5 pb5 border-b' wx:if='{{cellarList.length > 0 ? true : false}}'>
+        <view >藏品数量：<text class="color-y">{{allNum}}瓶</text></view>
+        <view class='pos-rel mt5'>总价值：<text class="color-y">￥{{allMoney}}</text><button class="btn-sm pos-ab btn-y right bt0" bindtap='getcell' >{{falgtetx}}</button></view>
+      </view>
+      <view class='bgf w100 mb100 '>
+      <view  wx:for="{{cellarList}}" wx:key="{{index}}" class="pos-rel">
+          <view   class="them-left  {{index==0 ? '':'border-t'}}"  hidden="{{cellarList ? false : true}}"  data-index="{{item.index}}">
+          <view class='pos-ab them-left-img'>
+               <image src="{{item.original}}"/>
+            </view>
+            <view class='pt20'>
+                <text class='color-66 font-md2 text-showell-two'>{{item.name}}</text>
+                <view class='mt20 color-83 font-md' >价值：<text class="color-y">￥{{item.unitPrice}}</text></view>
+                <view class="color-83 font-md">数量：{{item.store}}瓶</view>
+                <view class="color-83 font-md">储存时间：{{item.keepTime}}</view>
+            </view>
+            <!--数量  -->
+            <view class='pos-ab nubox r0' >
+             <label class="checkbox my-checkbox "   data-index="{{index}}" hidden="{{getflag ? false : true}}"  bindtap='checkgood'>
+               <view class='all-selected {{item.isCheck == true ? "active" : ""}}'></view>
+              </label>
+            <view class="rinumbox pos-ab" >
+            <!--hidden="{{checkflag ? false : true}}"  -->
+              <view class='munbox  bt0 row ' hidden="{{item.isCheck ? false : true}}">
+                <view class='des col-33'  catchtap="desnum" data-index="{{index}}">-</view>
+                <view class='col-33 addinp'> <input disabled  value='{{item.inputnum}}' type="number" /></view>
+                <view class='add col-33' data-index="{{index}}" catchtap='addnum'>+</view>
+              </view>
+            </view>
+            </view>
+          </view>
+        </view>
+          </view>
+  <view class='bottom-button' bindtap='okbtnfn' >
+      <button class='full-btn btn-y'>+   {{btntetx}}</button>
+  </view>
+</view>
+  <view class="no-order"   hidden="{{cellarList.length == 0 ? false : true}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">暂无藏酒</view>
+    </view>

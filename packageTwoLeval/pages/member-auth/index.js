@@ -99,7 +99,9 @@ class PageController {
   }
 
   memberAuthSelectOneDao_callback=(res)=>{
+    console.log(res)
     if (res.data.data[0]){
+      console.log(res.data.data)
       // self.data.update=true;
       self.setData({ result: res.data.data[0], update1:true,update2:true})
     }

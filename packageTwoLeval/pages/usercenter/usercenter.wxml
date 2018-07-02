@@ -53,7 +53,7 @@
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon4.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>我的酒窖<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
-  <navigator class='item pos-rel'  hover-class="none">
+  <navigator class='item pos-rel' url='../../../pages/ent/ent'  hover-class="none">
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon5.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>历史定制订单<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
@@ -63,7 +63,7 @@
   </navigator>
 </view>
 <view class='list mt5'>
-  <navigator class='item pos-rel' url='/packageTwoLeval/pages/myInMoney/index'  hover-class="none">
+  <navigator class='item pos-rel' url='/packageTwoLeval/pages/CircleFriends/index'  hover-class="none">
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon7.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>朋友圈<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>

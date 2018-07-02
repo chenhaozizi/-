@@ -106,9 +106,10 @@ Page({
       wx.reLaunch({
         url: "../parameter/parameter"
       })
-    } else if (e.target.dataset.num == 4) {//历史定制
+    } else if (e.target.dataset.num == 3) {//历史定制
       wx.navigateTo({
-        url: "../ent/ent"
+        url: "/page-shop/pages/home/home"
+        
       })
     } else if (e.target.dataset.num == 2) {//个人中心
       wx.navigateTo({

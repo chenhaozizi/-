@@ -1,0 +1,7 @@
+<view class="goods-info">
+        <view class="goods-title">{{result.name}}</view>
+        <view class="goods-price" style="padding-left:35rpx;">价格：¥ {{selectSizePrice}}</view>
+        <view class="goods-price" style="color:#999;font-size:24rpx;">库存：{{result.store>0?'有货':'无货'}}</view>
+        <view class="goods-price" style="color:#999;font-size:24rpx;">市场价：<view style='text-decoration: line-through;display:inline'>¥{{result.mktprice}}</view>
+        </view>
+</view>
