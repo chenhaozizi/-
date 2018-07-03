@@ -17,8 +17,8 @@
             <checkbox value="{{index}}" checked="{{item.defAddr==1?'true':'false'}}" />设为默认
           </label>
         </checkbox-group> -->
-        <view catchtap='del_addr' data-did="{{item.addrId}}"><image src='/images/icon_05.jpg'></image>删除</view>
-        <view catchtap='edit_addr' data-name="{{item.name}}" data-tel="{{item.mobile}}" data-province="{{item.province}}" data-city="{{item.city}}" data-region="{{item.region}}" data-town="{{item.town}}" data-addr="{{item.addr}}" data-eid="{{item.addrId}}"><image src='/images/icon_03.jpg'></image>编辑</view>
+        <view catchtap='del_addr' data-did="{{item.addrId}}"><i class="iconfont icon-shanchu mr10"></i> 删除</view>
+        <view catchtap='edit_addr' data-name="{{item.name}}" data-tel="{{item.mobile}}" data-province="{{item.province}}" data-city="{{item.city}}" data-region="{{item.region}}" data-town="{{item.town}}" data-addr="{{item.addr}}" data-eid="{{item.addrId}}"><i class="iconfont icon-edit_icon mr10"></i>编辑</view>
       </view>
     </view>
   </view>

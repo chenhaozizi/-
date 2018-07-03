@@ -43,7 +43,7 @@
 }
 
 .list-top {
-  margin-top:490rpx;
+  margin-top:640rpx;
   width: 660rpx;
 }
 

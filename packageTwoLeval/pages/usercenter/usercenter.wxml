@@ -43,14 +43,14 @@
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon2.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>绑定银行<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
-  <navigator class='item pos-rel'  hover-class="none">
+  <view class='item pos-rel'  bindtap='scan'>
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon3.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>成为经销商<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
-  </navigator>
+  </view>
 </view>
 
-<view class='list mt5'>
-  <navigator class='item pos-rel'  hover-class="none">
+<view class='list mt5' >
+  <navigator class='item pos-rel' url='/page-shop/pages/cellar/index'  hover-class="none" style='display:none'>
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon4.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>我的酒窖<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
@@ -67,6 +67,10 @@
   <navigator class='item pos-rel' url='/packageTwoLeval/pages/CircleFriends/index'  hover-class="none">
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon7.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>朋友圈<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
+  </navigator>
+  <navigator class='item pos-rel' url='/pages/add_addr/add_addr'  hover-class="none">
+    <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon8.png'></image></i>
+    <view class='item-lable font-md color-66  pos-rel border-t'>地址管理<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   </view>
   

@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/httputil.js'
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
 let comp,self;
 const app = getApp();
 /*
@@ -21,7 +21,7 @@ class MemberAuthSelectOneDao {
    * 加载接口
    */
   load = () => {
-    this.http.post("/EsMemberIdcard/FindByMemeberId", {memberId: app.globalData.userInfo.memberId})
+    this.http.post("/EsMemberIdcard/FindByMemeberId", { memberId: wx.getStorageSync("memberId")})
   }
 }
 
@@ -43,7 +43,7 @@ class MemberAuthUpdateDao {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/EsMemberIdcard/Update", { memberId: app.globalData.userInfo.memberId,...e })
+    this.http.post("/EsMemberIdcard/Update", { memberId: wx.getStorageSync("memberId"),...e })
   }
 }
 
@@ -65,7 +65,7 @@ class MemberAuthAddDao {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/EsMemberIdcard/Add", { memberId: app.globalData.userInfo.memberId,...e })
+    this.http.post("/EsMemberIdcard/Add", { memberId: wx.getStorageSync("memberId"),...e })
   }
 }
 

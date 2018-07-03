@@ -155,7 +155,7 @@ Page({
   },
   add_addr: function () {
     wx.navigateTo({
-      url: "../add_addr/add_addr"
+      url: "../add_addr/add_addr?backUrl="+'/pages/order/order'
     })
   },
   // 默认地址

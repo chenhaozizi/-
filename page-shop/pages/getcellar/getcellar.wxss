@@ -1,4 +1,0 @@
-/* pages/getcellar/getcellar.wxss */
-.addactive{background: #f7a483}
-page{background: #fff}
-textarea {width: 100%;min-height: 180rpx;box-sizing: inherit}

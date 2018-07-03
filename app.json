@@ -11,7 +11,9 @@
     "pages/edit_addr/edit_addr",
     "pages/ent_info/ent_info",
     "pages/ent/ent",
-    "pages/cutInside/cutInside"
+    "pages/cutInside/cutInside",
+    "pages/checkAuthorization/checkAuthorization"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,16 +25,16 @@
     {
       "root": "packageTwoLeval",
       "pages": [
-        "pages/usercenter/usercenter",
-        "pages/member-auth/index",
-        "pages/CircleFriends/index",
-        "pages/bindbank/index",
-        "pages/addbank/addbank",
-        "pages/checkAuthorization/checkAuthorization",
-        "pages/myMoney/myMoney",
-        "pages/myMoneyDetails/myMoneyDetails",
-        "pages/myCode/myCode",
-        "pages/withdraw/index"
+       "pages/usercenter/usercenter",
+      "pages/member-auth/index",
+      "pages/bindbank/index",
+      "pages/addbank/addbank",
+      "pages/checkAuthorization/checkAuthorization",
+      "pages/myMoney/myMoney",
+      "pages/myMoneyDetails/myMoneyDetails",
+      "pages/myCode/myCode",
+      "pages/withdraw/index",
+      "pages/CircleFriends/index"
       ]
     }
   ]

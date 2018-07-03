@@ -7,10 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addr_list: ''
+    addr_list: '',
+    backUrl:""
   },
-  onLoad: function () { this.addr_ask() },
+  onLoad: function (e) { this.addr_ask();
+    if (e.backUrl){
+      this.setData({ backUrl: e.backUrl })
+    } },
   // 请求地址
+
   addr_ask: function () {
     var that=this;
     wx.request({
@@ -45,7 +50,7 @@ Page({
   },
   // 选择地址
   add_choose: function (e) {
-    console.log(e);
+   if(this.data.backUrl){
     var id = e.currentTarget.dataset.id;
     console.log(id);
     wx.request({
@@ -68,7 +73,7 @@ Page({
         })
       }
     })
-
+  }
   },
   // 删除地址
   del_addr: function (e) {

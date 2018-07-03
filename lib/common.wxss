@@ -55,7 +55,9 @@ mr40{margin-right: 40rpx}
  .pb5{padding-bottom: 10rpx}
  /*按钮大小  */
 .btn-sm{padding: 6rpx 15rpx;display: inline-block;line-height: 44rpx;font-size:28rpx;border-color:#fff}
-.full-btn {width: 100%;border-radius: 0;border-color:#ff5a1a;font-size: 28rpx;height: 80rpx;line-height: 80rpx}
+.full-btn {width: 100%;border-radius: 0;border-color:#ff5a1a;font-size: 28rpx;height: 80rpx;line-height: 80rpx;margin: 0}
+.bottom-button{position: fixed;width: 100%; bottom: 0;font-size:28rpx;color:#000000;border-top: 1rpx solid #eee;height:80rpx;line-height: 80rpx;   }
+
 /*按钮颜色  */
 .btn-y{background:#ff5a1a;color:#fff }
 .lin128{line-height: 128rpx}.lin50{line-height: 50rpx}
@@ -140,3 +142,5 @@ box-shadow:6rpx 0px 8rpx rgba(23,23,23,0.08);
 width: 86%;margin: 0 auto;margin-top: 40rpx;line-height: 90rpx
 }
 .bg-confirm{background: #DC4A3D !important}
+
+

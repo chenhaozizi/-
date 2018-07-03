@@ -1,5 +1,0 @@
-/* pages/cellar-detail/cellar-detail.wxss */
-.type-top{height: 80rpx;line-height: 80rpx}
-.type-item.active{border-bottom: 1px solid #FF5A1A;color:#FF5A1A }
-.moreimg image{width: 150rpx;height: 160rpx;margin-right: 10rpx}
-.min-h100{min-height: 200rpx}

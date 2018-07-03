@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/httputil.js'
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
 var app = getApp();
 let self, comp;
 

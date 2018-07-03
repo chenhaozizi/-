@@ -1,5 +1,5 @@
 <!--pages/edit_addr/edit_addr.wxml-->
-<form bindsubmit="formSubmit">
+<form bindsubmit="formSubmit" style='font-size:28rpx;coloe:#666'>
   <view class='bg'>
     <text>收货人:</text>
     <input type='text' bindblur='userNameInput' value='{{namee}}' placeholder='请填写收货人姓名'></input>

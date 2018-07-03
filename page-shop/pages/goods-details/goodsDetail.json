@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "tabPage":"../../lib/trilobite/components/tabpage"
-  }
-}

@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/httputil.js'
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
 // import goPage from '../../../lib/page.js'
 //获取应用实例
 var app = getApp();

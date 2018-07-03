@@ -8,8 +8,9 @@ page{
   overflow: hidden;
   margin: 0 auto
 }
-.addr .add i{}
-.addr_bg{width: 100%;background: white;margin-bottom: 20rpx;}
+.add{color: #666}
+.mr10{margin-right:10rpx !important}
+.addr_bg{width: 100%;background: white;margin-bottom: 20rpx;font-size: 28rpx}
 .xx {align-items: center;justify-content: space-between;
 padding: 30rpx 0
 }

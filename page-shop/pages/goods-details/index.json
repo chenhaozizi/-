@@ -1,9 +1,0 @@
-{
-   "navigationBarTitleText": "商品详情",
-   "usingComponents": {
-    "goodsImages": "./goodsImages",
-    "goodsInfo":"./goodsInfo",
-    "goodsDetail": "./goodsDetail",
-    "goodsSpec":"./GoodsSpec"
-  }
-}
