@@ -17,7 +17,7 @@
         <image class='pos-ab'  src='http://thirdwx.qlogo.cn/mmopen/vi_32/RcaSh5gLHQoK9ZicIxfrkPMSQhrRzMdibqTH4fI6ebdPgRnKa37gdkjn5SbT2n5IBwAFgfmuQrllWQsrl91cbRaA/132'></image>
         <view class='right-text flex color-28'>
           <view class='lin50 mt20'>
-            <view class='font-md'>用户：张三</view>
+            <view class='font-md'>用户：张三{{index}}</view>
             <view class='font-sm'>订单量：3</view>
           </view>
           <view class='font-md color-y font-bold'>

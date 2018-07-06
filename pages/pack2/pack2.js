@@ -82,7 +82,7 @@ Page({
       //截取的图片
     if (op_arr) {
       this.setData({
-        tempfp: op_arr.src
+        tempfp: op_arr.tmpurl
       })
     }
     //初始化纸套样式

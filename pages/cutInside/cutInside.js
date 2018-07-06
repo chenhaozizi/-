@@ -40,6 +40,7 @@ Page({
   getCropperImage () {
     this.wecropper.getCropperImage((src) => {
       if (src) {
+        op_arr.tmpurl = src;
         // 截图上传
          const img_two= wx.uploadFile({
             url: 'https://mjapi.pandahot.cn/upload/upload-image/', 
