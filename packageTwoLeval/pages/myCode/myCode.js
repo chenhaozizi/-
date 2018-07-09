@@ -10,8 +10,9 @@ let self,comp;
 class PageController {
   constructor() {
     comp = this;
-   
+
   }
+
   data={
     userInfo: '',
   }

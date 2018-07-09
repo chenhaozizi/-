@@ -1,74 +1,72 @@
-// pages/myMoney/myMoney.js
-Page({
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
+let comp, self;
+const app = getApp();
+
+/*
+ * 会员认证查询
+*/
+class FindTradeRecordsPage {
+
+  constructor() {
+    this.http = new HttpUtil(app);
+    this.http.addResultListener(this.result);
+  }
+  result = (res) => {
+    if (this.callback) {
+      this.callback(res);
+    }
+  }
+  /**
+   * 加载接口
+   */
+  load = () => {
+    this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: 1, pageNumber: 1, pageSize: 4, tradeTypeCode:''})
+  }
+}
+
+/**
+ * 页面控制器
+ */
+class PageController {
+  constructor() {
+    comp = this;
+    comp.FindTradeRecordsPage = new FindTradeRecordsPage();
+    comp.FindTradeRecordsPage.callback = this.FindTradeRecordsPage_callback;
+
+    bindPickerChange = (e) =>{
+      console.log('picker发送选择改变，携带值为', e.detail.value)
+      this.setData({
+        index: e.detail.value
+      })
+    }
+  }
 
   /**
    * 页面的初始数据
    */
   data: {
-      a:[1,2,3],
-      index: 0,
-      array: ['选择账单类型', '提成', '返利', '提现']
-  },
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    a: [1, 2, 3],
+    index: 0,
+    array: ['选择账单类型', '提成', '返利', '提现']
   }
-})
+
+  FindTradeRecordsPage_callback = (res) => {
+    console.log(res)
+    if (res.data.data[0]) {
+      console.log(res.data.data)
+      // self.data.update=true;
+      self.setData({ result: res.data.data[0], update1: true, update2: true })
+    }
+
+  }
+
+  /**
+   * 加载的时候
+   */
+  onLoad = function () {
+    self = this;
+    comp.FindTradeRecordsPage.load();
+  }
+}
+
+Page(new PageController());

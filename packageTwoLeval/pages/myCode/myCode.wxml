@@ -3,5 +3,7 @@
     <image class='head' src='{{userInfo.avatarUrl}}'></image>
     <view class='user-name'>{{userInfo.nickName}}</view>
   </view>
-  <view class='code'></view>
+  <view class='code'>
+    <image src="https://mingjiu-api.conpanda.cn/RsMember/QRCode?id=1"></image>
+  </view>
 </view>

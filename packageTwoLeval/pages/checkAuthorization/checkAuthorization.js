@@ -1,66 +1,59 @@
-// pages/checkAuthorization/checkAuthorization.js
-Page({
+import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
+let comp, self;
+const app = getApp();
+/*
+ * 会员认证查询
+*/
+class FindAuthorizeInfo {
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  constructor() {
+    this.http = new HttpUtil(app);
+    this.http.addResultListener(this.result);
   }
-})
+  result = (res) => {
+    if (this.callback) {
+      this.callback(res);
+    }
+  }
+  /**
+   * 加载接口
+   */
+  load = () => {
+    this.http.post("/RsMember/FindAuthorizeInfo", { memberId: 1 })
+  }
+}
+
+/**
+ * 页面控制器
+ */
+class PageController {
+  constructor() {
+    comp = this;
+    comp.FindAuthorizeInfo = new FindAuthorizeInfo();
+    comp.FindAuthorizeInfo.callback = this.FindAuthorizeInfo_callback;
+  }
+
+  data = {
+    result: {},
+  }
+
+  FindAuthorizeInfo_callback = (res) => {
+    console.log(res, res.data.code)
+    if (res.data.code==200) {
+      // self.data.update=true;
+      self.setData({ result: res.data.data})
+      console.log(self.data)
+    }
+
+  }
+
+  /**
+   * 加载的时候
+   */
+  onLoad = function () {
+    self = this;
+    comp.FindAuthorizeInfo.load();
+  }
+}
+
+Page(new PageController());
