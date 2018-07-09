@@ -143,6 +143,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
+        console.log(res.data.data)
         if (res.data.message == "ok") {
           app.globalData.userInfo = res.data.data ;
           wx.setStorageSync('memberId', res.data.data.memberId);

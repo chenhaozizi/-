@@ -2,23 +2,24 @@
   <form class="form-panel" bindsubmit="onSave">
    <view class="form-item color-28">
       <label class='font-md'>提现金额：</label>
-      <input name="name"  placeholder='请输入提现金额'  type='number'></input>
+      <input name="amount"  placeholder='最多可提现{{recordTotal}}元'  type='number'></input>
    </view>
-   <view class="form-item font-md mt40">
+  <view class="form-item font-md mt40">
       <label>支持银行:</label>
       <view class='pick-box pos-rel'>
-       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-   <view class="picker">
-    {{array[index]}}
-    </view>
-  </picker>
+       <picker bindchange="bindPickerChange" data-id="{{bankArr[index].id}}"  name="bankId" value="{{index}}" range="{{bankArr}}" range-key='bankName'>
+          <view class="picker" >
+            {{bankArr[index].bankName}}
+            </view>
+        </picker>
       <i class="iconfont icon-xiajiantou pos-ab right" style="top:12rpx;color:#777"></i></view>
    </view>
   
   
-    <view class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
+    <button wx-if="{{bankArr.length>0}}" formType='submit' class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
     下一步
-  </view>
+  </button>
+  <navigator url='/packageTwoLeval/pages/addbank/addbank'  wx-if="{{bankArr.length<=0}}" class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>添加银行卡</navigator>
  
    </form>
 </view>

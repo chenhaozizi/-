@@ -2,32 +2,40 @@
   <form class="form-panel" bindsubmit="onSave">
    <view class="form-item color-28">
       <label class='font-md'>卡号：</label>
-      <input name="name"  placeholder='请输入银行卡号' ></input>
+      <input name="cardNumber"  placeholder='请输入银行卡号' type='number' ></input>
    </view>
    <view class="form-item font-md mt40">
       <label>支持银行:</label>
       <view class='pick-box pos-rel'>
-       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-   <view class="picker">
-    {{array[index]}}
+       <picker bindchange="bindPickerChange" data-id='{{bankArr[index].code}}'   name="bankCode" value="{{index}}" range="{{bankArr}}" range-key='name'>
+   <view class="picker" >
+    {{bankArr[index].name}}
     </view>
   </picker>
       <i class="iconfont icon-xiajiantou pos-ab right" style="top:12rpx;color:#777"></i></view>
    </view>
    <view class="form-item font-md mt40">
       <label>开户行:</label>
-      <input name="tel" type="number"  placeholder='请输入开户行'></input>
+      <input name="accountBank" type="text"  placeholder='请输入开户行'></input>
    </view>
     <view class="form-item font-md mt40">
       <label>开户行姓名:</label>
-      <input name="tel" type="number"  placeholder='请输入开户行姓名'></input>
+      <input name="accountName" type="text"  placeholder='请输入开户行姓名'></input>
    </view>
+   <view class="form-item font-md mt40">
+      <label>是否设为默认:</label>
+      <view class="body-view" style='margin-left:10%'>
+      <switch checked  name="isDefault"/>
+    
+</view>
+   </view>
+
   
-    <view class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
+    <button  formType="submit" class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
     确认
-  </view>
-  <view class=' addbank pd0 color-ff font-md text-center' >
+  </button>
+  <button class=' addbank pd0 color-ff font-md text-center' >
    返回
-  </view>
+  </button>
    </form>
 </view>
