@@ -4,6 +4,6 @@
     <view class='user-name'>{{userInfo.nickName}}</view>
   </view>
   <view class='code'>
-    <image src="https://mingjiu-api.conpanda.cn/RsMember/QRCode?id=1"></image>
+    <image src="https://mingjiu-api.conpanda.cn/front_v1/RsMember/QRCode?memberId={{memberId}}"></image>
   </view>
 </view>
