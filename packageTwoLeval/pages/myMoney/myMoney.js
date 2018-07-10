@@ -33,18 +33,18 @@ class PageController {
     comp.FindTradeRecordsPage = new FindTradeRecordsPage();
     comp.FindTradeRecordsPage.callback = this.FindTradeRecordsPage_callback;
 
-    bindPickerChange = (e) =>{
-      console.log('picker发送选择改变，携带值为', e.detail.value)
-      this.setData({
-        index: e.detail.value
-      })
-    }
+   
   }
-
+  bindPickerChange = (e) => {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  }
   /**
    * 页面的初始数据
    */
-  data: {
+  data ={
     a: [1, 2, 3],
     index: 0,
     array: ['选择账单类型', '提成', '返利', '提现'],

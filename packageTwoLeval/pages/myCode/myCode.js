@@ -15,6 +15,7 @@ class PageController {
 
   data={
     userInfo: '',
+    memberId :""
   }
   onShow=function(){
     this.getUserInfo();
@@ -29,6 +30,7 @@ class PageController {
             console.log(res)
             that.setData({
               userInfo: res.userInfo
+             
             });
           }
         })
@@ -37,6 +39,9 @@ class PageController {
   }
   onLoad=function(){
     self = this;
+    self.setData({
+      memberId: wx.getStorageSync("memberId")
+    })
   }
 }
 Page(new PageController());
