@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/trilobite/core/httputil.js'
+import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
 let comp, self;
 const app = getApp();
 
@@ -20,7 +20,7 @@ class FindTradeRecordsPage {
    * 加载接口
    */
   load = () => {
-    this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: 1, pageNumber: 1, pageSize: 4, tradeTypeCode:''})
+    this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: 1, pageNumber: 1, pageSize: 4,tradeTypeCode:''})
   }
 }
 
@@ -47,7 +47,8 @@ class PageController {
   data: {
     a: [1, 2, 3],
     index: 0,
-    array: ['选择账单类型', '提成', '返利', '提现']
+    array: ['选择账单类型', '提成', '返利', '提现'],
+    result:{}
   }
 
   FindTradeRecordsPage_callback = (res) => {
@@ -55,7 +56,7 @@ class PageController {
     if (res.data.data[0]) {
       console.log(res.data.data)
       // self.data.update=true;
-      self.setData({ result: res.data.data[0], update1: true, update2: true })
+      self.setData({ result: res.data.data[0]})
     }
 
   }
