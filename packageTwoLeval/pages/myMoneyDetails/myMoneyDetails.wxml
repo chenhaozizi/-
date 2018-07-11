@@ -1,14 +1,14 @@
 <navigator class='everyone'>
     <view class='up'>
-      <view class='one'>￥100.0</view>
-      <view class='two'>提成</view>
+      <view class='one'>￥{{result.amount}}</view>
+      <view class='two'>{{result.tradeName}}</view>
     </view>
     <view class='up'>
-      <view class='three'>收益来源:（***dad 订单号：510122200）</view>
-      <view class='four'>2018/06/15</view>
+      <view class='three'>收益来源:（{{result.remark}}）</view>
+      <view class='four'>{{result.createDate}}</view>
     </view>
 </navigator>
-<view class='state'>
+<view class='state' wx:if="{{result.tradeName=='提现'}}">
   <view class='do'>
     <view class='cicle inline-block'></view>
     <view class='inline-block p-top'>提现申请</view>
@@ -16,6 +16,8 @@
   <view class='doing'>正在处理，如未能及时到账，请联系客服</view>
   <view class='done'>
     <view class='cicle inline-block'></view>
-    <view class='inline-block p-top'>处理完成</view>    
+    <view class='inline-block p-top' wx:if="{{result.state==0}}">处理中</view>
+    <view class='inline-block p-top' wx:if="{{result.state==1}}">处理完成</view>    
+    <view class='inline-block p-top' wx:if="{{result.state==2}}">处理失败</view>    
   </view>
 </view>

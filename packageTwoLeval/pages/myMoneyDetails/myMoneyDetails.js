@@ -1,66 +1,32 @@
-// packageTwoLeval/pages/myMoneyDetails/myMoneyDetails.js
-Page({
+import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
+let comp, self;
+const app = getApp();
+
+/**
+ * 页面控制器
+ */
+class PageController {
+  constructor() {
+    comp = this;
+  }
+
 
   /**
    * 页面的初始数据
    */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  data = {
+    result:[]
   }
-})
+
+  /**
+   * 加载的时候
+   */
+  onLoad = function (options) {
+    self = this;
+    console.log(options)
+    self.setData({result:JSON.parse(options.currentdata)})
+    console.log(self.data.result)
+  }
+}
+
+Page(new PageController());

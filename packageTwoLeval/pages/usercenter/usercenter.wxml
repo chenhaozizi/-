@@ -7,7 +7,7 @@
               <image class='logo pos-ab'  src='{{userInfo.avatarUrl}}'></image>
               <view class='ml20' style='height:100%'>
                 <view class='font-md2 mt16 color-00'>{{userInfo.nickName}}</view>
-                <view class='font-sm mt12 color-66'>{{memberType}}</view>
+                <view class='font-sm mt12 color-66'>{{ memberType}}</view>
                 <view class='pos-ab  r40 color-00 font-md tpcenter'>
                 <navigator hover-class="none" url='/packageTwoLeval/pages/member-auth/index'>
                   实名认证<i class="iconfont pos-rel icon-zuojiantou"></i>
@@ -73,8 +73,5 @@
     <view class='item-lable font-md color-66  pos-rel border-t'>地址管理<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   </view>
-  
-  <view class='loginout color-ff font-md2'>
-    退出登录
-  </view>
+ 
 </view>
