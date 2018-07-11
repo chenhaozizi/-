@@ -3,31 +3,31 @@
   <view class='head flex color-ff'>
       <view class='text-center '>
           <view class='font-sm mt5 mb15'>我的朋友圈</view>
-          <view class='font-80'>10<text class='font-xs'>人</text></view>
+          <view class='font-80'>{{friendCount}}<text class='font-xs'>人</text></view>
       </view>
       <view class='text-center '>
           <view class='font-sm mt5 mb15'>拥有的二级分销商</view>
-          <view class='font-80'>2<text class='font-xs'>人</text></view>
+          <view class='font-80'>{{agentCount}}<text class='font-xs'>人</text></view>
       </view>
   </view>
 <!-- 列表  -->
- <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='margin-top:220rpx;margin-bottom:40rpx;height:calc(100vh)'>
-    <view wx:for="{{searchSongList}}" wx:key="unique"  data-data="{{item}}" class='list mt20'>
+ <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='margin-top:220rpx;height:98vh;margin-bootm:20rpx'>
+    <view wx:for="{{searchSongList}}" wx:key="item"  class='list mt20'>
       <view class='list-item pos-rel'>
-        <image class='pos-ab'  src='http://thirdwx.qlogo.cn/mmopen/vi_32/RcaSh5gLHQoK9ZicIxfrkPMSQhrRzMdibqTH4fI6ebdPgRnKa37gdkjn5SbT2n5IBwAFgfmuQrllWQsrl91cbRaA/132'></image>
+        <image class='pos-ab'  src='{{item.face}}'></image>
         <view class='right-text flex color-28'>
-          <view class='lin50 mt20'>
-            <view class='font-md'>用户：张三{{index}}</view>
-            <view class='font-sm'>订单量：3</view>
+          <view class='lin50 mt20 w50'>
+            <view class='font-md text-showell'>用户：{{item.uname}}</view>
+            <view class='font-sm'>订单量：{{item.orderCount}}</view>
           </view>
           <view class='font-md color-y font-bold'>
-          <view><i class="iconfont icon-user font-36 lin128"></i>普通用户</view>
+          <view><i class="iconfont icon-user font-36 lin128"></i>{{item.typeName}}</view>
           </view>
         </view>
       </view>
     </view>
-    <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
-      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    <view class="loading font-md" hidden="{{!searchLoading}}"><image class='loadeimg' src='../../../images/load.png'></image>正在载入更多...</view>
+      <view class="loading complete font-md" hidden="{{!searchLoadingComplete}}">已加载全部</view>
     <!-- <view class='list mt20'>
       <view class='list-item pos-rel'>
         <image class='pos-ab'  src='http://thirdwx.qlogo.cn/mmopen/vi_32/RcaSh5gLHQoK9ZicIxfrkPMSQhrRzMdibqTH4fI6ebdPgRnKa37gdkjn5SbT2n5IBwAFgfmuQrllWQsrl91cbRaA/132'></image>

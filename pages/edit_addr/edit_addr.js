@@ -105,11 +105,11 @@ Page({
               duration: 1500,
               mask: true
             });
-            setTimeout(function () {
-              wx.navigateTo({
-                url: "../order/order"
-              })
-            }, 2000)
+            // setTimeout(function () {
+            //   wx.navigateTo({
+            //     url: "../order/order"
+            //   })
+            // }, 2000)
           }
 
         })

@@ -70,8 +70,8 @@ mr40{margin-right: 40rpx}
 .float-l{float: left}.float-r{float: right}
 /*item 图标  */
 .list{width: 92%;margin:0 auto;background: #fff;border-radius: 6rpx}
-.list-item{min-height: 180rpx;box-sizing: border-box;padding-left: 120rpx}
-.list-item image{width: 107rpx;height: 107rpx;border-radius: 107rpx;left: 43rpx;top: 36rpx}
+.list-item{min-height: 180rpx;box-sizing: border-box;padding-left: 130rpx}
+.list-item image{width: 107rpx;height: 107rpx;border-radius: 107rpx;left: 25rpx;top: 36rpx}
 .item{min-height: 100rpx;padding-left: 120rpx;line-height: 100rpx;box-sizing:border-box }
 .right-text{height: 180rpx;box-sizing: border-box}
 .item-icon{diaplay:inline-block;width: 60rpx;height: 60rpx;background-position: center;background-repeat: no-repeat;background-size: cover;left: 40rpx;top: 20rpx}.item-icon image{width: 100%;height: 100%}
@@ -80,6 +80,8 @@ mr40{margin-right: 40rpx}
     justify-content: initial;
     display: block;
 }
+/*多余一行点点显示*/
+        .text-showell{    overflow: hidden;    text-overflow: ellipsis;    white-space: nowrap;}
 
 .form-panel{
    font-size: 26rpx;

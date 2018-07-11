@@ -93,7 +93,7 @@ class PageController {
     console.log('picker发送选择改变，携带值为', e.detail.value, e)
     self.setData({
       index: e.detail.value,
-      carid: e.target.dataset.id
+      carid: self.data.bankArr[e.detail.value].code
     })
   }
  

@@ -20,15 +20,15 @@
 
 <!-- 快捷菜单 -->
 <view class='flex bgf'>
-  <view class='self-nav' bindtap='scan'>
+  <view class='self-nav {{memberTypeCode == "0004" ? "w50 border-r" :"" }}' bindtap='scan'>
     <view class='nav-icon mb10' ><image src='/images/icon01.png'></image></view>
     <text class='color-66 font-sm '>二维码扫描</text>
   </view>
-  <navigator hover-class="none" class='border-r border-l self-nav' url='../myCode/myCode'>
+  <navigator hover-class="none" class='border-r border-l self-nav' wx-if="{{memberTypeCode !== '0004'}}" url='../myCode/myCode'>
     <view class='nav-icon mb10'><image src='/images/icon02.png'></image></view>
     <text class='color-66 font-sm '>我的二维码</text>
   </navigator>
-  <navigator class='self-nav' hover-class="none" url='../myMoney/myMoney'>
+  <navigator class='self-nav {{memberTypeCode == "0004" ? "w50 " :"" }}' hover-class="none" url='../myMoney/myMoney' >
     <view class='nav-icon mb10'><image src='/images/icon03.png'></image></view>
     <text class='color-66 font-sm'>我的收益</text>
   </navigator>
@@ -43,7 +43,7 @@
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon2.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>绑定银行<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
-  <view class='item pos-rel'  bindtap='scan'>
+  <view class='item pos-rel'  bindtap='scan1'>
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon3.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>成为经销商<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </view>

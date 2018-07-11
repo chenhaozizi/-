@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/trilobite/core/httputil.js'
+import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
 // import goPage from '../../../lib/page.js'
 //获取应用实例
 var app = getApp();
@@ -10,7 +10,7 @@ let self,comp;
 class PageController {
   constructor() {
     comp = this;
-
+   
   }
 
   data={

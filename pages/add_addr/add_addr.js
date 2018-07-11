@@ -10,13 +10,18 @@ Page({
     addr_list: '',
     backUrl:""
   },
-  onLoad: function (e) { this.addr_ask();
+  onShow:function(){
+    this.addr_ask();
+  },
+  onLoad: function (e) { 
+    
     if (e.backUrl){
       this.setData({ backUrl: e.backUrl })
     } },
   // 请求地址
 
   addr_ask: function () {
+    console.log(11111)
     var that=this;
     wx.request({
       method: "POST",

@@ -5,7 +5,20 @@ page{background: #EBEBEB}
 .loading{
   padding: 10rpx;
   text-align: center;
+ 
 }
+.loadeimg{  animation: rotate 1s linear infinite;width: 64rpx;height: 64rpx;position: relative;top:32rpx;right:10rpx}
+@keyframes rotate
+{
+from { transform: rotate(0deg);}
+           
+to { transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);}
+}
+
 .loading:before{
   display: inline-block;
   margin-right: 5rpx;
@@ -13,10 +26,11 @@ page{background: #EBEBEB}
   content: '';
   width: 40rpx;
   height: 40rpx;
-  background: url(http://thirdwx.qlogo.cn/mmopen/vi_32/RcaSh5gLHQoK9ZicIxfrkPMSQhrRzMdibqTH4fI6ebdPgRnKa37gdkjn5SbT2n5IBwAFgfmuQrllWQsrl91cbRaA/132) no-repeat;
-  background-size: contain;
-  animation: rotate 1s linear infinite;
+  /* background: url(../../../images/load.png) no-repeat;
+  background-size: contain; */
+ 
 }
 .loading.complete:before{
   display: none;
 }
+.w50{width: 50%}

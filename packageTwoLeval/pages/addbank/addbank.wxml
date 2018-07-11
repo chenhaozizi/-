@@ -7,7 +7,7 @@
    <view class="form-item font-md mt40">
       <label>支持银行:</label>
       <view class='pick-box pos-rel'>
-       <picker bindchange="bindPickerChange" data-id='{{bankArr[index].code}}'   name="bankCode" value="{{index}}" range="{{bankArr}}" range-key='name'>
+       <picker mode="selector" bindchange="bindPickerChange" data-id='{{bankArr[index].code}}'   name="bankCode" value="{{index}}" range="{{bankArr}}" range-key='name'>
    <view class="picker" >
     {{bankArr[index].name}}
     </view>

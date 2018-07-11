@@ -123,10 +123,9 @@ class PageController {
   }
   //银行卡选择
   bindPickerChange = (e) => {
-    console.log('picker发送选择改变，携带值为', e.detail.value, e.target.dataset.id)
     self.setData({
       index: e.detail.value,
-      cardId: e.target.dataset.id
+      cardId: self.data.bankArr[e.detail.value].id
     })
   }
 
