@@ -33,9 +33,9 @@ class PageController {
   }
   findInfoDao_callback = (res) =>{
     if(res.data.code == 200){
-      self.setData({
-        memberType: res.data.data.memberTypeName
-      })
+      // self.setData({
+      //   memberType: res.data.data.memberTypeName
+      // })
     }
   }
   data={
