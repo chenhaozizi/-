@@ -24,8 +24,8 @@ class PageController {
   onLoad = function (options) {
     self = this;
     console.log(options)
-    self.setData({result:JSON.parse(options.currentdata)})
-    console.log(self.data.result)
+   // self.setData({result:JSON.parse(options.currentdata)})
+   // console.log(self.data.result)
   }
 }
 

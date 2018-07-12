@@ -83,6 +83,7 @@ class PageController {
       cardId: res.data.data[0].id
     })
    }
+   console.log(self.data.bankArr)
   }
   //查询可提现余额
   selecRecordDao_callback = (res) =>{
@@ -97,11 +98,12 @@ class PageController {
   //提现
   AddRecordDao_callback = (res) =>{
     if (res.data.code === 200) {
+      console.log(res.data.data.message)
       wx.showToast({
-        title: res.data.data,
+        title: res.data.data.message,
         success: () => {
           wx.redirectTo({
-            url: '/packageTwoLeval/pages/myMoneyDetails/myMoneyDetails',
+            url: '/packageTwoLeval/pages/myMoneyDetails/myMoneyDetails?withdrawId=' + res.data.data.withdrawId,
           })
         }
       })
@@ -133,10 +135,15 @@ class PageController {
   onSave = (e) => {
     var formDatas = e.detail.value;
     formDatas.bankId = self.data.cardId;
-    if (formDatas.amount > self.data.recordTotal){
+    if (formDatas.amount >= self.data.recordTotal){
       self.showMessage("输入金额大于最大提现额度");
       return;
     }
+    if (formDatas.amount == 0) {
+      self.showMessage("输入金额小于或等于0");
+      return;
+    }
+    
     comp.AddRecordDao.load(formDatas)
   }
   showMessage = (m) => {

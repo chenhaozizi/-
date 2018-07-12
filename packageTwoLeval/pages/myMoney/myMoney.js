@@ -22,9 +22,9 @@ class FindTradeRecordsPage {
    */
   load = (e) => {
     if(e){
-      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: 10040, pageNumber: 1, pageSize: 4, tradeTypeCode:e})
+      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: 1, pageSize: 4, tradeTypeCode:e})
     }else{
-      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: 10040, pageNumber: 1, pageSize: 4})
+      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: 1, pageSize: 4})
     }
   }
 }
@@ -47,7 +47,7 @@ class FindFinanceStat {
    * 加载接口
    */
   load = () => {
-    this.http.post("/RsMember/FindFinanceStat", { memberId: 10040})
+    this.http.post("/RsMember/FindFinanceStat", { memberId: wx.getStorageSync("memberId")})
   }
 }
 
@@ -99,7 +99,7 @@ class PageController {
     if (res.data.code == 200) {
       console.log(res.data.data)
       for (let i = 0; i < res.data.data.length; i++){
-        res.data.data[i].createDate = self.jw.fmtDate(res.data.data[i].createDate)
+        //res.data.data[i].createDate = self.jw.fmtDate(res.data.data[i].createDate)
       }
       self.setData({ result: res.data.data})
       console.log(self.data.result)
