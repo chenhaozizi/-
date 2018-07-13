@@ -35,7 +35,7 @@
 </view>
 <!-- 功能列表  -->
 <view class='list mt20'>
-  <navigator class='item pos-rel' url='/packageTwoLeval/pages/withdraw/index'  hover-class="none">
+  <navigator class='item pos-rel' url='/packageTwoLeval/pages/withdraw/index'  wx-if="{{memberTypeCode !== '0004'}}"  hover-class="none">
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon1.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>申请提现<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
@@ -58,7 +58,7 @@
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon5.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>历史定制订单<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
-  <navigator class='item pos-rel'  hover-class="none" url="../checkAuthorization/checkAuthorization">
+  <navigator class='item pos-rel'  hover-class="none" url="../checkAuthorization/checkAuthorization"  wx-if="{{memberTypeCode !== '0004'}}">
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon6.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>查看授权<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>

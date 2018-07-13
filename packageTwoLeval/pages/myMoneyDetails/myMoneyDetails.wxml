@@ -1,14 +1,14 @@
 <navigator class='everyone'>
     <view class='up'>
       <view class='one'>￥{{result.amount}}</view>
-      <view class='two'>{{result.tradeName}}</view>
+      <view class='two'>提现</view>
     </view>
     <view class='up'>
-      <view class='three'>收益来源:（{{result.remark}}）</view>
-      <view class='four'>{{result.createDate}}</view>
+      <view class='three'>收益来源:（{{result.bankName}}）</view>
+      <view class='four'>{{result.startDate}}</view>
     </view>
 </navigator>
-<view class='state' wx:if="{{result.tradeName=='提现'}}">
+<view class='state'>
   <view class='do'>
     <view class='cicle inline-block'></view>
     <view class='inline-block p-top'>提现申请</view>

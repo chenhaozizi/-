@@ -103,7 +103,7 @@ class PageController {
         title: res.data.data.message,
         success: () => {
           wx.redirectTo({
-            url: '/packageTwoLeval/pages/myMoneyDetails/myMoneyDetails?withdrawId=' + res.data.data.withdrawId,
+            url: '/packageTwoLeval/pages/myMoneyDetails/myMoneyDetails?currentdata=' + res.data.data.withdrawId,
           })
         }
       })
@@ -135,7 +135,7 @@ class PageController {
   onSave = (e) => {
     var formDatas = e.detail.value;
     formDatas.bankId = self.data.cardId;
-    if (formDatas.amount >= self.data.recordTotal){
+    if (formDatas.amount >self.data.recordTotal){
       self.showMessage("输入金额大于最大提现额度");
       return;
     }

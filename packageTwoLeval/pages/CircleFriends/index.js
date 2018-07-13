@@ -17,7 +17,7 @@ class getTopDao {
    * 加载接口
    */
   load = () => {
-    this.http.post("/RsMember/FindFriendsStat", { memberId: 10040 })
+    this.http.post("/RsMember/FindFriendsStat", { memberId: wx.getStorageSync("memberId") })
 
   }
 }
@@ -37,7 +37,7 @@ class getfriendsDao {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/RsMember/FindFriendsPage", { memberId: 10040,...e })
+    this.http.post("/RsMember/FindFriendsPage", { memberId: wx.getStorageSync("memberId"),...e })
 
   }
 }

@@ -22,9 +22,9 @@ class FindTradeRecordsPage {
    */
   load = (e) => {
     if(e){
-      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: 1, pageSize: 4, tradeTypeCode:e})
+      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: e.pages, pageSize: 4, tradeTypeCode:e.recordid})
     }else{
-      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: 1, pageSize: 4})
+      // this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: self.data.pages, pageSize: 4})
     }
   }
 }
@@ -65,21 +65,29 @@ class PageController {
   }
   bindPickerChange = (e) => {
     console.log('picker发送选择改变，携带值为', e.detail.value,e)
-    // console.log(e)
-    // console.log(e.target.dataset.reid, 789456132132132)
-    self.setData({
-      index: e.detail.value,
-      recordid: self.data.array[e.detail.value].id
-    })
-    // console.log(self.data.recordid,123456)
-    // console.log(e.target.dataset.reid,789456)
-    comp.FindTradeRecordsPage.load(self.data.recordid);
+    self.setData({result:[]})
+    if (e.detail.value == 0){
+      self.setData({
+        index: e.detail.value,
+        recordid: '',
+        pages: 1
+      })
+    }else{
+      self.setData({
+        index: e.detail.value,
+        recordid: self.data.array[e.detail.value].id,
+        pages: 1
+      })
+    }
+    comp.FindTradeRecordsPage.load(self.data);
   }
   moreinfo = (e) => {
-    console.log(self.data.result[e.currentTarget.dataset.everyone],77777)
-    wx.navigateTo({
-      url: "../myMoneyDetails/myMoneyDetails?currentdata=" + JSON.stringify(self.data.result[e.currentTarget.dataset.everyone])
-    })
+    console.log(self.data.result[e.currentTarget.dataset.everyone].targetId,77777)
+    if(self.data.result[e.currentTarget.dataset.everyone].tradeName == '提现'){
+      wx.navigateTo({
+        url: '../myMoneyDetails/myMoneyDetails?currentdata=' + self.data.result[e.currentTarget.dataset.everyone].targetId,
+      })
+    }
   }
 
   /**
@@ -89,9 +97,10 @@ class PageController {
     a: [1, 2, 3],
     index: 0,
     array: [{ id:0,name: '选择账单类型' }, { id:2002,name: '提成' }, { id:2003,name: '返利' }, { id:2001,name: '提现'}],
-    recordid:"",
+    recordid:'',
     result:[],
-    money:[]
+    money:[],
+    pages:1
   }
 
   FindTradeRecordsPage_callback = (res) => {
@@ -99,9 +108,10 @@ class PageController {
     if (res.data.code == 200) {
       console.log(res.data.data)
       for (let i = 0; i < res.data.data.length; i++){
-        //res.data.data[i].createDate = self.jw.fmtDate(res.data.data[i].createDate)
+        res.data.data[i].createDate = self.jw.fmtDate(res.data.data[i].createDate)
       }
-      self.setData({ result: res.data.data})
+      
+      self.setData({ result: self.data.result.concat(res.data.data) })
       console.log(self.data.result)
     }
   }
@@ -119,8 +129,14 @@ class PageController {
    */
   onLoad = function () {
     self = this;
-    comp.FindTradeRecordsPage.load();
+    comp.FindTradeRecordsPage.load(self.data);
     comp.FindFinanceStat.load();
+  }
+  // 上拉事件
+  searchScrollLower = function () {
+    console.log("上拉")
+    self.setData({ pages:self.data.pages+1 })
+    comp.FindTradeRecordsPage.load(self.data);
   }
 }
 
