@@ -78,10 +78,30 @@ class PageController {
   // 已添加银行
   selecBankDao_callback = (res) => {
    if(res.data.code == 200){
+     if (res.data.data.length<=0){
+       wx.showModal({
+         title: '提现提示',
+         content: '暂无可选银行卡，去添加？',
+         success: function (res) {
+           if (res.confirm) {
+             wx.navigateTo({
+               url: '/packageTwoLeval/pages/addbank/addbank',
+             })
+           } else {
+             console.log('用户点击取消');
+             wx.navigateTo({
+               url: '/packageTwoLeval/pages/usercenter/usercenter',
+             })
+           }
+
+         }
+       })
+     }else{
     self.setData({
       bankArr: res.data.data,
       cardId: res.data.data[0].id
     })
+     }
    }
    console.log(self.data.bankArr)
   }
@@ -120,7 +140,7 @@ class PageController {
   }
   onLoad = function (){
     self = this;
-    comp.selecRecordDao.load()
+    comp.selecRecordDao.load();
     comp.selecBankDao.load();
   }
   //银行卡选择
