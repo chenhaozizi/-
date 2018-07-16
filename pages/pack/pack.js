@@ -5,9 +5,10 @@ const device = wx.getSystemInfoSync()
 const width = device.windowWidth
 const height = device.windowHeight - 50;
 var tempp;//原图图片 
+
 var bg_url;
 var pack = [];//纸套信息
-let This;
+let This,self;
 var img_a = "";//原图路径
 var app = getApp();
 Page({
@@ -49,7 +50,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    This = this;
+    This = self = this;
     // var oplist = JSON.parse(options.src);
     const { cropperOpt } = this.data.cropperOpt;
 
@@ -206,7 +207,7 @@ Page({
     // console.log(style_imgs.pack_show);
     app.globalData.style_img = style_imgs.pack_show;
     that.setData({
-      _num: 1,
+      _num: nums,
       pack_show: style_imgs.pack_show
     });
     wx.setStorageSync("zt", this.data._num);
@@ -287,9 +288,9 @@ Page({
             self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-            wx.navigateTo({
-              url: '../order/order',
-            })
+            // wx.navigateTo({
+            //   url: '../order/order',
+            // })
 
           } else {
             console.log('用户点击取消')
@@ -310,7 +311,7 @@ Page({
   ,
   //将截图绘制到canvas的固定
   setCutimg: function (context) {
-    context.drawImage(self.data.tempfp, 20, 13, 114, 193);
+    context.drawImage(self.data.tempfp, 20, 73, 100, 90);
   },
   createNewImg: function () {
     var that = this;
@@ -319,7 +320,7 @@ Page({
     //将纸套绘制到canvas
     context.drawImage(path, 0, 0, 280, 293);
     //绘制祝福语,cavas ,祝福语,x坐标,y坐标,文字盒子宽，文字盒子高,文字是否描边,是否竖排
-    setText.setText(context, "     " + self.data.blessing, 238, 168, 25, 75, false, true);
+    setText.setText(context, "     " + self.data.blessing, 169, 165, 82, 49, false, false);
     //绘制剪切的图
     this.setCutimg(context);
     context.draw();

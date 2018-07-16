@@ -94,3 +94,6 @@
   <image class='con-img' src='/images/msg.png' />
   <view class='cont-text'>客服</view>
 </view>
+<view class="canvas-box">
+    <canvas  style="width: 280px;height: 293px;" canvas-id="mycanvas"/>
+</view>
