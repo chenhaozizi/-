@@ -4,7 +4,6 @@ const device = wx.getSystemInfoSync()
 const width = device.windowWidth
 const height = device.windowHeight - 50;
 var tempp;//原图图片 
-
 var bg_url;
 var pack = [];//纸套信息
 let This;
@@ -217,7 +216,7 @@ Page({
     // console.log(style_imgs.pack_show);
     app.globalData.style_img = style_imgs.pack_show;
     that.setData({
-      _num: nums,
+      _num: 1,
       pack_show: style_imgs.pack_show
     });
     wx.setStorageSync("zt", this.data._num);
