@@ -1,5 +1,6 @@
 // pages/pack/pack.js
 import WeCropper from '../../lib/we-cropper/we-cropper.js'
+import setText from '../../lib/trilobite/core/drawText.js'
 const device = wx.getSystemInfoSync()
 const width = device.windowWidth
 const height = device.windowHeight - 50;
@@ -156,55 +157,44 @@ Page({
   //选择并将图片输出到canvas  
   change_cover: function () {
     var that = this;
-    wx.showModal({
-      title: '提示',
-      content: '选择定制图片',
-      confirmColor: '#ffb700',
-      success: function (res) {
-        if (res.confirm) {
-          const self = this
-          wx.chooseImage({
-            count: 1, // 默认9
-            sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
-            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-            success(res) {
-              const src = res.tempFilePaths[0]
-              // 上传的原图上传到后台
-              wx.uploadFile({
-                url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
-                filePath: src,
-                name: 'image',
-                formData: {
-                  'subFolder': 'customize'
-                },
-                success: function (res) {
-                  var img_a = (JSON.parse(res.data)).fsimg;
-                  wx.setStorage({
-                    key: "orimg",
-                    data: img_a
-                  });
-                }
-              })
-              //  获取裁剪图片资源后，给data添加src属性及其值
-              //跳转到截取页面
-
-              wx.navigateTo({
-                url: '../../pages/cutInside/cutInside?src=' + src,
-              })
+      wx.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success(res) {
+          const src = res.tempFilePaths[0]
+          // 上传的原图上传到后台
+          wx.uploadFile({
+            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            filePath: src,
+            name: 'image',
+            formData: {
+              'subFolder': 'customize'
+            },
+            success: function (res) {
+              var img_a = (JSON.parse(res.data)).fsimg;
+              wx.setStorage({
+                key: "orimg",
+                data: img_a
+              });
             }
           })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+          //  获取裁剪图片资源后，给data添加src属性及其值
+          //跳转到截取页面
+
+          wx.navigateTo({
+            url: '../../pages/cutInside/cutInside?src=' + src,
+          })
         }
-      }
-    })
+      })
+       
   },
 
 
 
   // 纸套选择
   zt_xz: function () {
-    this.setData({
+    this.setData({ 
       bottom1: "0",
       bottom2: "450rpx"
     })
@@ -295,6 +285,7 @@ Page({
             console.log('用户点击确定');
             // console.log(pack);
             // 定制信息 存储在全局变量里
+            self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
             wx.navigateTo({
@@ -318,4 +309,48 @@ Page({
     }
   }
   ,
+  //将截图绘制到canvas的固定
+  setCutimg: function (context) {
+    context.drawImage(self.data.tempfp, 20, 13, 114, 193);
+  },
+  createNewImg: function () {
+    var that = this;
+    var context = wx.createCanvasContext('mycanvas');
+    var path = self.data.pack_show;
+    //将纸套绘制到canvas
+    context.drawImage(path, 0, 0, 280, 293);
+    //绘制祝福语,cavas ,祝福语,x坐标,y坐标,文字盒子宽，文字盒子高,文字是否描边,是否竖排
+    setText.setText(context, "     " + self.data.blessing, 238, 168, 25, 75, false, true);
+    //绘制剪切的图
+    this.setCutimg(context);
+    context.draw();
+    //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
+    setTimeout(function () {
+      wx.canvasToTempFilePath({
+        canvasId: 'mycanvas',
+        success: function (res) {
+          var tempFilePath = res.tempFilePath;
+          console.log(tempFilePath);
+          that.setData({
+            imagePath: tempFilePath,
+            // canvasHidden:true
+          });
+          const orimgs = wx.uploadFile({
+            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            filePath: res.tempFilePath,
+            name: 'image',
+            formData: {
+              'subFolder': 'customize'
+            },
+            success: function (res) {
+              console.log('原图返回的', res.data)
+            }
+          })
+        },
+        fail: function (res) {
+          console.log(res);
+        }
+      });
+    }, 200);
+  }
 })
