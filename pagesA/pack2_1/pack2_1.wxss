@@ -124,7 +124,7 @@ left:154rpx;
   border: 1rpx dashed #b0844a;
   font-size: 15rpx;
   z-index: 99;
-  color: #fff;
+  color: black;
   text-align: left;
   text-indent: 20rpx;
 }
