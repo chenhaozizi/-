@@ -13,7 +13,6 @@ var img_a = "";//原图路径
 //var img_b="";//截图路径
 //获取应用实例
 var app = getApp();
-let op_arr;
 Page({
   /**
    * 页面的初始数据
@@ -46,7 +45,7 @@ Page({
     pack_show: '/images/mt1.png',
     bottom1: "450rpx",
     bottom2: "0",
-    _num: 4,
+    _num: '',
     crop: ""
   },
 
@@ -54,11 +53,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    if (JSON.stringify(options) == "{}") { } else {
-      op_arr = JSON.parse(options.op_arr)
-    }
     This = this;
+    // var oplist = JSON.parse(options.src);
     const { cropperOpt } = this.data.cropperOpt;
 
     new WeCropper(cropperOpt)
@@ -82,10 +78,11 @@ Page({
       })
       .updateCanvas();
       //截取的图片
-    if (op_arr) {
+    if (options.src) {
       this.setData({
-        tempfp: op_arr.tmpurl
-      })
+        tempfp: options.src
+      });
+      console.log('获取的截图地址:',this.data.tempfp)
     }
     //初始化纸套样式
     if (app.globalData.style_img) {
@@ -93,20 +90,16 @@ Page({
         pack_show: app.globalData.style_img
       })
     }
-    // //初始化想说的话选择
-    if (app.globalData.pack.zy) {
+    //初始化想说的话选择
+    if (app.globalData.pack.zy   ) {
       this.setData({
         zy: app.globalData.pack.zy
       })
     }
-    //初始化提交的blessing文字
-    if (op_arr) {
+   //初始化提交的blessing文字
+    if (app.globalData.pack.blessing) {
       this.setData({
-        blessing: op_arr.blessing
-      })
-    } else {
-      this.setData({
-        blessing: "祝福语区域"
+        blessing: app.globalData.pack.blessing
       })
     }
     //初始化输入框文字
@@ -120,7 +113,14 @@ Page({
   //选择并将图片输出到canvas  
   change_cover: function () {
     var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '选择定制图片',
+      confirmColor: '#ffb700',
+      success: function (res) {
+        if (res.confirm) {
           const self = this
+
           wx.chooseImage({
             count: 1, // 默认9
             sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -128,7 +128,7 @@ Page({
             success(res) {
               const src = res.tempFilePaths[0];
               // 上传的原图上传到后台
-              const orimg= wx.uploadFile({
+              wx.uploadFile({
                 url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
                 filePath: src,
                 name: 'image',
@@ -136,43 +136,28 @@ Page({
                   'subFolder': 'customize'
                 },
                 success: function (res) {
-                  console.log('原图返回的',res)
+                  console.log("原图地址：",res.data);
                   var img_a = (JSON.parse(res.data)).fsimg;
                   console.log("原图上传的：",img_a);
                   wx.setStorage({
                     key: "orimg",
                     data: img_a
                   });
-                },
-                fail: function (res) {
-                  wx.showToast({
-                    title: '网络不畅，请稍后重试',
-                    icon: 'none',
-                    mask: true,
-                    duration: 2000,
-                  });
-                  return;
                 }
-              })
-              //uploading
-              orimg.onProgressUpdate((res) => {
-               wx.showToast({
-                 title: '压缩中:'+res.progress+'%',
-                 icon:"loading",
-                 mask:true
-               })
-                // console.log('上传进度', res.progress)
-                // console.log('已经上传的数据长度', res.totalBytesSent)
-                // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
               })
               //  获取裁剪图片资源后，给data添加src属性及其值
               //跳转到截取页面
-              var op_arrs = { src: src, blessing: app.globalData.pack.blessing };
+
               wx.navigateTo({
-                url: '../../pages/cutInside/cutInside?dataobj=' + JSON.stringify(op_arrs)
+                url: '../../pages/cutInside/cutInside?src=' + src,
               })
             }
           })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
 
 
@@ -252,9 +237,9 @@ Page({
     console.log('默认底纹：', this.data._num);
     if (this.data._num === "") {
       warn = "请选择底纹"
-    } else if (this.data.tempfp == "/images/default.jpg" || this.data.tempfp == "/images/wny_default.jpg" || this.data.tempfp == "/images/add.png") {
+    } else if (this.data.tempfp == "/images/add.png") {
       warn = "请选择自定义图片"
-    } else if (this.data.blessing == '祝福语区域' || !this.data.blessing) {
+    } else if (this.data.blessing == '祝福语区域') {
       warn = "请填写祝福语"
     } else {
       flag = true;

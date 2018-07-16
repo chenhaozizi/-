@@ -1,5 +1,5 @@
 <!--pages/pack/pack.wxml-->
-<import src="../../lib/we-cropper/we-cropper.wxml"/>
+<import src="../../lib/we-cropper/we-cropper.wxml" />
 <view class='container'>
   <view class='pack_top'>
     <view class='show_box'>
@@ -9,11 +9,11 @@
     <view class='preview' bindtap='change_cover'>
       <image src='{{tempfp}}' style="{{tempfp=='/images/default.jpg'?'margin-left:-5%;margin-top:-10%':''}}"></image>
     </view>
-     <view class='preview' bindtap='change_cover' style='z-index:9999'>
-     
+    <view class='preview' bindtap='change_cover' style='z-index:9999'>
+
     </view>
     <view class='blessing' bindtap="submit">{{blessing}}</view>
-    <view class='ts' bindtap='change_cover'>点击换图片</view>
+    <view class='ts' bindtap='change_cover' hidden='hidden'>点击换图片</view>
     <view class='ts2'>
       <view>背面</view>
       <view>正面</view>
@@ -45,7 +45,7 @@
       <!--水平滚动-->
       <scroll-view class="scroll-view" scroll-x>
         <view wx:for="{{style_imgs}}" wx:key="index">
-          <image src='{{item.pack}}' data-nums="{{index}}"  class="{{_num==index?'activee':''}}" bindtap='img_src' />
+          <image src='{{item.pack}}' data-nums="{{index+1}}" class="{{_num==index+1?'activee':''}}" bindtap='img_src' />
         </view>
       </scroll-view>
     </view>
@@ -59,12 +59,15 @@
 </view>
 <view class="modalDlg" wx:if="{{showModal}}">
   <text class='mt_title'>想说的话</text>
-  <input placeholder='自定义:#写出你的话(少于30字哟)#' value="{{self_word}}" class='zdy_text' bindblur='zd_blessing'></input>
+  <input placeholder='自定义:#把话放进酒里#' value="{{self_word}}" class='zdy_text' bindblur='zd_blessing'></input>
   <view class='zfy'>
-    <scroll-view style='height:400rpx;' scroll-y="true">
-      <text bindtap='blessing' data-num="1" class="{{zy==1?'act':''}}" data-text="我愿提起笔墨，描绘出如诗一般对你的爱意">我愿提起笔墨，描绘出如诗一般对你的爱意</text>
-      <text bindtap='blessing' data-num="2" class="{{zy==2?'act':''}}" data-text="立足新起点，迈上新征程，开创新辉煌">立足新起点，迈上新征程，开创新辉煌</text>
-      <text bindtap='blessing' data-num="3" class="{{zy==3?'act':''}}"  data-text="希望你们像朵朵桃花开十里一般，一花一叶，道真谛">希望你们像朵朵桃花开十里一般，一花一叶，道真谛</text>
+    <scroll-view style='height:550rpx;' scroll-y="true">
+      <text bindtap='blessing' data-num="1" class="{{zy==1?'act':''}}" data-text="我梦想成真的第一件事就是和你结婚">我梦想成真的第一件事就是和你结婚</text>
+      <text bindtap='blessing' data-num="2" class="{{zy==2?'act':''}}" data-text="成长只有一次我们愿意把最好的给你">成长只有一次我们愿意把最好的给你</text>
+      <text bindtap='blessing' data-num="3" class="{{zy==3?'act':''}}" data-text="除了十月怀胎，你不比我妈轻松">除了十月怀胎，你不比我妈轻松</text>
+      <text bindtap='blessing' data-num="4" class="{{zy==4?'act':''}}" data-text="我对你的爱比酒还要烈1°">我对你的爱比酒还要烈1°</text>
+      <text bindtap='blessing' data-num="5" class="{{zy==5?'act':''}}" data-text="酒，一家人分着喝更暖">酒，一家人分着喝更暖</text>
+      <text bindtap='blessing' data-num="6" class="{{zy==6?'act':''}}" data-text="立足新起点，迈上新的征程，开创新的辉煌">立足新起点，迈上新的征程，开创新的辉煌</text>
     </scroll-view>
     <i>∨</i>
   </view>
@@ -72,24 +75,22 @@
 </view>
 <!--上传图片  -->
 <view class='cropper-wrapper' hidden='{{hide_canvas}}' id='cover-preview'>
-<template  is="we-cropper" data="{{...cropperOpt}}"/>
- <view class="cropper-buttons">
-        <!-- <view
+  <template is="we-cropper" data="{{...cropperOpt}}" />
+  <view class="cropper-buttons">
+    <!-- <view
                 class="upload"
                 bindtap="uploadTap">
             上传图片
         </view> -->
-        <view
-                class="getCropperImage"
-                bindtap="getCropperImage">
-            生成图片
-        </view>
+    <view class="getCropperImage" bindtap="getCropperImage">
+      生成图片
     </view>
+  </view>
 </view>
 
- <view class='contact-box'>
-  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+<view class='contact-box'>
+  <contact-button type="default-light" class='cont-btn' size="20">
   </contact-button>
-   <image class='con-img' src='/images/msg.png'  />
+  <image class='con-img' src='/images/msg.png' />
   <view class='cont-text'>客服</view>
 </view>

@@ -17,9 +17,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#DB4A3C",
+    "navigationBarBackgroundColor": "#a314b0",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "#FFF"
+    "navigationBarTextStyle": "#fff"
   },
   "subPackages": [
     {
@@ -36,6 +36,14 @@
       "pages/withdraw/index",
       "pages/CircleFriends/index"
       ]
-    }
+    },
+      {
+        "root": "pagesA",
+        "pages": [
+          "pack2_1/pack2_1",
+          "pack3_1/pack3_1",
+          "pack3_2/pack3_2"
+        ]
+      }
   ]
 }

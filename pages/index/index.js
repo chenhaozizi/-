@@ -16,17 +16,20 @@ Page({
     //   url: '../logs/logs'
     // })
   },
-  onLoad: function () {
-    wx.onNetworkStatusChange(function (res) {
-      console.log('网络是否连接',res.isConnected)
-      if (!res.isConnected){
-       wx.showModal({
-         title: '提示',
-         content: '网络未连接，请检查网络',
-       })
+  bindButtonTap: function () {
+    var that = this
+    wx.chooseVideo({
+      sourceType: ['album', 'camera'],
+      maxDuration: 60,
+      camera: 'back',
+      success: function (res) {
+        that.setData({
+          src: res.tempFilePath
+        })
       }
-      // console.log('网络类型',res.networkType)
     })
+  },
+  onLoad: function () {
     var that = this;
     // 获取用户信息
     wx.getSetting({
@@ -42,9 +45,8 @@ Page({
               })
               wx.getUserInfo({
                 success: res => {
-                  app.globalData.userInfo = res.userInfo
                   // 可以将 res 发送给后台解码出 unionId
-                 // console.log("授权后，取数据成功：" + JSON.stringify(res));
+                  //console.log("授权后，取数据成功：" + JSON.stringify(res));
                   console.log("授权后，取数据成功iv：" + res.iv);
                   wx.setStorageSync('nickname', res.userInfo.nickName);
                   wx.setStorageSync('sex', res.userInfo.gender);
@@ -53,7 +55,6 @@ Page({
                   wx.setStorageSync('face', res.userInfo.avatarUrl);
                   wx.setStorageSync('iv', res.iv);
                   wx.setStorageSync('encryptedData', res.encryptedData);
-                  wx.setStorageSync('headimg', res.avatarUrl)
                   console.log('缓存用户授权信息成功');
                   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                   // 所以此处加入 callback 以防止这种情况
@@ -102,24 +103,18 @@ Page({
     })
     if (wx.getStorageSync("memberId")) {
     } else {that.move();return}
-    if (e.target.dataset.num == 1) {//开始定制
-      wx.reLaunch({
+    if (e.target.dataset.num == 1) {
+      wx.navigateTo({
         url: "../parameter/parameter"
       })
-    } else if (e.target.dataset.num == 3) {//历史定制
-      wx.navigateTo({
-        url: "/page-shop/pages/home/home"
-        
-      })
-    } else if (e.target.dataset.num == 2) {//个人中心
+    } else if (e.target.dataset.num == 3) {
       wx.navigateTo({
         url: "/packageTwoLeval/pages/usercenter/usercenter"
       })
-    } 
+    }
   },
-  
   move: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../user_info/user_info',
     })
   },
@@ -143,9 +138,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        console.log(res.data.data)
         if (res.data.message == "ok") {
-          app.globalData.userInfo = res.data.data ;
           wx.setStorageSync('memberId', res.data.data.memberId);
           wx.setStorageSync('wxUnionid', res.data.data.wxUnionid);
           wx.setStorageSync('wxOpenid', res.data.data.wxOpenid);
@@ -160,16 +153,5 @@ Page({
         }
       },
     });
-  },
-  //转发
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '云酒定制小程序',
-      path: 'pages/index/index'
-    }
   }
 })

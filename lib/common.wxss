@@ -129,7 +129,7 @@ button{
   font-size:28rpx; 
 }
 button.success{
-  background-color:#E64340;
+  background: linear-gradient(to right, #e306bf, #ad12b2, #60259f) !important;
   color: #fff;
 }
 
@@ -143,6 +143,6 @@ border-radius:15rpx;
 box-shadow:6rpx 0px 8rpx rgba(23,23,23,0.08);
 width: 86%;margin: 0 auto;margin-top: 40rpx;line-height: 90rpx
 }
-.bg-confirm{background: #DC4A3D !important}
+.bg-confirm{background: linear-gradient(to right, #e306bf, #ad12b2, #60259f)!important}
 
 

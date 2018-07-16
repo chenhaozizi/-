@@ -155,7 +155,7 @@ Page({
   },
   add_addr: function () {
     wx.navigateTo({
-      url: "../add_addr/add_addr?backUrl="+'/pages/order/order'
+      url: "../add_addr/add_addr?backUrl=" + '/pages/order/order'
     })
   },
   // 默认地址
@@ -242,12 +242,14 @@ Page({
         name: this.data.brand,
         addrId: this.data.addrId,
         flavor: app.globalData.parameter.flavour,
-        netContent: app.globalData.parameter.netwt,
+        netContent: app.globalData.parameter.netwt,//所有类型暂时默认500ml
         original: This.data.orgimg,
         thumbnail: This.data.tmpimg,
         message: app.globalData.pack.blessing,
         brand: app.globalData.parameter.brand,
-        alcohol: app.globalData.parameter.degree
+        alcohol: app.globalData.parameter.degree,
+        // price: app.globalData.parameter.price,//2期版本新增价格
+        // family: app.globalData.parameter.family//2期版本新增酒类型
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -290,7 +292,6 @@ Page({
     });
   },
   pay_show: function (a, b, c, d) {
-    var that=this;
     console.log(a, b, c, d)
     wx.requestPayment({
       'nonceStr': a,
@@ -325,11 +326,8 @@ Page({
           })
         }, 1000);
 
-      },
-      'complete':function(){
-        app.globalData.pack.blessing = '祝福语区域',
-        wx.removeStorageSync("zt");
       }
+
     })
   },
   parameter: function () {
@@ -346,17 +344,41 @@ Page({
         price: 268
       })
     } else if (app.globalData.parameter.brand == 2) {
-      that.setData({
-        brand: "五粮液·银坛",
-        logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png",
-        price: 188
-      })
+      if (app.globalData.parameter.family == "金樽" || app.globalData.parameter.family == 2){
+        that.setData({
+          brand: "五粮液·金樽",
+          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png",
+          price: 188
+        })
+      } else if (app.globalData.parameter.family == "银坛" || app.globalData.parameter.family == 1){
+        that.setData({
+          brand: "五粮液·银坛",
+          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png",
+          price: 188
+        })
+      }
+      
     } else if (app.globalData.parameter.brand == 3) {
-      that.setData({
-        brand: "贵州茅台·品味级",
-        logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
-        price: 198
-      })
+      if (app.globalData.parameter.family == "品味级" || app.globalData.parameter.family == 1) {
+        that.setData({
+          brand: "贵州茅台·品味级",
+          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
+          price: 198
+        })
+      } else if (app.globalData.parameter.family == "鉴赏级" || app.globalData.parameter.family == 2){
+        that.setData({
+          brand: "贵州茅台·鉴赏级",
+          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
+          price: 198
+        })
+      } else if (app.globalData.parameter.family == "尊享级" || app.globalData.parameter.family == 3) {
+        that.setData({
+          brand: "贵州茅台·尊享级",
+          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
+          price: 198
+        })
+      }
+     
     };
     if (app.globalData.parameter.flavour == 1) {
       that.setData({

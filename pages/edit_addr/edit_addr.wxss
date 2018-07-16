@@ -12,7 +12,7 @@ page{
   padding: 40rpx 20rpx;
 }
 .bg text{display: inline-block;width: 180rpx;}
-.footer {position: fixed; bottom: 0; left: 0; right: 0;text-align:center;color: white;background: #ffb700}
+.footer {position: fixed; bottom: 0; left: 0; right: 0;text-align:center;color: white;background: #a314b0}
 .footer view {
   display: inline-block;
   height: 100rpx;
@@ -20,4 +20,3 @@ page{
   padding: 0 40rpx;
 }
 .bg1{justify-content: space-between}
-.mr{}

@@ -40,7 +40,7 @@ Page({
   getCropperImage () {
     this.wecropper.getCropperImage((src) => {
       if (src) {
-        op_arr.tmpurl = src;
+        op_arr.src = src;
         // 截图上传
          const img_two= wx.uploadFile({
             url: 'https://mjapi.pandahot.cn/upload/upload-image/', 
@@ -56,18 +56,36 @@ Page({
                 key: "tempfs",
                 data: img_b
               });
+              var src = op_arr.src;
               if (app.globalData.parameter.brand==1){
+                // console.log(op_arr);
                 wx.navigateTo({
-                  url: '../../pages/pack/pack?op_arr=' + JSON.stringify(op_arr),
+                  url: '../../pages/pack/pack?src=' +src,
                 })
               } else if (app.globalData.parameter.brand == 2){
-                wx.navigateTo({
-                  url: '../../pages/pack2/pack2?op_arr=' + JSON.stringify(op_arr),
-                })
+                if (app.globalData.parameter.family == "金樽" || app.globalData.parameter.family == 2) {
+                  wx.navigateTo({
+                    url: '../../pagesA/pack2_1/pack2_1?src=' + src,
+                  })
+                } else if (app.globalData.parameter.family == "银坛" || app.globalData.parameter.family == 1) {
+                  wx.navigateTo({
+                    url: '../../pages/pack2/pack2?src=' + src,
+                  })
+                }
               } else if (app.globalData.parameter.brand == 3){
-                wx.navigateTo({
-                  url: '../../pages/pack3/pack3?op_arr=' + JSON.stringify(op_arr),
-                })
+                if (app.globalData.parameter.family == "品味级" || app.globalData.parameter.family == 1) {
+                  wx.navigateTo({
+                    url: '../../pages/pack3/pack3?src=' + src,
+                  })
+                } else if (app.globalData.parameter.family == "鉴赏级" || app.globalData.parameter.family == 2) {
+                  wx.navigateTo({
+                    url: '../../pagesA/pack3_1/pack3_1?src=' + src,
+                  })
+                } else if (app.globalData.parameter.family == "尊享级" || app.globalData.parameter.family == 3) {
+                  wx.navigateTo({
+                    url: '../../pagesA/pack3_2/pack3_2?src=' + src,
+                  })
+                }
               }
             
             },
@@ -110,7 +128,7 @@ Page({
     })
   },
   onLoad (option) {
-    op_arr = JSON.parse(option.dataobj)
+     op_arr = option
     var that=this;
     if (app.globalData.parameter.brand == 2) {
       console.log("品牌：",app.globalData.parameter.brand)
@@ -150,6 +168,7 @@ Page({
       })
 
     };
+    console.log(op_arr)
     const imgsrc = op_arr.src;
    
     const { cropperOpt } = this.data;
