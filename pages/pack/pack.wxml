@@ -45,7 +45,7 @@
       <!--水平滚动-->
       <scroll-view class="scroll-view" scroll-x>
         <view wx:for="{{style_imgs}}" wx:key="index">
-          <image src='{{item.pack}}' data-nums="{{index+1}}" class="{{_num==index+1?'activee':''}}" bindtap='img_src' />
+          <image src='{{item.pack}}' data-nums="{{index}}" class="{{_num==index?'activee':''}}" bindtap='img_src' />
         </view>
       </scroll-view>
     </view>

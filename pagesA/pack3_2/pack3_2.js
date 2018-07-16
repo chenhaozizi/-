@@ -168,7 +168,7 @@ Page({
     // console.log(style_imgs.pack_show);
     app.globalData.style_img = style_imgs.pack_show;
     that.setData({
-      _num:7,
+      _num:8,
       pack_show: style_imgs.pack_show
     });
     console.log(this.data._num);
