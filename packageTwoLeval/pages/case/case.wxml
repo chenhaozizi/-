@@ -1,0 +1,45 @@
+<!--pages/case/case.wxml-->
+<view>
+  <video></video>
+  <view class='everyone'>
+    <view class='left'>
+      <view class='fz30'>演唱会定制酒·李宇春</view>
+      <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+    </view>
+    <view class='right'>
+      <view class='iconfont icon-buoumaotubiao16'></view>
+      <view class='fz18'>0000</view>
+      <view class='iconfont icon-zhuanfa'></view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <video></video>
+  <view class='everyone'>
+    <view class='left'>
+      <view class='fz30'>演唱会定制酒·李宇春</view>
+      <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+    </view>
+    <view class='right'>
+      <view class='iconfont icon-buoumaotubiao16'></view>
+      <view class='fz18'>0000</view>
+      <view class='iconfont icon-zhuanfa'></view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <video></video>
+  <view class='everyone'>
+    <view class='left'>
+      <view class='fz30'>演唱会定制酒·李宇春</view>
+      <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+    </view>
+    <view class='right'>
+      <view class='iconfont icon-buoumaotubiao16'></view>
+      <view class='fz18'>0000</view>
+      <view class='iconfont icon-zhuanfa'></view>
+    </view>
+  </view>
+</view>
