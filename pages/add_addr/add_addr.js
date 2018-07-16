@@ -55,6 +55,7 @@ Page({
   },
   // 选择地址
   add_choose: function (e) {
+    console.log(e,this.data.backUrl);
    if(this.data.backUrl){
     var id = e.currentTarget.dataset.id;
     console.log(id);

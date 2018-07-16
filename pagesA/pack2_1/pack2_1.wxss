@@ -1,0 +1,142 @@
+/* pages/pack/pack.wxss */
+
+page {
+  background: 483938;
+}
+
+.show_box {
+  width: 560rpx;
+  margin: 0 auto;
+  margin-top: 67rpx;
+  text-align: center;
+}
+
+.show_img {
+  position: relative;
+  z-index: 9;
+  width: 560rpx;
+  height: 633rpx;
+}
+
+.ts {
+  display: none;
+  position: absolute;
+  right: 40rpx;
+  top: 44%;
+  writing-mode: tb-rl;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.ts2 {
+  text-align: center;
+}
+
+.ts2 view {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.pack_bottom {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: all 400ms ease-in;
+  background: #f1f0f5
+}
+.gn_box2 {
+  background: none;
+}
+.gn_box {
+  width: 100%;
+  margin: 20rpx auto 0;
+  text-align: center;
+  color: #ededed;
+  background: #fff;
+  overflow: hidden;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+
+.gn_box p {
+  display: block;
+  color: #666;
+}
+
+.gn_box view {
+  text-align: center;
+  display: inline-block;
+  width: 28%;
+}
+.gn_box view image {
+  width: 89rpx;
+  height: 64rpx;
+  margin-bottom: 6rpx;
+}
+
+
+.next_step {
+  bottom: 80rpx;
+}
+
+
+
+.scroll-view view {
+  background: #fff;
+  width: 144rpx;
+  height: 134rpx;
+  display: inline-block;
+  margin: 0 5rpx;
+}
+
+.scroll-view view image {
+  width: 98%;
+  height: 98%;
+  transition: all 200ms;
+  border: 1px solid #403332;
+}
+
+
+/*上传图片*/
+
+.preview {
+  width: 192rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 527rpx;
+  right: 125rpx;
+  background-size: cover
+}
+.preview1 {
+top:448rpx;
+left:154rpx;
+}
+.blessing {
+  width: 175rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 156rpx;
+  right: 135rpx;
+  border: 1rpx dashed #b0844a;
+  font-size: 15rpx;
+  z-index: 99;
+  color: black;
+  text-align: left;
+  text-indent: 20rpx;
+}
+.blessing1 {
+width:212rpx;
+height:38rpx;
+bottom:147rpx;
+left:146rpx;
+}
+
+
+.preview image {
+  width: 100% !important;
+  height: 100% !important;
+}
