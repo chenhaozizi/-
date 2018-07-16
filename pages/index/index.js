@@ -107,6 +107,10 @@ Page({
       wx.navigateTo({
         url: "../parameter/parameter"
       })
+    } else if (e.target.dataset.num == 2) {
+      wx.navigateTo({
+        url: "/packageTwoLeval/pages/case/case"
+      })
     } else if (e.target.dataset.num == 3) {
       wx.navigateTo({
         url: "/packageTwoLeval/pages/usercenter/usercenter"
