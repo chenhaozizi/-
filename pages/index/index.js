@@ -3,8 +3,8 @@
 var app = getApp();
 Page({
   data: {
-    video_src: "http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",//领导视频地址
-    video_hidden: true,
+    video_src: "http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",//引导视频地址
+    video_hidden: true,//隐藏视频引导页
     _num: "1",
     xs: "-100%",
     userInfo: {},
@@ -60,9 +60,9 @@ Page({
                   console.log('缓存用户授权信息成功');
                   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                   // 所以此处加入 callback 以防止这种情况
-                  // if (this.userInfoReadyCallback) {
-                  //   this.userInfoReadyCallback(res);
-                  // }
+                  if (that.userInfoReadyCallback) {
+                    that.userInfoReadyCallback(res);
+                  }
                   console.log('开始进行登录 code = ' + that.data.code);
                   that.login(that.data.code);
                 }
@@ -75,23 +75,32 @@ Page({
             console.log('未授权，播放引导动画');
             that.setData({
               video_hidden: false,//隐藏视频引导
-            })
+            });
+            that.videoContext.play();
+            that.videoContext.hideStatusBar();
             //跳转到授权页面
             // that.move();
           }, 10)
         }
       }
     });
-
   },
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo');
+   
   },
   // 引导视频结束
   video_end: function () {
     this.setData({
       video_hidden: true,//隐藏视频引导
     });
+    this.move();
+  },
+  close_video:function(){
+    this.setData({
+      video_hidden: true,//隐藏视频引导
+    });
+    this.videoContext.pause();
     this.move();
   },
 
