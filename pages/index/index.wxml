@@ -18,7 +18,7 @@
    <view>
     <!--引导视频-->
     <view class="lead_video" hidden='{{video_hidden}}'>
-           <video id="myVideo" src="{{video_src}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" autoplay='auto' enable-danmu="false" danmu-btn="false" controls show-center-play-btn="true" bindended="video_end" ></video>
+           <video id="myVideo"  custom-cache="{{false}}" src="{{video_src}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}"  enable-danmu="false" danmu-btn="false"  controls show-center-play-btn="true" bindended="video_end" ></video>
     </view>
   </view>
 </view>
