@@ -67,7 +67,7 @@ Page({
     }
     return {
       title: '自定义转发标题',
-      path: '/page/user?id=123'
+      path: 'packageTwoLeval/pages/case/case?id=123'
     }
   }
 })

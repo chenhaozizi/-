@@ -55,3 +55,10 @@ button::after{
 .button-hover{
   background-color: white;
 }
+.contact-box{
+  position: fixed;
+  padding: 5rpx;
+}
+.cont-text{
+  line-height: 100rpx;
+}

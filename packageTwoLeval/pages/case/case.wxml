@@ -49,3 +49,10 @@
     </view>
   </view>
 </view>
+
+<view class='contact-box'>
+  <contact-button type="default-light" class='cont-btn' size="20">
+  </contact-button>
+  <view class='cont-text'>开始定制</view>
+</view>
+
