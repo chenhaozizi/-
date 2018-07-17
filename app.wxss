@@ -285,3 +285,4 @@ page {
   height: 64rpx;
   margin-bottom: 6rpx;
 }
+.canvas-box{position: fixed;display: none}

@@ -36,7 +36,6 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
-  overflow: ;
 }
 
 .userinfo-nickname {
@@ -44,14 +43,14 @@
 }
 
 .list-top {
-  margin-top: 250rpx;
+  margin-top: 271rpx;
   width: 400rpx;
 }
 
 .list-menu {
   padding: 15rpx 0;
   opacity: 1;
-  margin: 30rpx auto;
+  margin: 47rpx auto;
   border-radius: 20rpx;
   text-align: center;
   color: white;
@@ -113,24 +112,4 @@
 }
 .history text{font-size:86rpx}
 
-/* 引导视频 */
-.lead_video{
-  width: 100%;height: 100%;
-  position: fixed;
-  top:0;
-  left: 0;
-  right: 0;
-  bottom: 0
-}
-.lead_video video{
-  width: 100%;
-  height: 100%;
-}
-.close_video{
-  position: fixed;
-  top: 20rpx;
-  right: 30rpx;
-  color: #fff;
-  font-size: 28rpx;
-  z-index: 999;
-}
+
