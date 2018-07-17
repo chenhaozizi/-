@@ -5,6 +5,11 @@ page{background: #EBEBEB}
    background-repeat: no-repeat;
    background-size: 100% 203rpx;
 }
+ .header{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+} 
 .headjw{
   display: flex;
   flex-direction:column;

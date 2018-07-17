@@ -57,6 +57,7 @@ button::after{
 }
 .contact-box{
   position: fixed;
+  z-index: 99;
   padding: 5rpx;
 }
 .cont-text{

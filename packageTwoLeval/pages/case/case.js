@@ -69,5 +69,12 @@ Page({
       title: '自定义转发标题',
       path: 'packageTwoLeval/pages/case/case?id=123'
     }
+  },
+  startmake:function(){
+    console.log("start")
+    wx.navigateTo({
+      url: '../../../pages/parameter/parameter'
+    })
   }
+
 })
