@@ -1,6 +1,6 @@
 <!--pages/getuserInfo/user_info.wxml-->
 <view class='container'>
-  <image src='/images/logo.jpg' class='im'></image>
+  <image src='/images/logo.png' class='im'></image>
   <view class='bt'>云酒定制</view>
   <view class='ts'> 授权账号登陆"云酒定制"小程序</view>
   <view class="userinfo">
