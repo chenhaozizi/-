@@ -1,5 +1,5 @@
 
-import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
 //获取应用实例
 var app = getApp();
 let self, comp;

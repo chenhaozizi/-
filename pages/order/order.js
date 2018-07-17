@@ -167,7 +167,7 @@ Page({
     });
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/EsMemberAddress/findDefault',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsMemberAddress/findDefault',
       data: {
         memberId: wx.getStorageSync("memberId")
       },
@@ -232,7 +232,7 @@ Page({
       }
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/EsCustomizationOrder/Add',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/Add',
       data: {
         paper: app.globalData.pack.zt,
         num: this.data.num,
@@ -259,7 +259,13 @@ Page({
         var cuzOrderId = dd.cuzOrderId;
         console.log(dd);
         console.log("订单号", cuzOrderId);
-        that.pay(dd.cuzOrderId);
+        // 调试收益
+        setTimeout(function () {
+          wx.redirectTo({
+            url: '../ent/ent?currentTab=1',
+          })
+        }, 1000)
+        // that.pay(dd.cuzOrderId);
       }
     })
     }else{
@@ -275,7 +281,7 @@ Page({
     var that = this;
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/CuzWeixin/Pay',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/CuzWeixin/Pay',
       data: {
         openid: wx.getStorageSync('wxOpenid'),
         cuzOrderId: e,

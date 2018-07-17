@@ -115,7 +115,7 @@ class PageController {
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+          url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'image',
           formData: {

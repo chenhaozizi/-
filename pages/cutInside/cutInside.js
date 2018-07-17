@@ -43,7 +43,7 @@ Page({
         op_arr.src = src;
         // 截图上传
          const img_two= wx.uploadFile({
-            url: 'https://mjapi.pandahot.cn/upload/upload-image/', 
+            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', 
             filePath: src,
             name: 'image',
             formData: {
@@ -59,30 +59,30 @@ Page({
               var src = op_arr.src;
               if (app.globalData.parameter.brand==1){
                 // console.log(op_arr);
-                wx.navigateTo({
+                wx.redirectTo({
                   url: '../../pages/pack/pack?src=' +src,
                 })
               } else if (app.globalData.parameter.brand == 2){
                 if (app.globalData.parameter.family == "金樽" || app.globalData.parameter.family == 2) {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../../pagesA/pack2_1/pack2_1?src=' + src,
                   })
                 } else if (app.globalData.parameter.family == "银坛" || app.globalData.parameter.family == 1) {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../../pages/pack2/pack2?src=' + src,
                   })
                 }
               } else if (app.globalData.parameter.brand == 3){
                 if (app.globalData.parameter.family == "品味级" || app.globalData.parameter.family == 1) {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../../pages/pack3/pack3?src=' + src,
                   })
                 } else if (app.globalData.parameter.family == "鉴赏级" || app.globalData.parameter.family == 2) {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../../pagesA/pack3_1/pack3_1?src=' + src,
                   })
                 } else if (app.globalData.parameter.family == "尊享级" || app.globalData.parameter.family == 3) {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../../pagesA/pack3_2/pack3_2?src=' + src,
                   })
                 }

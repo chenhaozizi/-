@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
 let comp, self;
 const app = getApp();
 /*

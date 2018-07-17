@@ -99,7 +99,7 @@ Page({
     console.log("注册时，face：" + wx.getStorageSync('face'));
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/EsMember/mjdzWxAutologin',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsMember/mjdzWxAutologin',
       data: {
         sex: wx.getStorageSync('sex'),
         city: wx.getStorageSync('city'),
