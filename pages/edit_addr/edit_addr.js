@@ -81,7 +81,7 @@ Page({
         flag = true;
         wx.request({
           method: 'POST',
-          url: 'https://mjapi.pandahot.cn/EsMemberAddress/Add',
+          url: 'https://mingjiu-api.conpanda.cn/front_v1/EsMemberAddress/Add',
           data: {
             defAddr: 1,
             memberId: wx.getStorageSync("memberId"),
@@ -125,7 +125,7 @@ Page({
     }else if(is_edit==0){
       wx.request({
         method: 'POST',
-        url: 'https://mjapi.pandahot.cn/EsMemberAddress/Update',
+        url: 'https://mingjiu-api.conpanda.cn/front_v1/EsMemberAddress/Update',
         data: {
           defAddr: 1,
           memberId: wx.getStorageSync("memberId"),
@@ -163,7 +163,7 @@ Page({
     var that = this;
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/EsMemberAddress/FindById',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsMemberAddress/FindById',
       data: {
         addrId: e,
       },

@@ -1,4 +1,4 @@
-import HttpUtil from '../../../lib/trilobite/core/rsHttps.js'
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
 import ymdDatejw from '../../../lib/trilobite/core/ymdDatejw.js'
 
 let comp, self;

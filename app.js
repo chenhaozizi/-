@@ -11,7 +11,7 @@ class AppController {
   }
   globalData= {
     subDomain: "tz", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
-    Domain: "https://mjapi.pandahot.cn",
+    Domain: "https://mingjiu-api.conpanda.cn/front_v1",
     rsDomain:"https://mingjiu-api.conpanda.cn/front_v1",
     userInfo: null,
     userInfoNew: [],//用户信息

@@ -118,7 +118,7 @@ Page({
           const src = res.tempFilePaths[0]
           // 上传的原图上传到后台
           wx.uploadFile({
-            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
             filePath: src,
             name: 'image',
             formData: {
@@ -285,7 +285,7 @@ Page({
             // canvasHidden:true
           });
           const orimgs = wx.uploadFile({
-            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
             filePath: res.tempFilePath,
             name: 'image',
             formData: {

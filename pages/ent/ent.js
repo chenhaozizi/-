@@ -15,7 +15,6 @@ Page({
     pay:"",//待发货
     send:''//已发货
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,7 +61,7 @@ Page({
     var that = this;
     wx.request({
       method: 'POST',
-      url: 'https://mjapi.pandahot.cn/EsCustomizationOrder/FindByStatus', //仅为示例，并非真实的接口地址
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/FindByStatus', //仅为示例，并非真实的接口地址
       data: {
         memberId: wx.getStorageSync("memberId"),
         payStatus: payStatus,
@@ -80,7 +79,7 @@ Page({
           that.setData({ send: res.data.data })//已发货
         }
        
-          console.log(res.data)
+          console.log(res.data,that.data)
       }
     })
   },
@@ -94,7 +93,7 @@ Page({
         if (res.confirm) { 
           wx.request({
             method: 'POST',
-            url: 'https://mjapi.pandahot.cn/EsCustomizationOrder/Delete',
+            url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/Delete',
             data: {
               id: id,
             },
@@ -119,7 +118,7 @@ Page({
     var that = this;
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/CuzWeixin/Pay',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/CuzWeixin/Pay',
       data: {
         openid: wx.getStorageSync('wxOpenid'),
         cuzOrderId: id,

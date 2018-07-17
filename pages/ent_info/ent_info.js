@@ -17,7 +17,7 @@ Page({
     var that = this;
     wx.request({
       method: 'POST',
-      url: 'https://mjapi.pandahot.cn/EsCustomizationOrder/FindById',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/FindById',
       data: {
         cuzOrderId: options.cuzOrderId
       },
@@ -50,7 +50,7 @@ Page({
     var that = this;
     wx.request({
       method: "POST",
-      url: 'https://mjapi.pandahot.cn/CuzWeixin/Pay',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/CuzWeixin/Pay',
       data: {
         openid: wx.getStorageSync('wxOpenid'),
         cuzOrderId: id,
@@ -105,7 +105,7 @@ Page({
         if (res.confirm) {
           wx.request({
             method: 'POST',
-            url: 'https://mjapi.pandahot.cn/EsCustomizationOrder/Delete',
+            url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/Delete',
             data: {
               id: id,
             },
