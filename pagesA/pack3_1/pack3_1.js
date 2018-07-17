@@ -1,13 +1,13 @@
 // pages/pack/pack.js
 import WeCropper from '../../lib/we-cropper/we-cropper.js'
-
+import setText from '../../lib/trilobite/core/drawText.js'
 const device = wx.getSystemInfoSync()
 const width = device.windowWidth
 const height = device.windowHeight - 50;
 var tempp;//原图图片 
 var bg_url;
 var pack = [];//纸套信息
-let This;
+let This,self;
 var img_a = "";//原图路径
 //var img_b="";//截图路径
 //获取应用实例
@@ -34,7 +34,7 @@ Page({
     hide_canvas: true,//绘图层显示控制变量 
     tempfp: "/images/add.png",
     showModal: false,
-    // blessing: "祝福语区域",
+     //blessing: "祝福语区域",
     blessing: "",
     zy: "",
     style_imgs: [
@@ -51,7 +51,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    This = this;
+    This = self =  this;
     // var oplist = JSON.parse(options.src);
     const { cropperOpt } = this.data.cropperOpt;
 
@@ -110,48 +110,36 @@ Page({
   //选择并将图片输出到canvas  
   change_cover: function () {
     var that = this;
-    wx.showModal({
-      title: '提示',
-      content: '选择定制图片',
-      confirmColor: '#ffb700',
-      success: function (res) {
-        if (res.confirm) {
-          const self = this
-          wx.chooseImage({
-            count: 1, // 默认9
-            sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
-            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-            success(res) {
-              const src = res.tempFilePaths[0]
-              // 上传的原图上传到后台
-              wx.uploadFile({
-                url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
-                filePath: src,
-                name: 'image',
-                formData: {
-                  'subFolder': 'customize'
-                },
-                success: function (res) {
-                  var img_a = (JSON.parse(res.data)).fsimg;
-                  wx.setStorage({
-                    key: "orimg",
-                    data: img_a
-                  });
-                }
-              })
-              //  获取裁剪图片资源后，给data添加src属性及其值
-              //跳转到截取页面
-
-              wx.navigateTo({
-                url: '../../pages/cutInside/cutInside?src=' + src,
-              })
+      wx.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success(res) {
+          const src = res.tempFilePaths[0]
+          // 上传的原图上传到后台
+          wx.uploadFile({
+            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            filePath: src,
+            name: 'image',
+            formData: {
+              'subFolder': 'customize'
+            },
+            success: function (res) {
+              var img_a = (JSON.parse(res.data)).fsimg;
+              wx.setStorage({
+                key: "orimg",
+                data: img_a
+              });
             }
           })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+          //  获取裁剪图片资源后，给data添加src属性及其值
+          //跳转到截取页面
+
+          wx.navigateTo({
+            url: '../../pages/cutInside/cutInside?src=' + src,
+          })
         }
-      }
-    })
+      })
   },
   // 纸套选择
   zt_xz: function () {
@@ -229,7 +217,7 @@ Page({
       warn = "请选择底纹"
     } else if (this.data.tempfp == "/images/add.png") {
       warn = "请选择自定义图片"
-    } else if (this.data.blessing == '祝福语区域') {
+    } else if (this.data.blessing == '不需要文字') {
       warn = "请填写祝福语"
     } else {
       flag = true;
@@ -245,11 +233,10 @@ Page({
             console.log('用户点击确定');
             // console.log(pack);
             // 定制信息 存储在全局变量里
+            self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-            wx.navigateTo({
-              url: '/pages/order/order'
-            })
+           
 
           } else {
             console.log('用户点击取消')
@@ -270,4 +257,52 @@ Page({
     }
   }
   ,
+  //将截图绘制到canvas的固定
+  setCutimg: function (context) {
+    context.drawImage(self.data.tempfp, 15, 137, 65, 118);
+  },
+  createNewImg: function () {
+    var that = this;
+    var context = wx.createCanvasContext('mycanvas');
+    var path = self.data.pack_show;
+
+    //绘制剪切的图
+    this.setCutimg(context);
+    context.drawImage(self.data.tempfp, 124, 65, 72, 160);
+    //将纸套绘制到canvas
+    context.drawImage(path, 0, 0, 280, 316);
+
+    context.draw();
+    //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
+    setTimeout(function () {
+      wx.canvasToTempFilePath({
+        canvasId: 'mycanvas',
+        success: function (res) {
+          var tempFilePath = res.tempFilePath;
+          console.log(tempFilePath);
+          that.setData({
+            imagePath: tempFilePath,
+            // canvasHidden:true
+          });
+          const orimgs = wx.uploadFile({
+            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            filePath: res.tempFilePath,
+            name: 'image',
+            formData: {
+              'subFolder': 'customize'
+            },
+            success: function (res) {
+              console.log('原图返回的', res.data);
+              wx.navigateTo({
+                url: '/pages/order/order'
+              })
+            }
+          })
+        },
+        fail: function (res) {
+          console.log(res);
+        }
+      });
+    }, 200);
+  }
 })

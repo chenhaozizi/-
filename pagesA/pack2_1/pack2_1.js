@@ -1,13 +1,13 @@
 // pages/pack/pack.js
 import WeCropper from '../../lib/we-cropper/we-cropper.js'
-
+import setText from '../../lib/trilobite/core/drawText.js'
 const device = wx.getSystemInfoSync()
 const width = device.windowWidth
 const height = device.windowHeight - 50;
 var tempp;//原图图片 
 var bg_url;
 var pack = [];//纸套信息
-let This;
+let This,self;
 var img_a = "";//原图路径
 //var img_b="";//截图路径
 //获取应用实例
@@ -50,7 +50,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    This = this;
+    This =  self = this;
     // var oplist = JSON.parse(options.src);
     const { cropperOpt } = this.data.cropperOpt;
 
@@ -109,13 +109,6 @@ Page({
   //选择并将图片输出到canvas  
   change_cover: function () {
     var that = this;
-    wx.showModal({
-      title: '提示',
-      content: '选择定制图片',
-      confirmColor: '#ffb700',
-      success: function (res) {
-        if (res.confirm) {
-          const self = this
           wx.chooseImage({
             count: 1, // 默认9
             sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -146,11 +139,6 @@ Page({
               })
             }
           })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
   },
   // 纸套选择
   zt_xz: function () {
@@ -244,11 +232,10 @@ Page({
             console.log('用户点击确定');
             // console.log(pack);
             // 定制信息 存储在全局变量里
+            self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-            wx.navigateTo({
-              url: '/pages/order/order'
-            })
+           
 
           } else {
             console.log('用户点击取消')
@@ -269,4 +256,55 @@ Page({
     }
   }
   ,
+  setCutimg: function (context) {
+    context.drawImage(self.data.tempfp, 168, 232, 93, 38);
+  },
+  createNewImg: function () {
+    var that = this;
+    var context = wx.createCanvasContext('mycanvas');
+    var path = self.data.pack_show;
+
+    //绘制剪切的图
+    context.drawImage(self.data.tempfp, 168, 232, 93, 38);
+    context.drawImage(self.data.tempfp, 30, 190, 96, 40);
+    this.setCutimg(context);
+    //绘制祝福语,cavas ,祝福语,x坐标,y坐标,文字盒子宽，文字盒子高,文字是否描边,是否竖排
+    setText.setText(context, "     " + self.data.blessing, 172, 240, 90, 27, false, false);
+    //将纸套绘制到canvas
+    context.drawImage(path, 0, 0, 280, 316);
+    setText.setText(context, "     " + self.data.blessing, 30, 248, 90, 27, false, false);
+
+    context.draw();
+    //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
+    setTimeout(function () {
+      wx.canvasToTempFilePath({
+        canvasId: 'mycanvas',
+        success: function (res) {
+          var tempFilePath = res.tempFilePath;
+          console.log(tempFilePath);
+          that.setData({
+            imagePath: tempFilePath,
+            // canvasHidden:true
+          });
+          const orimgs = wx.uploadFile({
+            url: 'https://mjapi.pandahot.cn/upload/upload-image/', //仅为示例，非真实的接口地址
+            filePath: res.tempFilePath,
+            name: 'image',
+            formData: {
+              'subFolder': 'customize'
+            },
+            success: function (res) {
+              console.log('原图返回的', res.data);
+              wx.navigateTo({
+                url: '/pages/order/order'
+              })
+            }
+          })
+        },
+        fail: function (res) {
+          console.log(res);
+        }
+      });
+    }, 200);
+  }
 })

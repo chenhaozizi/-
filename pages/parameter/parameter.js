@@ -23,9 +23,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log('原有的纸套：', wx.getStorageSync("zt"));
+    console.log('原有的纸套：', wx.getStorageSync("zt"), '原有祝福语:', app.globalData.pack.blessing);
     wx.setStorageSync("zt", '');
-    console.log("纸套清理以后:", wx.getStorageSync("zt"));
+    app.globalData.pack.blessing = "祝福语区域";
+    console.log("纸套清理以后:", wx.getStorageSync("zt"), '清空祝福语:', app.globalData.pack.blessing);
+    app.globalData.pack.zy = '';
   },
   formSubmit: function(e) {
     var that = this;
