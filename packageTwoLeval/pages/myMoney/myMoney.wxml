@@ -1,24 +1,27 @@
-<view class='headjw'>
-  <view class='title'>累计总收益</view>
-  <view class='sum'>￥{{money.earningTotal}}</view>
-  <view class='both'>
-    <view>余额：￥{{money.balanceTotal}}</view>
-    <view>提现：￥{{money.withdrawTotal}}</view>
+ <view class='header'> 
+  <view class='headjw'>
+    <view class='title'>累计总收益</view>
+    <view class='sum'>￥{{money.earningTotal}}</view>
+    <view class='both'>
+      <view>余额：￥{{money.balanceTotal}}</view>
+      <view>提现：￥{{money.withdrawTotal}}</view>
+    </view>
   </view>
-</view>
-<view class='history-sel'>
-  <view class='left'>
-    <view class='icon-shu'></view>
-    <view>历史纪录</view>
+  <view class='history-sel'>
+    <view class='left'>
+      <view class='icon-shu'></view>
+      <view>历史纪录</view>
+    </view>
+    <view class='right'>
+      <picker bindchange="bindPickerChange" data-reid="{{array[index].id}}" range-key='name' value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index].name}}<text class='iconfont icon-xiajiantou'></text>
+        </view>
+      </picker>
+    </view>
   </view>
-  <view class='right'>
-    <picker bindchange="bindPickerChange" data-reid="{{array[index].id}}" range-key='name' value="{{index}}" range="{{array}}">
-      <view class="picker">
-        {{array[index].name}}<text class='iconfont icon-xiajiantou'></text>
-      </view>
-    </picker>
-  </view>
-</view>
+ </view> 
+
  <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:98vh' class='list-content' >
   <view class='everyone' wx:for="{{result}}" wx:key="index" bindtap="moreinfo" data-everyone="{{index}}">
     <view class='up'>
