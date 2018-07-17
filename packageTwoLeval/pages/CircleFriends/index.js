@@ -51,7 +51,6 @@ class PageController {
     comp.getTopDao.callback = this.getTopDao_callback;
     comp.getfriendsDao = new getfriendsDao();
     comp.getfriendsDao.callback = this.getfriendsDao_callback
-
   }
   getTopDao_callback = (res) =>{
     if(res.data.code == 200){
@@ -70,10 +69,16 @@ class PageController {
             let searchList = [];
             //如果isFromSearch是true从data中取出数据，否则先从原来的数据继续添加
             self.data.isFromSearch ? searchList = data.data : searchList = self.data.searchSongList.concat(data.data)
+           
             self.setData({
               searchSongList: searchList, //获取数据数组
               searchLoading: true   //把"上拉加载"的变量设为false，显示
             });
+            // if (self.data.searchSongList.length<5){
+            //   self.setData({
+            //     searchLoading: false   //把"上拉加载"的变量设为false，显示
+            //   })
+            // }
             //没有数据了，把“没有数据”显示，把“上拉加载”隐藏
           } else {
             console.log("没数据了")

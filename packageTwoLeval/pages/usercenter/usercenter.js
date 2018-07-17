@@ -155,6 +155,10 @@ class PageController {
                 console.log("一级经销商")
                 pardatas.memberTypeCode = '0002'
               }
+              if (JSON.parse(res.result).memberTypeCode == '0002') {
+                console.log("二级经销商")
+                pardatas.memberTypeCode = '0003'
+              }
               comp.addNewvipDao.load(pardatas);
 
             },
