@@ -45,3 +45,13 @@ video{
   display: flex;
   line-height: 80rpx;
 }
+button{
+  background: white;
+  -webkit-tap-highlight-color:white;
+}
+button::after{
+  border: none;
+}
+.button-hover{
+  background-color: white;
+}
