@@ -75,17 +75,19 @@ Page({
             console.log('未授权，播放引导动画');
             that.setData({
               video_hidden: false,//隐藏视频引导
-            })
+            });
+            that.videoContext.play();
+            that.videoContext.hideStatusBar();
             //跳转到授权页面
             // that.move();
           }, 10)
         }
       }
     });
-
   },
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo');
+   
   },
   // 引导视频结束
   video_end: function () {
