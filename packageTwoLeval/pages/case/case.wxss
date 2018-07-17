@@ -33,7 +33,8 @@ video{
   display:flex;
   justify-content:space-around;
   height: 80rpx;
-  padding: 0 30rpx;
+  padding: 10rpx 30rpx;
+  line-height: 32rpx;
 }
 .left{
   display: flex;

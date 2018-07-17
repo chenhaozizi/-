@@ -3,12 +3,14 @@
 var app = getApp();
 Page({
   data: {
+    video_src: "http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",//领导视频地址
+    video_hidden: true,
     _num: "1",
     xs: "-100%",
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    code:''
+    code: ''
   },
   //事件处理函数
   bindViewTap: function () {
@@ -58,27 +60,41 @@ Page({
                   console.log('缓存用户授权信息成功');
                   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                   // 所以此处加入 callback 以防止这种情况
-                  // if (this.userInfoReadyCallback) {
-                  //   this.userInfoReadyCallback(res);
-                  // }
+                  if (this.userInfoReadyCallback) {
+                    this.userInfoReadyCallback(res);
+                  }
                   console.log('开始进行登录 code = ' + that.data.code);
                   that.login(that.data.code);
                 }
               })
-
             }
           });
-        }else{
+        } else {
           //未授权
           setTimeout(function () {
-            console.log('未授权，跳转页面去授权');
-            that.move();
-          }, 500)
+            console.log('未授权，播放引导动画');
+            that.setData({
+              video_hidden: false,//隐藏视频引导
+            })
+            //跳转到授权页面
+            // that.move();
+          }, 10)
         }
       }
     });
-    
+
   },
+  onReady: function (res) {
+    this.videoContext = wx.createVideoContext('myVideo');
+  },
+  // 引导视频结束
+  video_end: function () {
+    this.setData({
+      video_hidden: true,//隐藏视频引导
+    });
+    this.move();
+  },
+
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -97,12 +113,12 @@ Page({
 
   },
   menuClick: function (e) {
-    var that=this;
+    var that = this;
     this.setData({
       _num: e.target.dataset.num
     })
     if (wx.getStorageSync("memberId")) {
-    } else {that.move();return}
+    } else { that.move(); return }
     if (e.target.dataset.num == 1) {
       wx.navigateTo({
         url: "../parameter/parameter"
@@ -149,11 +165,11 @@ Page({
           console.log('登录成功 memberId = ' + wx.getStorageSync("memberId"));
           console.log('登录成功 wxUnionid = ' + wx.getStorageSync("wxUnionid"));
           console.log('登录成功 wxOpenid = ' + wx.getStorageSync("wxOpenid"));
-        } else{
-            setTimeout(function () {
-              console.log('出错信息 = ' + res.data.message);
-              that.move();
-            }, 500)
+        } else {
+          setTimeout(function () {
+            console.log('出错信息 = ' + res.data.message);
+            that.move();
+          }, 500)
         }
       },
     });
