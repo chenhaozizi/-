@@ -182,7 +182,7 @@ Page({
           //  获取裁剪图片资源后，给data添加src属性及其值
           //跳转到截取页面
 
-          wx.redirectTo({
+          wx.navigateTo({
             url: '../../pages/cutInside/cutInside?src=' + src,
           })
         }
@@ -342,7 +342,7 @@ Page({
             },
             success: function (res) {
               console.log('原图返回的', res.data);
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../order/order',
               })
             }

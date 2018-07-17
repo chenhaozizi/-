@@ -301,7 +301,7 @@ Page({
             },
             success: function (res) {
               console.log('原图返回的', res.data);
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../order/order',
               })
             }

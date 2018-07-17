@@ -100,7 +100,6 @@ class PageController {
     callbackcount: 5,      //返回数据的个数
     searchLoading: false, //"上拉加载"的变量，默认false，隐藏
     searchLoadingComplete: false,  //“没有数据”的变量，默认false，隐藏
-    ifhas:true
 
   }
   onShow = function () {
