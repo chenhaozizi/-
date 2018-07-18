@@ -43,6 +43,7 @@ page{background: #EBEBEB}
   margin-bottom: 66rpx;
 }
 .nameState{
+  margin-top: 23rpx;
   margin-bottom: 23rpx;
   text-align: left;
   padding-left: 52rpx;

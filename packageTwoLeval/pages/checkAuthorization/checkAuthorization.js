@@ -19,10 +19,10 @@ class FindAuthorizeInfo {
    * 加载接口
    */
   load = () => {
-    this.http.post("/RsMember/FindAuthorizeInfo", { memberId: wx.getStorageSync("memberId")})
+    this.http.post("/RsMember/FindAuthorizeInfo", { memberId:10413})
   }
 }
-
+// wx.getStorageSync("memberId")
 /**
  * 页面控制器
  */
