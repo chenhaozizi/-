@@ -1,58 +1,60 @@
 <!--pages/case/case.wxml-->
-<view>
-  <video></video>
-  <view class='everyone'>
-    <view class='left'>
-      <view class='fz30'>演唱会定制酒·李宇春</view>
-      <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+<view class='content-view'>
+  <view>
+    <video></video>
+    <view class='everyone'>
+      <view class='left'>
+        <view class='fz30'>演唱会定制酒·李宇春</view>
+        <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+      </view>
+      <view class='right'>
+        <view class='iconfont icon-buoumaotubiao16'></view>
+        <view class='fz18'>0000</view>
+        <button open-type="share" bindtap='onShareAppMessage'>
+          <view class='iconfont icon-zhuanfa'></view>
+        </button>
+      </view>
     </view>
-    <view class='right'>
-      <view class='iconfont icon-buoumaotubiao16'></view>
-      <view class='fz18'>0000</view>
-      <button open-type="share" bindtap='onShareAppMessage'>
-        <view class='iconfont icon-zhuanfa'></view>
-      </button>
+  </view>
+
+  <view>
+    <video></video>
+    <view class='everyone'>
+      <view class='left'>
+        <view class='fz30'>演唱会定制酒·李宇</view>
+        <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+      </view>
+      <view class='right'>
+        <view class='iconfont icon-buoumaotubiao16'></view>
+        <view class='fz18'>0000</view>
+        <button open-type="share" bindtap='onShareAppMessage'>
+          <view class='iconfont icon-zhuanfa'></view>
+        </button>    
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <video></video>
+    <view class='everyone'>
+      <view class='left'>
+        <view class='fz30'>演唱会定制酒·李</view>
+        <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
+      </view>
+      <view class='right'>
+        <view class='iconfont icon-buoumaotubiao16'></view>
+        <view class='fz18'>0000</view>
+        <button open-type="share" bindtap='onShareAppMessage'>
+          <view class='iconfont icon-zhuanfa'></view>
+        </button>   
+      </view>
     </view>
   </view>
 </view>
 
-<view>
-  <video></video>
-  <view class='everyone'>
-    <view class='left'>
-      <view class='fz30'>演唱会定制酒·李宇</view>
-      <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
-    </view>
-    <view class='right'>
-      <view class='iconfont icon-buoumaotubiao16'></view>
-      <view class='fz18'>0000</view>
-      <button open-type="share" bindtap='onShareAppMessage'>
-        <view class='iconfont icon-zhuanfa'></view>
-      </button>    
-    </view>
-  </view>
-</view>
-
-<view>
-  <video></video>
-  <view class='everyone'>
-    <view class='left'>
-      <view class='fz30'>演唱会定制酒·李</view>
-      <view class='fz26 grey'>全兴大曲 99系列 52%vol 500ml</view>
-    </view>
-    <view class='right'>
-      <view class='iconfont icon-buoumaotubiao16'></view>
-      <view class='fz18'>0000</view>
-      <button open-type="share" bindtap='onShareAppMessage'>
-        <view class='iconfont icon-zhuanfa'></view>
-      </button>   
-    </view>
-  </view>
-</view>
-
-<view class='contact-box' bindtap='startmake'>
+<cover-view class='contact-box' bindtap='startmake'>
   <contact-button type="default-light" class='cont-btn' size="20">
   </contact-button>
   <view class='cont-text'>开始定制</view>
-</view>
+</cover-view>
 

@@ -63,3 +63,11 @@ button::after{
 .cont-text{
   line-height: 100rpx;
 }
+.content-view{
+  position: relative;
+  z-index: 50;
+  overflow-y: scroll; 
+  width: 100%;
+  height: auto;
+   -webkit-overflow-scrolling: touch; 
+}

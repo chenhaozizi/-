@@ -40,9 +40,9 @@ class PageController {
   FindAuthorizeInfo_callback = (res) => {
     console.log(res, res.data.code)
     if (res.data.code==200) {
-      // self.data.update=true;
       self.setData({ result: res.data.data})
       console.log(self.data)
+
     }
 
   }
