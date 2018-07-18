@@ -103,7 +103,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .title{width: 110rpx;float: left;color: #474747;letter-spacing: 4rpx;padding: 6rpx 0}
 .info{font-size: 26rpx;color:#ada8a8;margin-bottom: 30rpx}
 .show_box1{padding-bottom: 0px;background: none!}
-.section1{margin: 20rpx 0;overflow: hidden}
+.section1{margin: 33rpx 0;overflow: hidden}
 .radio_box1{width: 514rpx;float: left}
 .radio_box1 label{width:28%;overflow:hidden;text-align: center;display: inline-block;margin-right:4%;background: #f1f0f5;border-radius: 16rpx;border: 1rpx solid  #f1f0f5;color:#7e7e7e;padding: 6rpx 0}
 .radio_box1 label:last-child{margin-right: 0rpx}
@@ -123,5 +123,6 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   -moz-opacity: 0.7;   
   filter: alpha(opacity=70);
 }
-.close{position: fixed;right:40rpx;top:40rpx;}
-.close image{width: 80rpx;height: 80rpx;float: right}
+.inf{margin-top: -5rpx}
+.close{position: fixed;right:33rpx;top:28rpx;}
+.close image{width: 60rpx;height: 60rpx;float: right}
