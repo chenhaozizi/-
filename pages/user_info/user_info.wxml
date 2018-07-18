@@ -1,8 +1,8 @@
 <!--pages/getuserInfo/user_info.wxml-->
 <view class='container'>
   <image src='/images/logo.png' class='im'></image>
-  <view class='bt'>云酒定制</view>
-  <view class='ts'> 授权账号登陆"云酒定制"小程序</view>
+  <view class='bt'>耍花样</view>
+  <view class='ts'> 授权账号登陆"耍花样"小程序</view>
   <view class="userinfo">
     <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='ty' >同意</button>
   </view>
@@ -11,6 +11,6 @@
     <!--引导视频-->
     <view class="lead_video" hidden='{{video_hidden}}'>
       <view class='close_video' bindtap='close_video' hidden='hidden'>跳过>></view>
-      <video id="myVideo" custom-cache="{{false}}" src="{{video_src}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu="false" danmu-btn="false" controls show-center-play-btn="true" bindended="video_end"></video>
+      <video id="myVideo" custom-cache="{{false}}" src="{{video_src}}" binderror="videoErrorCallback"   bindended="video_end"></video>
     </view>
   </view>
