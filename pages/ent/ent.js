@@ -32,7 +32,7 @@ Page({
     }
   },
   onUnload: function (e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '/pages/index/index'
     })
   },

@@ -288,7 +288,9 @@ Page({
             self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-           
+            wx.redirectTo({
+              url: '../order/order',
+            })
 
           } else {
             console.log('用户点击取消')
@@ -342,9 +344,9 @@ Page({
             },
             success: function (res) {
               console.log('原图返回的', res.data);
-              wx.redirectTo({
-                url: '../order/order',
-              })
+              // wx.redirectTo({
+              //   url: '../order/order',
+              // })
             }
           })
         },

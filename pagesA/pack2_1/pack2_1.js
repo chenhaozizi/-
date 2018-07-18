@@ -11,6 +11,7 @@ let This,self;
 var img_a = "";//原图路径
 //var img_b="";//截图路径
 //获取应用实例
+
 var app = getApp();
 Page({
   /**
@@ -235,7 +236,9 @@ Page({
             self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-           
+            wx.redirectTo({
+              url: '/pages/order/order',
+            })
 
           } else {
             console.log('用户点击取消')
@@ -295,9 +298,9 @@ Page({
             },
             success: function (res) {
               console.log('原图返回的', res.data);
-              wx.redirectTo({
-                url: '/pages/order/order'
-              })
+              // wx.redirectTo({
+              //   url: '/pages/order/order'
+              // })
             }
           })
         },
