@@ -30,7 +30,7 @@ page {
 
 .ty {
   margin-top: 200rpx;
-  width: 400rpx;
+  width: 600rpx;
   display: block;
   align-items: center;
   justify-content: center;

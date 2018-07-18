@@ -74,5 +74,4 @@
     <view class='item-lable font-md color-66  pos-rel border-t'>地址管理<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
   </navigator>
   </view>
- 
 </view>

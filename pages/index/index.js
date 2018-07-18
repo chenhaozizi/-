@@ -100,7 +100,7 @@ Page({
     }
   },
   move: function () {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../user_info/user_info',
     })
   },
