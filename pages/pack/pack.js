@@ -182,7 +182,7 @@ Page({
           //  获取裁剪图片资源后，给data添加src属性及其值
           //跳转到截取页面
 
-          wx.redirectTo({
+          wx.navigateTo({
             url: '../../pages/cutInside/cutInside?src=' + src,
           })
         }
@@ -288,7 +288,9 @@ Page({
             self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-           
+            wx.redirectTo({
+              url: '../order/order',
+            })
 
           } else {
             console.log('用户点击取消')
@@ -342,9 +344,9 @@ Page({
             },
             success: function (res) {
               console.log('原图返回的', res.data);
-              wx.navigateTo({
-                url: '../order/order',
-              })
+              // wx.redirectTo({
+              //   url: '../order/order',
+              // })
             }
           })
         },

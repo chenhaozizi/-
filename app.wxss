@@ -16,7 +16,7 @@ page {
 
 .next_step {
   position: absolute;
-  bottom: 2%;
+  bottom: 3%;
   left: 0;
   right: 0;
   width: 670rpx;
@@ -285,3 +285,4 @@ page {
   height: 64rpx;
   margin-bottom: 6rpx;
 }
+.canvas-box{position: fixed;display: none}

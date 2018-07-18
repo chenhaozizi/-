@@ -1,21 +1,24 @@
 // pages/getuserInfo/user_info.js
-var app= getApp();
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    video_src: "http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400", //引导视频地址
+    video_hidden: true, //隐藏视频引导页
 
   },
 
- 
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     var that = this;
+    that.videoContext = wx.createVideoContext('myVideo');
     if (app.globalData.userInfo) {
       console.log(app.globalData.userInfo);
       that.setData({
@@ -43,17 +46,32 @@ Page({
         }
       })
     };
-  
-  },
- 
-  
 
- 
-  getUserInfo: function (e) {
+  },
+  // 引导视频结束
+  video_end: function() {
+    this.setData({
+      video_hidden: true, //隐藏视频引导
+    });
+    wx.redirectTo({
+      url: '../index/index',
+    })
+  },
+  close_video: function() {
+    this.setData({
+      video_hidden: true, //隐藏视频引导
+    });
+    this.videoContext.pause();
+  },
+
+
+
+
+  getUserInfo: function(e) {
     var that = this;
     // 新用户授权后进行注册，并获取memberId
     wx.login({
-      success: function (res) {
+      success: function(res) {
         console.log('获取到的code：' + res.code);
         if (res.code) {
           //授权后取一次微信用户信息
@@ -61,12 +79,12 @@ Page({
         }
       }
     });
-    
+
   },
-  getWxSysUserInfo: function (code) {
+  getWxSysUserInfo: function(code) {
     var that = this;
     wx.getUserInfo({
-      success: function (res) {
+      success: function(res) {
         app.globalData.userInfo = res.userInfo
         that.setData({
           userInfo: res.userInfo,
@@ -86,12 +104,13 @@ Page({
         //向服务器提交注册数据
         that.regster(code);
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log("未授权，取数据失败了" + JSON.stringify(res));
       }
     })
   },
-  regster: function (code) {
+  regster: function(code) {
+    var that = this;
     console.log("注册时，sex：" + wx.getStorageSync('sex'));
     console.log("注册时，city：" + wx.getStorageSync('city'));
     console.log("注册时，province：" + wx.getStorageSync('province'));
@@ -113,7 +132,7 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.message == "ok") {
           wx.setStorageSync("memberId", res.data.data.memberId);
           wx.setStorageSync('wxUnionid', res.data.data.wxUnionid);
@@ -122,9 +141,13 @@ Page({
           console.log('注册成功 wxUnionid = ' + wx.getStorageSync("wxUnionid"));
           console.log('注册成功 wxOpenid = ' + wx.getStorageSync("wxOpenid"));
           //跳回首页
-          wx.redirectTo({
-            url: '../index/index',
-          })
+          console.log('刚授权，播放引导动画');
+          that.setData({
+            video_hidden: false, //隐藏视频引导
+          });
+          that.videoContext.play();
+          that.videoContext.hideStatusBar();
+          //跳转到授权页面
         } else {
           wx.showToast({
             title: res.data.message,

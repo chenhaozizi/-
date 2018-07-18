@@ -51,7 +51,6 @@ class PageController {
     comp.getTopDao.callback = this.getTopDao_callback;
     comp.getfriendsDao = new getfriendsDao();
     comp.getfriendsDao.callback = this.getfriendsDao_callback
-
   }
   getTopDao_callback = (res) =>{
     if(res.data.code == 200){
@@ -70,10 +69,17 @@ class PageController {
             let searchList = [];
             //如果isFromSearch是true从data中取出数据，否则先从原来的数据继续添加
             self.data.isFromSearch ? searchList = data.data : searchList = self.data.searchSongList.concat(data.data)
+           
             self.setData({
               searchSongList: searchList, //获取数据数组
               searchLoading: true   //把"上拉加载"的变量设为false，显示
             });
+            if (data.data.length <5){
+              self.setData({
+                searchLoadingComplete: true, //把“没有数据”设为true，显示
+                searchLoading: false  //把"上拉加载"的变量设为false，隐藏
+              });
+            }
             //没有数据了，把“没有数据”显示，把“上拉加载”隐藏
           } else {
             console.log("没数据了")
@@ -93,7 +99,7 @@ class PageController {
     searchPageNum: 1,   // 设置加载的第几次，默认是第一次
     callbackcount: 5,      //返回数据的个数
     searchLoading: false, //"上拉加载"的变量，默认false，隐藏
-    searchLoadingComplete: false  //“没有数据”的变量，默认false，隐藏
+    searchLoadingComplete: false,  //“没有数据”的变量，默认false，隐藏
 
   }
   onShow = function () {
@@ -109,7 +115,7 @@ class PageController {
   }
  
   searchScrollLower= function() {
-    console.log("上拉")
+    console.log("上拉");
     let that = this;
     if (that.data.searchLoading && !that.data.searchLoadingComplete) {
       that.setData({

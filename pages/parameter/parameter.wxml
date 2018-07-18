@@ -41,7 +41,7 @@
         <image src='{{img_show}}'></image>
       </view>
       <view class='parameter_box'>
-        <view class='section1'>
+        <view class='section1 inf'>
           <view class='info'>
             {{ parameter.info}}
           </view>
@@ -111,7 +111,7 @@
           </view>
         </view>
         <view class="btn-area">
-          <button formType="submit" hover-class='button-hover' class='next_step'>下一步 ></button>
+          <button formType="submit" hover-class='button-hover' class='next_step'>下一步</button>
         </view>
       </view>
     </view>
