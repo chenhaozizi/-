@@ -20,7 +20,7 @@
 
 <!-- 快捷菜单 -->
 <view class='flex bgf'>
-  <view class='self-nav {{memberTypeCode == "0004" || memberTypeCode == "0003" ? "w50 " :"" }}' bindtap='scan'>
+  <view class='self-nav {{memberTypeCode == "0004" || memberTypeCode == "0003" ? "w20 " :"" }}' bindtap='scan'>
     <view class='nav-icon mb10' ><image src='/images/icon01.png'></image></view>
     <text class='color-66 font-sm '>二维码扫描</text>
   </view>

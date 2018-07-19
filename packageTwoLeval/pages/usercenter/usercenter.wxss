@@ -10,3 +10,4 @@ page{background: rgb(234, 234, 234)}
 .self-nav {min-width: 33%;text-align: center}
 .loginout{height: 70rpx;background: rgb(255,183,0);width: 60%;margin:0 auto;text-align: center;border-radius: 37rpx;box-shadow: 1px 0px 10px rgba(53,53,53,0.3);margin-top: 44rpx;margin-bottom: 44rpx;line-height: 70rpx}
 .w50{min-width: 50%}
+.w20{min-width: 20%}

@@ -64,7 +64,7 @@ mr40{margin-right: 40rpx}
 /*定位距离  */
 .bt0{bottom:0} .r0{right:0}
 .right{right:10rpx}.tpcenter{top: 40%}.r40{right: 40rpx}
-.flex{  display:flex;justify-content:space-around;padding:22rpx 0 30rpx;}
+.flex{  display:flex;justify-content:space-around;padding:26rpx 0 30rpx;}
 .text-left{text-align: left}.text-center{text-align: center}.text-right{text-align: right}
 /*浮动  */
 .float-l{float: left}.float-r{float: right}
