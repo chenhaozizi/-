@@ -43,14 +43,19 @@
 }
 
 .list-top {
+  opacity: 0;
   margin-top: 271rpx;
   width: 400rpx;
+  animation: show 1s ease-in 2200ms normal 1;animation-fill-mode: forwards
+}
+@keyframes show {
+  100% {opacity: 1;}
 }
 
 .list-menu {
-  padding: 15rpx 0;
+  padding: 12rpx 0;
   opacity: 1;
-  margin: 47rpx auto;
+  margin: 65rpx auto;
   border-radius: 20rpx;
   text-align: center;
   color: white;
@@ -90,8 +95,8 @@
   position: static;
 }
 .word_box{height: 500rpx;display: flex;justify-content: center;align-items: center;flex-direction: column}
-.word1{opacity: 0;width: 400rpx;height: 130rpx;animation: down 1s ease-in 600ms normal 1;animation-fill-mode: forwards}
-.word2{opacity: 0;width: 200rpx;height: 30rpx;animation: down2 1s ease-in 1200ms normal 1;animation-fill-mode: forwards}
+.word1{opacity: 0;width: 400rpx;animation: down 1s ease-in 600ms normal 1;animation-fill-mode: forwards}
+.word2{opacity: 0;width: 200rpx;animation: down2 1s ease-in 1200ms normal 1;animation-fill-mode: forwards}
 @keyframes down{
   100%{margin-top: 300rpx;opacity: 1}
 }

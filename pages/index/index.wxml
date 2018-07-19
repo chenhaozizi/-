@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <view class='word_box'>
-    <image src='/images/word1.png' class='word1'></image>
-    <image src='/images/word2.png' class='word2'></image>
+    <image src='/images/word1.png' class='word1' mode="widthFix"></image>
+    <image src='/images/word2.png' class='word2' mode="widthFix"></image>
   </view>
   <view class="list-wrapper">
     <view class="list-top">

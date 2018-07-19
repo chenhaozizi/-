@@ -1,6 +1,6 @@
 <!--pages/parameter/parameter.wxml-->
 <view class='show_box'>
-  <image src='/images/mt3.jpg'></image>
+  <image src='/images/mt3.jpg' mode='widthFix'></image>
 </view>
 <view class='form_box'>
   <form bindsubmit="formSubmit" bindreset="formReset">
@@ -38,7 +38,7 @@
         <image src='/images/close_btn.png' bindtap='parameter_close'></image>
       </view>
       <view class='show_box show_box1'>
-        <image src='{{img_show}}'></image>
+        <image src='{{img_show}}' mode='widthFix'></image>
       </view>
       <view class='parameter_box'>
         <view class='section1 inf'>
