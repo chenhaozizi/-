@@ -17,7 +17,7 @@
         <view class='fz26 grey'>{{item.paizi}}</view>
       </view>
       <view class='right'>
-        <view class='iconfont icon-buoumaotubiao16'></view>
+        <view  data-index ='{{index}}'  class='iconfont icon-buoumaotubiao16'></view>
         <view class='fz18'>{{item.zan}}</view>
         <button open-type="share" bindtap='onShareAppMessage'>
           <view class='iconfont icon-zhuanfa'></view>

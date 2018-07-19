@@ -1,4 +1,5 @@
 // pages/case/case.js
+let self;
 Page({
 
   /**
@@ -8,15 +9,15 @@ Page({
       curr_id: '',   //当前打开的视频id
       items: [
         {
-          id: 1, src: 'https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg',title:'演唱会定制酒·李宇春',paizi:'全兴大曲 99系列 52%vol 500ml',zan:'0000'
+          id: 1, zan: 123, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg',title:'演唱会定制酒·李宇春',paizi:'全兴大曲 99系列 52%vol 500ml'
         }, {
-          id: 2, src: 'https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·李宇', paizi: '全兴大 99系列 52%vol 500ml', zan: '0003'
+          id: 2, zan: 23, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·李宇', paizi: '全兴大 99系列 52%vol 500ml'
         },
         {
-          id: 3, src: 'https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·李', paizi: '全大曲 99系列 52%vol 500ml', zan: '0001'
+          id: 3, zan: 345, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·李', paizi: '全大曲 99系列 52%vol 500ml'
         },
         {
-          id: 4, src: 'https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·', paizi: '全兴曲 99系列 52%vol 500ml', zan: '0002'
+          id: 4, zan: 567, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·', paizi: '全兴曲 99系列 52%vol 500ml'
         },
       ],
   },
@@ -25,7 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+  self = this
   },
 
   /**
@@ -48,7 +49,18 @@ Page({
   onShow: function () {
   
   },
+  zan:function(e){
+    console.log();
+    var index = e.currentTarget.dataset.index;
+    for (var i = 0; i < self.data.items.length;i++){
+      if (i == e.currentTarget.dataset.index)
 
+      self.data.items[index].zan+=1;
+    }
+    self.setData({
+      items: self.data.items
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -69,6 +81,7 @@ Page({
   onPullDownRefresh: function () {
   
   },
+
 
   /**
    * 页面上拉触底事件的处理函数
