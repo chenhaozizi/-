@@ -93,5 +93,5 @@
   <view class='cont-text'>客服</view>
 </view>
 <view class="canvas-box">
-    <canvas  style="width: 280px;height: 316px;" canvas-id="mycanvas"/>
+    <canvas  style="width: 280px;height: 316px;" canvas-id="mycanvas1"/>
 </view>

@@ -41,16 +41,17 @@ Page({
     this.wecropper.getCropperImage((src) => {
       if (src) {
         op_arr.src = src;
+        console.log("截图的图"+src)
         // 截图上传
          const img_two= wx.uploadFile({
-            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', 
+           url: 'https://mingjiu-api.conpanda.cn/fileserver/uploadImage', 
             filePath: src,
-            name: 'image',
-            formData: {
-              'subFolder': 'customize'
-            },
+            name: 'file',
             success: function (res) {
-              var img_b = (JSON.parse(res.data)).fsimg;
+              console.log(res)
+              var img_b = (JSON.parse(res.data)).remoteUrl;
+              
+              console.log(img_b)
               //跳转到选图页面
               wx.setStorage({
                 key: "tempfs",

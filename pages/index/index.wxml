@@ -8,11 +8,14 @@
     <view class="list-top">
       <view data-num="1" class="list-menu  list-menu1 {{_num==1?'cur':''}}" bindtap="menuClick">开始定制</view>
       <view data-num="2" class="list-menu list-menu2 {{_num==2?'cur':''}}" bindtap="menuClick">案 例</view>
-      <!-- <view data-num="3" class="list-menu list-menu3 {{_num==3?'cur':''}}" bindtap="menuClick">个人中心</view> -->
+       <view data-num="3" class="list-menu list-menu3 {{_num==3?'cur':''}}" bindtap="menuClick">个人中心</view> 
     </view>
   </view>
   <!--  
   <view class='history' bindtap='history'>
    <text class='iconfont icon-work'></text>
   </view> -->
+</view>
+<view class="canvas-box">
+    <canvas  style="width: 280px;height: 316px;" canvas-id="mycanvas"/>
 </view>

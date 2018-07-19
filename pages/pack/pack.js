@@ -165,14 +165,12 @@ Page({
           const src = res.tempFilePaths[0]
           // 上传的原图上传到后台
           wx.uploadFile({
-            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
+            url: 'https://mingjiu-api.conpanda.cn/fileserver/uploadImage', //仅为示例，非真实的接口地址
             filePath: src,
-            name: 'image',
-            formData: {
-              'subFolder': 'customize'
-            },
+            name: 'file',
             success: function (res) {
-              var img_a = (JSON.parse(res.data)).fsimg;
+              var img_a = (JSON.parse(res.data)).remoteUrl;
+              console.log(img_a)
               wx.setStorage({
                 key: "orimg",
                 data: img_a
@@ -288,9 +286,7 @@ Page({
             self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-            wx.redirectTo({
-              url: '../order/order',
-            })
+           
 
           } else {
             console.log('用户点击取消')
@@ -320,6 +316,7 @@ Page({
     //将纸套绘制到canvas
     context.drawImage(path, 0, 0, 280, 293);
     //绘制祝福语,cavas ,祝福语,x坐标,y坐标,文字盒子宽，文字盒子高,文字是否描边,是否竖排
+    context.fillText(self.data.blessing, 0, 0)
     setText.setText(context, "     " + self.data.blessing, 169, 165, 82, 49, false, false);
     //绘制剪切的图
     this.setCutimg(context);
@@ -329,24 +326,28 @@ Page({
       wx.canvasToTempFilePath({
         canvasId: 'mycanvas',
         success: function (res) {
+          console.log("cabsdsdll：" + res.tempFilePath)
           var tempFilePath = res.tempFilePath;
           console.log(tempFilePath);
           that.setData({
             imagePath: tempFilePath,
             // canvasHidden:true
           });
+          console.log("cavas:"+tempFilePath)
           const orimgs = wx.uploadFile({
-            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
+            url: 'https://mingjiu-api.conpanda.cn/fileserver/uploadImage', //仅为示例，非真实的接口地址
             filePath: res.tempFilePath,
-            name: 'image',
-            formData: {
-              'subFolder': 'customize'
-            },
+            name: 'file',
+           
             success: function (res) {
-              console.log('原图返回的', res.data);
-              // wx.redirectTo({
-              //   url: '../order/order',
-              // })
+              var resData = JSON.parse(res.data);
+              if (resData.code == 200){
+                wx.setStorageSync( "compimg",resData.remoteUrl);
+              }
+              console.log("存储的合成图：" + wx.getStorageSync("compimg"))
+              wx.redirectTo({
+                url: '../order/order',
+              })
             }
           })
         },

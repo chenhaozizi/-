@@ -248,6 +248,7 @@ Page({
         message: app.globalData.pack.blessing,
         brand: app.globalData.parameter.brand,
         alcohol: app.globalData.parameter.degree,
+        compositeImg: wx.getStorageSync("compimg")
         // price: app.globalData.parameter.price,//2期版本新增价格
         // family: app.globalData.parameter.family//2期版本新增酒类型
       },

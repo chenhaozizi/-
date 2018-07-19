@@ -121,15 +121,12 @@ Page({
           const src = res.tempFilePaths[0];
           // 上传的原图上传到后台
           wx.uploadFile({
-            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
+            url: 'https://mingjiu-api.conpanda.cn/fileserver/uploadImage', //仅为示例，非真实的接口地址
             filePath: src,
-            name: 'image',
-            formData: {
-              'subFolder': 'customize'
-            },
+            name: 'file',
             success: function (res) {
               console.log("原图地址：",res.data);
-              var img_a = (JSON.parse(res.data)).fsimg;
+              var img_a = (JSON.parse(res.data)).remoteUrl;
               console.log("原图上传的：",img_a);
               wx.setStorage({
                 key: "orimg",
@@ -246,9 +243,6 @@ Page({
             self.createNewImg();
             app.globalData.pack = pack;
             console.log("提交的自定义参数为", app.globalData.pack);
-            wx.redirectTo({
-              url: '../order/order',
-            })
           } else {
             console.log('用户点击取消')
           }
@@ -295,17 +289,18 @@ Page({
             // canvasHidden:true
           });
           const orimgs = wx.uploadFile({
-            url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
+            url: 'https://mingjiu-api.conpanda.cn/fileserver/uploadImage', //仅为示例，非真实的接口地址
             filePath: res.tempFilePath,
-            name: 'image',
-            formData: {
-              'subFolder': 'customize'
-            },
+            name: 'file',
             success: function (res) {
-              console.log('原图返回的', res.data);
-              // wx.redirectTo({
-              //   url: '../order/order',
-              // })
+              var resData = JSON.parse(res.data);
+              if (resData.code == 200) {
+                wx.setStorageSync("compimg", resData.remoteUrl);
+              }
+              console.log("存储的合成图：" + wx.getStorageSync("compimg"))
+              wx.redirectTo({
+                url: '../order/order',
+              })
             }
           })
         },
