@@ -16,7 +16,7 @@ page {
 
 .next_step {
   position: absolute;
-  bottom: 2%;
+  bottom: 3%;
   left: 0;
   right: 0;
   width: 670rpx;

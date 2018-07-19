@@ -19,10 +19,10 @@ class FindAuthorizeInfo {
    * 加载接口
    */
   load = () => {
-    this.http.post("/RsMember/FindAuthorizeInfo", { memberId: wx.getStorageSync("memberId")})
+    this.http.post("/RsMember/FindAuthorizeInfo", { memberId:10413})
   }
 }
-
+// wx.getStorageSync("memberId")
 /**
  * 页面控制器
  */
@@ -40,9 +40,9 @@ class PageController {
   FindAuthorizeInfo_callback = (res) => {
     console.log(res, res.data.code)
     if (res.data.code==200) {
-      // self.data.update=true;
       self.setData({ result: res.data.data})
       console.log(self.data)
+
     }
 
   }
