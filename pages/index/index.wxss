@@ -55,7 +55,7 @@
   height: 61rpx;
   line-height: 61rpx;
   opacity: 1;
-  margin:30rpx auto;
+  margin:56rpx auto;
   border-radius: 14rpx;
   text-align: center;
   color: white;
