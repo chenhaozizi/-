@@ -40,7 +40,7 @@
       </view>
     </view>
     <view class="btn-area">
-      <button hover-class='button-hover' class='next_step' bindtap='next_step'>下一步 ></button>
+      <button hover-class='button-hover' class='next_step' bindtap='next_step'>下一步</button>
     </view>
   </view>
   <!--纸套选择  -->

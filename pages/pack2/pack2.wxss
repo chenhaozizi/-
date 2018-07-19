@@ -40,45 +40,6 @@ page {
   font-size: 28rpx;
 }
 
-.pack_bottom {
-  position: relative;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  transition: all 400ms ease-in;
-  background: #f1f0f5
-}
-.gn_box2 {
-  background: none;
-}
-.gn_box {
-  width: 100%;
-  margin: 20rpx auto 0;
-  text-align: center;
-  color: #ededed;
-  background: #fff;
-  overflow: hidden;
-  font-size: 32rpx;
-  padding: 20rpx 0;
-}
-
-.gn_box p {
-  display: block;
-  color: #666;
-}
-
-.gn_box view {
-  text-align: center;
-  display: inline-block;
-  width: 28%;
-}
-.gn_box view image {
-  width: 89rpx;
-  height: 64rpx;
-  margin-bottom: 6rpx;
-}
-
-
 .next_step {
   bottom: 80rpx;
 }
