@@ -55,7 +55,7 @@
 .list-menu {
   padding: 12rpx 0;
   opacity: 1;
-  margin: 65rpx auto;
+  margin: 50rpx auto;
   border-radius: 20rpx;
   text-align: center;
   color: white;
