@@ -343,11 +343,12 @@ Page({
               var resData = JSON.parse(res.data);
               if (resData.code == 200){
                 wx.setStorageSync( "compimg",resData.remoteUrl);
+                console.log("存储的合成图：" + wx.getStorageSync("compimg"))
+                wx.redirectTo({
+                  url: '../order/order',
+                })
               }
-              console.log("存储的合成图：" + wx.getStorageSync("compimg"))
-              wx.redirectTo({
-                url: '../order/order',
-              })
+             
             }
           })
         },

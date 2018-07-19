@@ -47,6 +47,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    this.setData({
+      logo:wx.getStorageSync("compimg")
+    })
     console.log(app.globalData.parameter)
     that.parameter();
     //截图
@@ -347,20 +350,17 @@ Page({
     if (app.globalData.parameter.brand == 1) {
       that.setData({
         brand: "全兴大曲·99系列",
-        logo: "/images/logo1.png",
         price: 268
       })
     } else if (app.globalData.parameter.brand == 2) {
       if (app.globalData.parameter.family == "金樽" || app.globalData.parameter.family == 2){
         that.setData({
           brand: "五粮液·金樽",
-          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png",
           price: 188
         })
       } else if (app.globalData.parameter.family == "银坛" || app.globalData.parameter.family == 1){
         that.setData({
           brand: "五粮液·银坛",
-          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png",
           price: 188
         })
       }
@@ -369,19 +369,16 @@ Page({
       if (app.globalData.parameter.family == "品味级" || app.globalData.parameter.family == 1) {
         that.setData({
           brand: "贵州茅台·品味级",
-          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
           price: 198
         })
       } else if (app.globalData.parameter.family == "鉴赏级" || app.globalData.parameter.family == 2){
         that.setData({
           brand: "贵州茅台·鉴赏级",
-          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
           price: 198
         })
       } else if (app.globalData.parameter.family == "尊享级" || app.globalData.parameter.family == 3) {
         that.setData({
           brand: "贵州茅台·尊享级",
-          logo: "http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png",
           price: 198
         })
       }

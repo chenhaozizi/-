@@ -32,9 +32,9 @@ Page({
     }
   },
   onUnload: function (e) {
-    wx.reLaunch({
-      url: '/pages/index/index'
-    })
+    // wx.reLaunch({
+    //   url: '/pages/index/index'
+    // })
   },
   swichNav: function (e) {
     var cur = e.target.dataset.current;
@@ -78,7 +78,6 @@ Page({
         } else if (payStatus == 2 && shipStatus == 2) {
           that.setData({ send: res.data.data })//已发货
         }
-       
           console.log(res.data,that.data)
       }
     })

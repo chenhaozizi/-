@@ -289,7 +289,7 @@ Page({
                 wx.setStorageSync("compimg", resData.remoteUrl);
               }
               console.log("存储的合成图：" + wx.getStorageSync("compimg"))
-              跳转页面
+              //跳转页面
               wx.redirectTo({
                 url: '/pages/order/order'
               })

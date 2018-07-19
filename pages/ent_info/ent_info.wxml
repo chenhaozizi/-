@@ -44,15 +44,7 @@
         </view>
         <view class='goods_info'>
           <view class='img'>
-            <block wx:if="{{orderInfo.brand==1}}">
-                <image src='/images/logo1.png'></image>
-              </block>
-              <block wx:if="{{orderInfo.brand==2}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
-              </block>
-              <block wx:if="{{orderInfo.brand==3}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
-              </block>
+            <image src='{{orderInfo.compositeImg}}'></image>
           </view>
           <view class='bt_box'>
             <view class='bt'>

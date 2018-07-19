@@ -19,15 +19,8 @@
         <view class='goods_info'>
           <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
             <view class='img'>
-              <block wx:if="{{item.brand==1}}">
-                <image src='/images/logo1.png'></image>
-              </block>
-              <block wx:if="{{item.brand==2}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
-              </block>
-              <block wx:if="{{item.brand==3}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
-              </block>
+           
+                <image src='{{item.compositeImg}}'></image>
 
             </view>
             <view class='bt_box'>
@@ -71,16 +64,7 @@
       <view class='goods_info'>
         <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
             <view class='img'>
-              <block wx:if="{{item.brand==1}}">
-                <image src='/images/logo1.png'></image>
-              </block>
-              <block wx:if="{{item.brand==2}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
-              </block>
-              <block wx:if="{{item.brand==3}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
-              </block>
-
+               <image src='{{item.compositeImg}}'></image>
             </view>
           <view class='bt_box'>
             <view class='bt'>
@@ -117,15 +101,7 @@
       <view class='goods_info'>
         <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
          <view class='img'>
-              <block wx:if="{{item.brand==1}}">
-                <image src='/images/logo1.png'></image>
-              </block>
-              <block wx:if="{{item.brand==2}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand3-active.png'></image>
-              </block>
-              <block wx:if="{{item.brand==3}}">
-                <image src='http://mingjiu.pandahot.cn/b2c/statics/customize/brand2-active.png'></image>
-              </block>
+               <image src='{{item.compositeImg}}'></image>
 
             </view>
           <view class='bt_box'>
