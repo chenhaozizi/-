@@ -310,6 +310,13 @@ Page({
     context.drawImage(self.data.tempfp, 20, 73, 100, 90);
   },
   createNewImg: function () {
+    wx.showToast({
+      title: '图片合成中',
+      icon: "loading",
+      mask: true,
+      duration:50000
+    });
+  
     var that = this;
     var context = wx.createCanvasContext('mycanvas');
     var path = self.data.pack_show;
@@ -344,6 +351,7 @@ Page({
               if (resData.code == 200){
                 wx.setStorageSync( "compimg",resData.remoteUrl);
                 console.log("存储的合成图：" + wx.getStorageSync("compimg"))
+                wx.hideLoading();
                 wx.redirectTo({
                   url: '../order/order',
                 })

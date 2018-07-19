@@ -5,7 +5,6 @@ const app = getApp();
  * 会员认证查询
 */
 class MemberAuthSelectOneDao {
-  
   constructor() {
     this.http = new HttpUtil(app);
     this.http.addResultListener(this.result);
@@ -24,34 +23,10 @@ class MemberAuthSelectOneDao {
     this.http.post("/EsMemberIdcard/FindByMemeberId", { memberId: wx.getStorageSync("memberId")})
   }
 }
-
-/*
- * 会员认证修改
-*/
-class MemberAuthUpdateDao {
-
-  constructor() {
-    this.http = new HttpUtil(app);
-    this.http.addResultListener(this.result);
-  }
-  result = (res) => {
-    if (this.callback) {
-      this.callback(res);
-    }
-  }
-  /**
-   * 加载接口
-   */
-  load = (e) => {
-    this.http.post("/EsMemberIdcard/Update", { memberId: wx.getStorageSync("memberId"),...e })
-  }
-}
-
 /*
  * 会员认证修改
 */
 class MemberAuthAddDao {
-
   constructor() {
     this.http = new HttpUtil(app);
     this.http.addResultListener(this.result);
@@ -65,7 +40,7 @@ class MemberAuthAddDao {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/EsMemberIdcard/Add", { memberId: wx.getStorageSync("memberId"),...e })
+    this.http.post("/EsMemberIdcard/save", { memberId: wx.getStorageSync("memberId"),...e })
   }
 }
 
@@ -79,13 +54,12 @@ class PageController {
     comp.memberAuthSelectOneDao.callback =this. memberAuthSelectOneDao_callback;
     comp.memberAuthAddDao=new MemberAuthAddDao();
     comp.memberAuthAddDao.callback=this.save_callback;
-    comp.memberAuthUpdateDao = new MemberAuthUpdateDao();
-    comp.memberAuthUpdateDao.callback = this.save_callback;
   }
 
   save_callback=(e)=>{
-    if(e.data.code===200){
-      comp.showMessage("保存资料成功！");
+    console.log(e)
+    if(e.data.code==200){
+      comp.showMessage(e.data.data);
       comp.memberAuthSelectOneDao.load();
     }
 
@@ -115,23 +89,19 @@ class PageController {
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://mingjiu-api.conpanda.cn/front_v1/upload/uploadImg', //仅为示例，非真实的接口地址
+          url: 'https://mingjiu-api.conpanda.cn/fileserver/uploadImage', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
-          name: 'image',
-          formData: {
-            'subFolder': 'customize'
-          },
+          name: 'file',
           success: function (res) {
-            console.log(self.data.result)
-            var data = JSON.parse(res.data);
+            var data = (JSON.parse(res.data)).remoteUrl;
             let rest = self.data.result;
             if (imgCase==="1"){
-              rest.idcardFront = data.img;
-              rest.idcardFrontUrl = data.fsimg;
+              rest.idcardFront = data;
+              
               self.setData({ result: rest, update1: true })
             }else{
-              rest.idcardBack = data.img;
-              rest.idcardBackUrl = data.fsimg;
+              rest.idcardBack = data;
+            
               self.setData({ result: rest, update2: true })
             }
             
@@ -156,12 +126,14 @@ class PageController {
       comp.showMessage("身份证姓名不能为空")
       return;
     }
-    if (info.tel === "") {
-      comp.showMessage("手机号码不能为空")
+    console.log(info.idcardNo, info.tel,info)
+    if (info.tel === "" || info.tel.length < 11) {
+      comp.showMessage("请填写正确的手机号码")
       return;
     }
-    if (info.idcartNo === "") {
-      comp.showMessage("身份证号码不能为空")
+   
+    if (info.idcardNo === "" || info.idcardNo.length<18) {
+      comp.showMessage("请输入正确的身份证号")
       return;
     }
     if (info.idcartFront === "") {
@@ -172,11 +144,7 @@ class PageController {
       comp.showMessage("身份证背面未进行上传")
       return;
     }
-    if (self.data.result.status == 3){
-     comp.memberAuthUpdateDao.load(info);
-    }else{
       comp.memberAuthAddDao.load(info);
-    }
   }
 
   onShow=function(){

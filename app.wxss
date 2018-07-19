@@ -290,7 +290,9 @@ page {
 
 .canvas-box {
   position: absolute;
-  left: 0;
+  left: -100000px;
   top: 0;
   z-index: -99;
+  opacity: 0；
+
 }

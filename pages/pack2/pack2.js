@@ -241,7 +241,6 @@ Page({
             // wx.redirectTo({
             //   url: '../order/order',
             // })
-
           } else {
             console.log('用户点击取消')
           }
@@ -265,6 +264,12 @@ Page({
     context.drawImage(self.data.tempfp, 168, 232, 93, 38);
   },
   createNewImg: function() {
+    wx.showToast({
+      title: '图片合成中',
+      icon: "loading",
+      mask: true,
+      duration: 50000
+    });
     var that = this;
     var context = wx.createCanvasContext('mycanvas1');
     var path = self.data.pack_show;
@@ -298,6 +303,7 @@ Page({
                 wx.setStorageSync("compimg", resData.remoteUrl);
               }
               console.log("存储的合成图：" + wx.getStorageSync("compimg"))
+              wx.hideLoading();
               wx.redirectTo({
                 url: '../order/order',
               })
