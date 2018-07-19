@@ -14,13 +14,14 @@ form {
 .radio_box {
   color: #dd5345;
   transition: all 300ms;
-  overflow: hidden
+  overflow: hidden;
+  margin-top: 30rpx
 }
 
 .section__title {
   text-indent: 22rpx;
   text-align: left;
-  padding: 40rpx 0;
+  margin: 86rpx 0 65rpx 0;
   color: #333333;
 }
 .section__title i {
@@ -95,7 +96,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   text-align: center;
 }
 .show_box image{width: 100%;}
-.form_box{text-align: center;padding: 0 40rpx}
+.form_box{text-align: center;}
 .radio_box label{display: inline-block;width: 25%;text-align: center;margin-bottom: 40rpx}
 .parameter{position: fixed;width:94%;height: 93%;top:20rpx;left:3%;background:#fff;border-radius: 23rpx;overflow: hidden;z-index: 99999999999}
 .parameter_box{padding:10rpx 20rpx}
@@ -104,7 +105,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .show_box1{padding-bottom: 0px;background: none!;height: 400rpx}
 .section1{margin: 33rpx 0;overflow: hidden}
 .radio_box1{width: 514rpx;float: left}
-.radio_box1 label{width:28%;overflow:hidden;text-align: center;display: inline-block;margin-right:4%;background: #f1f0f5;border-radius: 16rpx;border: 1rpx solid  #f1f0f5;color:#7e7e7e;padding: 6rpx 0}
+.radio_box1 label{width:28%;overflow:hidden;text-align: center;display: inline-block;margin-right:4%;background: #f1f0f5;border-radius: 14rpx;border: 1rpx solid  #f1f0f5;color:#7e7e7e;padding: 6rpx 0}
 .radio_box1 label:last-child{margin-right: 0rpx}
 .radio_box1 label radio{display: none}  
  /*参数选中后的样式  */
@@ -124,4 +125,4 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 }
 .inf{margin-top: -5rpx}
 .close{position: fixed;right:33rpx;top:28rpx;}
-.close image{width: 60rpx;height: 60rpx;float: right}
+.close image{width: 53rpx;height: 53rpx;float: right}

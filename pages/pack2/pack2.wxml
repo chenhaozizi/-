@@ -46,7 +46,7 @@
         </view>
       </scroll-view>
     </view>
-    <view class="btn-area">
+    <view class="btn-area btn-area-ok">
       <button hover-class='button-hover' class='next_step' bindtap="zt_ok">确定</button>
     </view>
   </view>

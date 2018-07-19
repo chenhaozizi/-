@@ -3,7 +3,6 @@
 var app = getApp();
 Page({
   data: {
-  
     _num: "1",
     xs: "-100%",
     userInfo: {},

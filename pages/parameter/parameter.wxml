@@ -104,14 +104,14 @@
           <view class="title">价格</view>
           <view class='radio_box1'>
             <radio-group name="price">
-                <label style='width:61%' wx:key="price">
+                <label style='width:61%;background:#fff' wx:key="price">
                   <radio disabled='true' checked='che' value='{{sp_price}}' /> {{sp_price}}
                 </label>
             </radio-group>
           </view>
         </view>
         <view class="btn-area">
-          <button formType="submit" hover-class='button-hover' class='next_step'>下一步</button>
+          <button formType="submit" hover-class='button-hover1' class='next_step'>下一步</button>
         </view>
       </view>
     </view>

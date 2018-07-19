@@ -46,13 +46,7 @@ page {
   bottom: 80rpx;
 }
 
-.scroll-view view {
-  background: #fff;
-  width: 144rpx;
-  height: 134rpx;
-  display: inline-block;
-  margin: 0 5rpx;
-}
+
 
 .scroll-view view image {
   width: 98%;
