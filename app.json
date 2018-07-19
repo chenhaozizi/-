@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/parameter/parameter",
     "pages/index/index",
     "pages/user_info/user_info",
-   
+    "pages/parameter/parameter",
     "pages/order/order",
     "pages/pack/pack",
     "pages/pack2/pack2",
@@ -34,17 +33,17 @@
         "pages/myMoneyDetails/myMoneyDetails",
         "pages/myCode/myCode",
         "pages/withdraw/index",
-        "pages/case/case",                
+        "pages/case/case",
         "pages/CircleFriends/index"
       ]
     },
-      {
-        "root": "pagesA",
-        "pages": [
-          "pack2_1/pack2_1",
-          "pack3_1/pack3_1",
-          "pack3_2/pack3_2"
-        ]
-      }
+    {
+      "root": "pagesA",
+      "pages": [
+        "pack2_1/pack2_1",
+        "pack3_1/pack3_1",
+        "pack3_2/pack3_2"
+      ]
+    }
   ]
 }
