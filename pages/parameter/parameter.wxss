@@ -21,7 +21,7 @@ form {
 .section__title {
   text-indent: 22rpx;
   text-align: left;
-  margin: 86rpx 0 65rpx 0;
+  margin: 60rpx 0;
   color: #333333;
 }
 .section__title i {
@@ -126,3 +126,4 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .inf{margin-top: -5rpx}
 .close{position: fixed;right:33rpx;top:28rpx;}
 .close image{width: 53rpx;height: 53rpx;float: right}
+swiper{width: 100%;height: 450rpx}

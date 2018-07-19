@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/parameter/parameter",
     "pages/index/index",
     "pages/user_info/user_info",
-    "pages/parameter/parameter",
+   
     "pages/order/order",
     "pages/pack/pack",
     "pages/pack2/pack2",

@@ -6,6 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrls: [
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/b2e5dc17a8244ba98dec6942063864b8.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/e3420a4e1d6c47aebec3a91d8aea27d6.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/dc488f0155ff4591a2b7963c1d01cf4c.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/1486c625ae5944d6a6656ed3039be662.jpg',
+    ],
+    indicatorDots: true,//控点
+    autoplay: true,
+    interval: 4000,//自动播放间隔
+    duration: 300,//过渡时间
+    indicatorActiveColor:"#A314B0",
     family_change: '', //酒体
     vinosity_change: '', //酒质
     deree_change: '', //度数

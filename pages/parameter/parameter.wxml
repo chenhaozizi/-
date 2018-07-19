@@ -1,7 +1,13 @@
 <!--pages/parameter/parameter.wxml-->
-<view class='show_box'>
-  <image src='/images/mt3.jpg' mode='widthFix'></image>
-</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  mode='widthFix' indicator-active-color="{{indicatorActiveColor}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <view class='show_box'>
+        <image src="{{item}}" class="slide-image" mode='widthFix' />
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
 <view class='form_box'>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <!--品牌  -->
@@ -72,12 +78,12 @@
         <!--酒体-->
         <block wx:if="{{parameter.family}}">
           <view class="section1">
-          <block wx:if="{{parameter.brand==3}}">
-            <view class="title">酒质</view>
-          </block>
-           <block wx:else>
-            <view class="title">酒体</view>
-          </block>
+            <block wx:if="{{parameter.brand==3}}">
+              <view class="title">酒质</view>
+            </block>
+            <block wx:else>
+              <view class="title">酒体</view>
+            </block>
             <view class='radio_box1'>
               <radio-group name="family">
                 <label wx:for="{{parameter.family}}" wx:key="family" bindtap="type_change" data-type="4" data-num='{{index+1}}' class="{{family_change==index+1?'active':''}} {{parameter.family.length==1?'active':''}}" data-price="{{item.price}}" data-imgsrc="{{item.img}}">
@@ -104,9 +110,9 @@
           <view class="title">价格</view>
           <view class='radio_box1'>
             <radio-group name="price">
-                <label style='width:61%;background:#fff' wx:key="price">
-                  <radio disabled='true' checked='che' value='{{sp_price}}' /> {{sp_price}}
-                </label>
+              <label style='width:61%;background:#fff' wx:key="price">
+                <radio disabled='true' checked='che' value='{{sp_price}}' /> {{sp_price}}
+              </label>
             </radio-group>
           </view>
         </view>
@@ -117,7 +123,7 @@
     </view>
   </form>
 </view>
-<view class='contact-box'  hidden='{{maskFlag2}}'>
+<view class='contact-box' hidden='{{maskFlag2}}'>
   <contact-button type="default-light" class='cont-btn' size="20">
   </contact-button>
   <image class='con-img' src='/images/msg.png' />
