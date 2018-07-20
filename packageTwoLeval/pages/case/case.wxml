@@ -1,10 +1,10 @@
 <!--pages/case/case.wxml-->
-<view class='content-view'>
+<scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:98vh' class='content-view' >
   <view wx:for="{{items}}" wx:key="id">
     <view class='video-container' data-id="{{item.id}}" bindtap='videoplay'>
-      <video wx:if="{{curr_id == item.id}}" src='{{item.src}}' poster='{{item.poster}}' objectFit='cover' autoplay></video>
+      <video wx:if="{{curr_id == item.id}}" src='{{item.videoUrl}}' poster='{{item.coverUrl}}' objectFit='cover' autoplay></video>
       <view wx:else>
-        <image class="model-img"  mode="aspectFill" src="{{item.poster}}"></image>
+        <image class="model-img"  mode="aspectFill" src="{{item.coverUrl}}"></image>
         <view class="model-btn">
           <view class="play-icon"></view>
         </view>
@@ -14,22 +14,20 @@
     <view class='everyone'>
       <view class='left'>
         <view class='fz30'>{{item.title}}</view>
-        <view class='fz26 grey'>{{item.paizi}}</view>
+        <view class='fz26 grey'>{{item.content}}</view>
       </view>
       <view class='right'>
-        <view  data-index ='{{index}}'  class='iconfont icon-buoumaotubiao16'></view>
-        <view class='fz18'>{{item.zan}}</view>
+        <view  data-index ='{{index}}'  class='iconfont icon-buoumaotubiao16'  bindtap='zan'></view>
+        <view class='fz18'>{{item.favorCount + item.startCount}}</view>
         <button open-type="share" bindtap='onShareAppMessage'>
           <view class='iconfont icon-zhuanfa'></view>
         </button>
       </view>
     </view>
   </view>
-</view>
+</scroll-view>
 
-<view class='contact-box' bindtap='startmake'>
-  <button type="default-light" class='cont-btn' size="20">
-  </button>
-  <view class='cont-text'>开始定制</view>
-</view>
+<cover-view class='contact-box' bindtap='startmake'>
+ <cover-image class="img" src="/images/ks.png" />
+</cover-view>
 
