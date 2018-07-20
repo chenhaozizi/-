@@ -30,24 +30,25 @@ video{
 .fz18{font-size: 18rpx;margin: 0 20rpx;}
 .grey{color:#b7b7b7}
 .everyone{
-  display:flex;
-  justify-content:space-around;
-  height: 80rpx;
-  padding: 10rpx 30rpx;
-  line-height: 32rpx;
+  display: flex;
+  height: 100rpx;
+  padding: 0 20rpx 0 40rpx;
 }
 .left{
-  display: flex;
-  flex-wrap:wrap;
-  align-content:space-around;
+ width: 70%;
+ margin-top: 10rpx;
 }
 .right{
+  width: 30%;
   display: flex;
-  line-height: 80rpx;
+  line-height: 100rpx;
 }
 button{
   background: white;
   -webkit-tap-highlight-color:white;
+  margin: 0;
+  padding: 0;
+  line-height: 100rpx;
 }
 button::after{
   border: none;

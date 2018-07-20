@@ -1,99 +1,82 @@
-// pages/case/case.js
-let self;
-Page({
-
+import HttpUtil from '../../../lib/trilobite/core/httputil.js'
+let comp, self;
+const app = getApp();
+/*
+ * 分页查询视频
+*/
+class FindPage {
+  constructor() {
+    this.http = new HttpUtil(app);
+    this.http.addResultListener(this.result);
+  }
+  result = (res) => {
+    if (this.callback) {
+      this.callback(res);
+    }
+  }
   /**
-   * 页面的初始数据
+   * 加载接口
    */
-  data: {
-      curr_id: '',   //当前打开的视频id
-      items: [
-        {
-          id: 1, zan: 123, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg',title:'演唱会定制酒·李宇春',paizi:'全兴大曲 99系列 52%vol 500ml'
-        }, {
-          id: 2, zan: 23, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·李宇', paizi: '全兴大 99系列 52%vol 500ml'
-        },
-        {
-          id: 3, zan: 345, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·李', paizi: '全大曲 99系列 52%vol 500ml'
-        },
-        {
-          id: 4, zan: 567, src: 'http://www.w3school.com.cn//i/movie.mp4', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg', title: '演唱会定制酒·', paizi: '全兴曲 99系列 52%vol 500ml'
-        },
-      ],
-  },
+  load = (e) => {
+    this.http.post("/Video/FindPage", { pageNumber : e ,pageSize: 5 })
+  }
+}
 
+/*
+ * 点赞
+*/
+class DoFavor {
+  constructor() {
+    this.http = new HttpUtil(app);
+    this.http.addResultListener(this.result);
+  }
+  result = (res) => {
+    if (this.callback) {
+      this.callback(res);
+    }
+  }
   /**
-   * 生命周期函数--监听页面加载
+   * 加载接口
    */
-  onLoad: function (options) {
-  self = this
-  },
+  load = (e) => {
+    this.http.post("/Video/DoFavor", { memberId: wx.getStorageSync("memberId"), videoId: e })
+  }
+}
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {  //创建视频上下文对象
-    this.videoContext = wx.createVideoContext('myVideo')
-  },
-  videoplay(e) {
+// wx.getStorageSync("memberId")
+/**
+ * 页面控制器
+ */
+class PageController {
+  constructor() {
+    comp = this;
+    comp.FindPage = new FindPage();
+    comp.FindPage.callback = this.FindPage_callback;
+    comp.DoFavor = new DoFavor();
+    comp.DoFavor.callback = this.DoFavor_callback;
+  }
+
+  videoplay = (e) => {
     console.log("进入播放")
-    this.setData({
+    self.setData({
       curr_id: e.currentTarget.dataset.id,
     })
-    this.videoContext.play()
-  },
+    self.videoContext.play()
+  }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-  zan:function(e){
-    console.log();
+  zan = function(e) {
+    console.log(e.currentTarget.dataset.index);
     var index = e.currentTarget.dataset.index;
-    for (var i = 0; i < self.data.items.length;i++){
-      if (i == e.currentTarget.dataset.index)
+    var videoId = self.data.items[index].id
+    var favorCount = "items["+index+"].favorCount"
+    console.log(favorCount)
+    console.log(self.data.items[index].favorCount + 1)
+    self.setData({ [favorCount]: self.data.items[index].favorCount+1 })
+    console.log(self.data.items)
+    comp.DoFavor.load(videoId);
+  }
 
-      self.data.items[index].zan+=1;
-    }
-    self.setData({
-      items: self.data.items
-    })
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function (res) {
+  onShareAppMessage = function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
@@ -102,12 +85,46 @@ Page({
       title: '个性案例',
       path: 'packageTwoLeval/pages/case/case?id=123'
     }
-  },
-  startmake:function(){
+  }
+
+  startmake = function() {
     console.log("start")
     wx.navigateTo({
       url: '../../../pages/parameter/parameter'
     })
   }
 
-})
+  data= {
+    curr_id: '',   //当前打开的视频id
+    items: [],
+    pages:1
+  }
+
+  FindPage_callback = (res) => {
+    console.log(res, res.data.code)
+    if (res.data.code == 200) {
+      self.setData({ items: self.data.items.concat(res.data.data)  })
+      console.log(self.data)
+    }
+  }
+
+  /**
+   * 加载的时候
+   */
+  onLoad = function () {
+    self = this;
+    comp.FindPage.load(self.data.pages);
+  }
+
+  onReady = function () {  //创建视频上下文对象
+    self.videoContext = wx.createVideoContext('myVideo')
+  }
+  // 上拉事件
+  searchScrollLower = function () {
+    console.log("上拉")
+    self.setData({ pages: self.data.pages + 1 })
+    comp.FindPage.load(self.data.pages);
+  }
+}
+
+Page(new PageController());
