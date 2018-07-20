@@ -26,6 +26,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket: true //要求小程序返回分享目标信息
+    })
   self = this
   },
 
@@ -100,7 +103,17 @@ Page({
     }
     return {
       title: '个性案例',
-      path: 'packageTwoLeval/pages/case/case?id=123'
+      path: 'packageTwoLeval/pages/case/case?id=123',
+      success:function(res){
+        console.log(res)
+        // console.log
+        // wx.getShareInfo({
+        //   shareTicket: res.shareTickets[0],
+        //   success: function (res) { console.log(res) },
+        //   fail: function (res) { console.log(res) },
+        //   complete: function (res) { console.log(res) }
+        // })
+      }
     }
   },
   startmake:function(){
