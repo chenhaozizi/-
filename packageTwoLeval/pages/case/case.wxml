@@ -27,9 +27,7 @@
   </view>
 </scroll-view>
 
-<view class='contact-box' bindtap='startmake'>
-  <button type="default-light" class='cont-btn' size="20">
-  </button>
-  <view class='cont-text'>开始定制</view>
-</view>
+<cover-view class='contact-box' bindtap='startmake'>
+ <cover-image class="img" src="/images/ks.png" />
+</cover-view>
 

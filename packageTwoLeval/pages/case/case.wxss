@@ -99,3 +99,4 @@ button::after{
     border-left:36rpx solid #fff;
     border-bottom:22rpx solid transparent;
 }
+.img{width: 100%;height: 100%;}

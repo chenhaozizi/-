@@ -9,10 +9,10 @@
         <view class='fz20' hidden='{{result.authorizedDate==null ? true:false}}'>授权日期：{{result.authorizedDate}}</view>
       </view>
       <view class='fz30' hidden='{{result.commissionRate==null ? true:false}}'>提成比例为：{{result.commissionRate}}%</view>
-      <view class='fz30 marg'  hidden='{{result.authorizeRemark==null ? true:false}}'>销售业绩累计返利：{{result.authorizeRemark}}</view>
-      <view class='fz20 nameState' wx:if="{{result.auditState == 1}}">是否实名认证：已实名</view>
-      <view class='fz20 nameState' wx:elif="{{result.auditState == 0}}">是否实名认证：未实名</view>
-      <view class='fz20 reason' wx:if="{{result.auditState == 2}}">审核失败原因：1、未进行实名认证  2、未能协商返利比例</view>
+      <view class='fz30 marg'  hidden='{{result.rebate_remark==null ? true:false}}'>销售业绩累计返利：{{result.rebate_remark}}</view>
+      <view class='fz20 nameState' wx:if="{{result.status == 3}}">是否实名认证：已实名</view>
+      <view class='fz20 nameState' wx:elif="{{result.status == 2}}">备注：{{result.authorizedRemark}}</view>
+      <view class='fz20 reason' wx:else>是否实名认证：待实名</view>
     </view>
   </view>
 </view>
