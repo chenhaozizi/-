@@ -16,10 +16,10 @@
    </view>
   
   
-    <button wx-if="{{bankArr.length>0}}" formType='submit' class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
+    <button wx:if="{{bankArr.length>0}}" formType='submit' class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>
     下一步
   </button>
-  <navigator url='/packageTwoLeval/pages/addbank/addbank'  wx-if="{{bankArr.length<=0}}" class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>添加银行卡</navigator>
+  <navigator url='/packageTwoLeval/pages/addbank/addbank'  wx:if="{{bankArr.length<=0}}" class=' addbank pd0 color-ff font-md text-center bg-confirm  mt100'>添加银行卡</navigator>
  
    </form>
 </view>
