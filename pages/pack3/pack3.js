@@ -264,7 +264,7 @@ Page({
   ,
   //将截图绘制到canvas的固定
   setCutimg: function (context) {
-    context.drawImage(self.data.tempfp, 20, 13, 114, 193);
+    context.drawImage(this.data.tempfp, 20, 13, 114, 193);
   },
   createNewImg: function () {
     wx.showToast({
@@ -276,12 +276,14 @@ Page({
     var that = this;
     var context = wx.createCanvasContext('mycanvas');
     var path = self.data.pack_show;
+
+
+    //绘制剪切的图
+    this.setCutimg(context);
     //将纸套绘制到canvas
     context.drawImage(path, 0, 0, 280, 293);
     //绘制祝福语,cavas ,祝福语,x坐标,y坐标,文字盒子宽，文字盒子高,文字是否描边,是否竖排
     setText.setText(context, "     " + self.data.blessing, 237, 165, 25, 75, false, true);
-    //绘制剪切的图
-    this.setCutimg(context);
     context.draw();
     //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
     setTimeout(function () {
