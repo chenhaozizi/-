@@ -71,8 +71,8 @@ Page({
       var flag = false;
       if (name == '') {
         warn = "请填写收货人"
-      } else if (tel == "") {
-        warn = "手机号未填写"
+      } else if (tel == "" || tel.length<11) {
+          warn='请填写正确的手机号'
       } else if (province == "" || city == "" || region == "") {
         warn = "请选择地区"
       } else if (addr == "") {
@@ -105,21 +105,22 @@ Page({
               duration: 1500,
               mask: true
             });
-            // setTimeout(function () {
-            //   wx.navigateTo({
-            //     url: "../order/order"
-            //   })
-            // }, 2000)
+            setTimeout(function () {
+              wx.navigateBack({
+                delta:1
+              })
+            }, 2000)
           }
 
         })
       };
       if (flag == false) {
-        wx.showToast({
-          title: warn,
-          icon: 'loading',
-          duration: 1000,
-          mask: true
+      
+        wx.showModal({
+          title: '提示',
+          content: warn,
+          showCancel: false,
+          confirmColor: '#007aff'
         })
       };
     }else if(is_edit==0){
