@@ -105,7 +105,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .show_box1{padding-bottom: 0px;background: none!;height: 400rpx}
 .section1{margin: 33rpx 0;overflow: hidden}
 .radio_box1{width: 514rpx;float: left}
-.radio_box1 label{width:28%;overflow:hidden;text-align: center;display: inline-block;margin-right:4%;background: #f1f0f5;border-radius: 14rpx;border: 1rpx solid  #f1f0f5;color:#7e7e7e;padding: 6rpx 0}
+.radio_box1 label{width:28%;overflow:hidden;text-align: center;display: inline-block;margin-right:4%;background: #f1f0f5;border-radius: 14rpx;border: 1rpx solid  #f1f0f5;color:#7e7e7e;padding: 5rpx 0}
 .radio_box1 label:last-child{margin-right: 0rpx}
 .radio_box1 label radio{display: none}  
  /*参数选中后的样式  */
