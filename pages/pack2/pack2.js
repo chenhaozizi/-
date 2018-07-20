@@ -268,7 +268,7 @@ Page({
       title: '图片合成中',
       icon: "loading",
       mask: true,
-      duration: 50000
+      duration: 500000
     });
     var that = this;
     var context = wx.createCanvasContext('mycanvas1');
