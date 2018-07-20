@@ -2,14 +2,14 @@
 <view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:98vh' class='content-view' >
   <view wx:for="{{items}}" wx:key="id">
     <view class='video-container' data-id="{{item.id}}" bindtap='videoplay'>
-      <video src='{{item.videoUrl}}' poster='{{item.coverUrl}}' objectFit='cover'></video>
+      <video wx:if="{{curr_id == item.id}}" src='{{item.videoUrl}}' poster='{{item.coverUrl}}' objectFit='cover' autoplay></video>
       <!-- wx:if="{{curr_id == item.id}}" -->
-      <!-- <view wx:else>
+       <view wx:else>
         <image class="model-img"  mode="aspectFill" src="{{item.coverUrl}}"></image>
         <view class="model-btn">
           <view class="play-icon"></view>
         </view>
-      </view> -->
+      </view> 
     </view>
 
     <view class='everyone'>
@@ -23,13 +23,15 @@
         <button open-type="share" bindtap='onShareAppMessage' data-vindex ='{{index}}'>
           <view class='iconfont icon-zhuanfa tap-grey'></view>
         </button>
-        <view class='fz18'>{{item.sharedCount}}</view>
+        <view class='fz18'>{{item.sharedCount == null ? 0 : item.sharedCount}}</view>
       </view>
     </view>
   </view>
 </view>
 
-<cover-view class='contact-box' bindtap='startmake'>
- <cover-image class="img" src="/images/ks.png" />
-</cover-view>
-
+<view class='contact-box' bindtap='startmake'>
+  <contact-button type="default-light" class='cont-btn' size="20">
+  </contact-button>
+  <!-- <view class='cont-text'>开始定制</view> -->
+  <image src='../../../../images/ks.png' class='lastimg'></image>
+</view>
