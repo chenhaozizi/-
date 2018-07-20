@@ -79,7 +79,7 @@ button::after{
 
 .model-img{
     width: 100%;
-    height: 420rpx;
+    height: 225px;
 }
 .model-btn{
     position:absolute;
