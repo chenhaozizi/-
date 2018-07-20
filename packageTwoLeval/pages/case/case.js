@@ -18,7 +18,7 @@ class FindPage {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/Video/FindPage", { pageNumber : e ,pageSize: 5 })
+    this.http.post("/Video/FindPage", { memberId: wx.getStorageSync("memberId"),pageNumber : e ,pageSize: 5 })
   }
 }
 
@@ -42,6 +42,28 @@ class DoFavor {
     this.http.post("/Video/DoFavor", { memberId: wx.getStorageSync("memberId"), videoId: e })
   }
 }
+
+/*
+ * 分享
+*/
+class SaveShareRecord {
+  constructor() {
+    this.http = new HttpUtil(app);
+    this.http.addResultListener(this.result);
+  }
+  result = (res) => {
+    if (this.callback) {
+      this.callback(res);
+    }
+  }
+  /**
+   * 加载接口
+   */
+  load = (e) => {
+    this.http.post("/Video/SaveShareRecord", { memberId: wx.getStorageSync("memberId"), videoId: e })
+  }
+}
+
 
 // wx.getStorageSync("memberId")
 /**
@@ -68,8 +90,16 @@ class PageController {
     console.log(e.currentTarget.dataset.index);
     var index = e.currentTarget.dataset.index;
     var videoId = self.data.items[index].id
-    var favorCount = "items["+index+"].favorCount";
-    self.setData({ [favorCount]: self.data.items[index].favorCount+1 })
+    var favorCount = "items["+index+"].favorCount"
+    var isFavor = "items["+index+"].isFavor"
+    console.log(self.data.items[index].isFavor,55)
+    if(self.data.items[index].isFavor == 0){
+      self.setData( { [favorCount]: self.data.items[index].favorCount + 1 })
+      self.setData( { [isFavor]: 1 })
+      console.log(self.data.items[index].isFavor,66)
+      console.log(self.data.items[index].favorCount)
+
+    }
     comp.DoFavor.load(videoId);
   }
 
@@ -80,17 +110,7 @@ class PageController {
     }
     return {
       title: '个性案例',
-      path: 'packageTwoLeval/pages/case/case?id=123',
-      success:function(res){
-        console.log(res)
-        // console.log
-        // wx.getShareInfo({
-        //   shareTicket: res.shareTickets[0],
-        //   success: function (res) { console.log(res) },
-        //   fail: function (res) { console.log(res) },
-        //   complete: function (res) { console.log(res) }
-        // })
-      }
+      path: 'packageTwoLeval/pages/case/case?id=123'
     }
   }
 
@@ -121,9 +141,6 @@ class PageController {
   onLoad = function () {
     self = this;
     comp.FindPage.load(self.data.pages);
-    wx.showShareMenu({
-      withShareTicket: true //要求小程序返回分享目标信息
-    })
   }
 
   onReady = function () {  //创建视频上下文对象

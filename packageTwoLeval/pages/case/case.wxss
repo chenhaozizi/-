@@ -18,9 +18,9 @@ page{
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-buoumaotubiao16:before { content: "\e60f"; color: #ccc}
+.icon-buoumaotubiao16:before { content: "\e60f";}
 
-.icon-zhuanfa:before { content: "\e627"; color: #ccc}
+.icon-zhuanfa:before { content: "\e627";}
 
 video{
   width: 100%
@@ -29,6 +29,8 @@ video{
 .fz26{font-size: 26rpx;}
 .fz18{font-size: 18rpx;margin: 0 20rpx;}
 .grey{color:#b7b7b7}
+.tap-grey{color:#ccc}
+.tap-red{color:#a314b0}
 .everyone{
   display: flex;
   height: 100rpx;

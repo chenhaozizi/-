@@ -17,10 +17,10 @@
         <view class='fz26 grey'>{{item.content}}</view>
       </view>
       <view class='right'>
-        <view  data-index ='{{index}}'  class='iconfont icon-buoumaotubiao16'  bindtap='zan'></view>
-        <view class='fz18'>{{item.favorCount + item.startCount}}</view>
+        <view data-index ='{{index}}'  class="{{item.isFavor == 0 ? 'iconfont icon-buoumaotubiao16 tap-grey':'iconfont icon-buoumaotubiao16 tap-red'}}"  bindtap='zan'></view>
+        <view class='fz18'>{{item.favorCount}}</view>
         <button open-type="share" bindtap='onShareAppMessage'>
-          <view class='iconfont icon-zhuanfa'></view>
+          <view class='iconfont icon-zhuanfa tap-grey'></view>
         </button>
       </view>
     </view>
