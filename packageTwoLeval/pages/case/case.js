@@ -60,7 +60,7 @@ class SaveShareRecord {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/Video/SaveShareRecord", { memberId: wx.getStorageSync("memberId"), videoId: e })
+    this.http.post("/Video/SaveShareRecord", { memberId: wx.getStorageSync("memberId"), videoId: e.vidid, shareTo:e.sharemsg })
   }
 }
 
@@ -76,6 +76,8 @@ class PageController {
     comp.FindPage.callback = this.FindPage_callback;
     comp.DoFavor = new DoFavor();
     comp.DoFavor.callback = this.DoFavor_callback;
+    comp.SaveShareRecord = new SaveShareRecord();
+    comp.SaveShareRecord.callback = this.SaveShareRecord_callback;
   }
 
   videoplay = (e) => {
@@ -104,14 +106,25 @@ class PageController {
   }
 
   onShareAppMessage = function (res) {
+    let datasetid = res.target.dataset.vindex
     if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
+      // 来自页面内转发分享按钮
+      console.log(res.target.dataset.vindex)
+      self.setData({ vidid : self.data.items[res.target.dataset.vindex].id})
     }
     return {
       title: '个性案例',
-      path: 'packageTwoLeval/pages/case/case?id=123'
+      path: 'packageTwoLeval/pages/case/case?id=123',
+      success:function(res){
+        // console.log(res.shareTickets[0])
+        var sharedCount = "items[" + datasetid + "].sharedCount"
+        self.setData({ sharemsg : res.shareTickets })
+        console.log(datasetid,89898)
+        self.setData({ [sharedCount]: self.data.items[datasetid].sharedCount+1 })
+        comp.SaveShareRecord.load(self.data);
+      }
     }
+   
   }
 
   startmake = function() {
@@ -124,7 +137,9 @@ class PageController {
   data= {
     curr_id: '',   //当前打开的视频id
     items: [],
-    pages:1
+    pages:1,
+    vidid:0,
+    sharemsg:''
   }
 
   FindPage_callback = (res) => {
@@ -141,6 +156,9 @@ class PageController {
   onLoad = function () {
     self = this;
     comp.FindPage.load(self.data.pages);
+    wx.showShareMenu({
+      withShareTicket: true //要求小程序返回分享目标信息
+    })
   }
 
   onReady = function () {  //创建视频上下文对象

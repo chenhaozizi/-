@@ -18,16 +18,16 @@ page{
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-buoumaotubiao16:before { content: "\e60f";}
+.icon-buoumaotubiao16:before { content: "\e60f";font-size: 50rpx}
 
-.icon-zhuanfa:before { content: "\e627";}
+.icon-zhuanfa:before { content: "\e627";font-size: 50rpx}
 
 video{
   width: 100%
 }
-.fz30{font-size: 30rpx;}
+.fz30{font-size: 30rpx;margin-bottom: 5rpx}
 .fz26{font-size: 26rpx;}
-.fz18{font-size: 18rpx;margin: 0 20rpx;}
+.fz18{font-size: 26rpx;margin: 0 20rpx;}
 .grey{color:#b7b7b7}
 .tap-grey{color:#ccc}
 .tap-red{color:#a314b0}
@@ -35,13 +35,16 @@ video{
   display: flex;
   height: 100rpx;
   padding: 0 20rpx 0 40rpx;
+  margin-bottom: 10rpx;
 }
 .left{
- width: 70%;
+ width: 60%;
  margin-top: 10rpx;
+ margin-bottom: 10rpx;
 }
 .right{
-  width: 30%;
+  width: 40%;
+  margin: 0 auto;
   display: flex;
   line-height: 100rpx;
 }
@@ -67,17 +70,12 @@ button::after{
   line-height: 100rpx;
 }
 .content-view{
-  position: relative;
-  z-index: 50;
-  overflow-y: scroll; 
+  position: relative; 
   width: 100%;
   height: auto;
-   -webkit-overflow-scrolling: touch; 
+  -webkit-overflow-scrolling: touch;   
 }
 /*循环*/
-.video-container{
-    position: relative;
-}
 
 .model-img{
     width: 100%;
