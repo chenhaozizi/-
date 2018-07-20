@@ -68,11 +68,8 @@ class PageController {
     console.log(e.currentTarget.dataset.index);
     var index = e.currentTarget.dataset.index;
     var videoId = self.data.items[index].id
-    var favorCount = "items["+index+"].favorCount"
-    console.log(favorCount)
-    console.log(self.data.items[index].favorCount + 1)
+    var favorCount = "items["+index+"].favorCount";
     self.setData({ [favorCount]: self.data.items[index].favorCount+1 })
-    console.log(self.data.items)
     comp.DoFavor.load(videoId);
   }
 
@@ -83,7 +80,17 @@ class PageController {
     }
     return {
       title: '个性案例',
-      path: 'packageTwoLeval/pages/case/case?id=123'
+      path: 'packageTwoLeval/pages/case/case?id=123',
+      success:function(res){
+        console.log(res)
+        // console.log
+        // wx.getShareInfo({
+        //   shareTicket: res.shareTickets[0],
+        //   success: function (res) { console.log(res) },
+        //   fail: function (res) { console.log(res) },
+        //   complete: function (res) { console.log(res) }
+        // })
+      }
     }
   }
 
@@ -114,6 +121,9 @@ class PageController {
   onLoad = function () {
     self = this;
     comp.FindPage.load(self.data.pages);
+    wx.showShareMenu({
+      withShareTicket: true //要求小程序返回分享目标信息
+    })
   }
 
   onReady = function () {  //创建视频上下文对象
