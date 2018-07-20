@@ -22,7 +22,7 @@ class FindTradeRecordsPage {
    */
   load = (e) => {
     if(e){
-      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: e.pages, pageSize: 4, tradeTypeCode:e.recordid})
+      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: e.pages, pageSize: 5, tradeTypeCode:e.recordid})
     }else{
       // this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: self.data.pages, pageSize: 4})
     }

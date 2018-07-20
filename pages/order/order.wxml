@@ -76,7 +76,7 @@
     <view class='total_price'>合计：
       <i>¥{{total_price}}</i>
     </view>
-     <view class='pay' bindtap='pick_up'>确认付款</view> 
+     <view class='pay mybtn' ><button class='ok-pick' hover-class="none" disabled='{{btnflag}}' bindtap='pick_up'>确认付款</button></view> 
   </view>
 </view>
 <view class='contact-box'>

@@ -3,6 +3,7 @@ var price = 0;//商品单价
 var app = getApp();
 let This;
 var de_addr=false;
+let flag = true;
 Page({
   /**
    * 页面的初始数据
@@ -39,7 +40,7 @@ Page({
     orgimg: '',
     tmpimg: '',
     logo: '',
-    ok:true
+    ok:true,btnflag:false
   },
 
   /**
@@ -213,7 +214,12 @@ Page({
       }
     });
   },
+ 
   pick_up: function () {
+    console.log(1111)
+    this.setData({
+      btnflag:true
+    })
     var that = this;
     if (this.data.num < 3) {
       wx.showModal({
@@ -233,6 +239,7 @@ Page({
         });
         return;
       }
+
     wx.request({
       method: "POST",
       url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/Add',
@@ -259,6 +266,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
+       
         var dd = res.data.data;
         var cuzOrderId = dd.cuzOrderId;
         console.log(dd);
@@ -268,10 +276,14 @@ Page({
           wx.redirectTo({
             url: '../ent/ent?currentTab=1',
           })
+          that.setData({
+            btnflag: false
+          })
         }, 1000)
         // that.pay(dd.cuzOrderId);
       }
     })
+   
     }else{
       wx.showToast({
         title:'请先填写地址',
