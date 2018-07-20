@@ -66,8 +66,15 @@ button::after{
   z-index: 99;
   padding: 5rpx;
 }
-.cont-text{
-  line-height: 100rpx;
+/* .cont-text{
+   line-height: 60rpx; 
+} */
+.lin1{
+   line-height: 70rpx; 
+}
+.lin2{
+   line-height: 30rpx; 
+   margin-top: -20rpx;
 }
 .content-view{
   position: relative; 
