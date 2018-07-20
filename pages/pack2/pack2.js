@@ -264,6 +264,7 @@ Page({
     context.drawImage(self.data.tempfp, 168, 232, 93, 38);
   },
   createNewImg: function() {
+    console.log("截取的图片：" + self.data.tempfp, "选取的文字：" + self.data.blessing)
     wx.showToast({
       title: '图片合成中',
       icon: "loading",
