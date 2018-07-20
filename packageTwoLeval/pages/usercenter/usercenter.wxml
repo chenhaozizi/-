@@ -36,10 +36,10 @@
 <!-- 功能列表  -->
 <view class='list mt20'>
 <!--暂时屏蔽提现功能  -->
-   <navigator class='item pos-rel' url='/packageTwoLeval/pages/withdraw/index'  wx:if="{{memberTypeCode == '0001' || memberTypeCode == '0002'  }}"  hover-class="none" >
+   <!-- <navigator class='item pos-rel' url='/packageTwoLeval/pages/withdraw/index'  wx:if="{{memberTypeCode == '0001' || memberTypeCode == '0002'  }}"  hover-class="none"  >
     <i class="item-icon icon01 pos-ab"><image src='/images/icon/icon1.png'></image></i>
     <view class='item-lable font-md color-66  pos-rel'>申请提现<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
-  </navigator> 
+  </navigator>  -->
   <navigator class='item pos-rel' url='/packageTwoLeval/pages/bindbank/index'  hover-class="none" wx:if="{{memberTypeCode == '0001' || memberTypeCode == '0002' }}">
     <i class="item-icon pos-ab icon02"><image src='/images/icon/icon2.png'></image></i>
     <view class='item-lable color-66 font-md border-t pos-rel'>绑定银行<i class="iconfont pos-ab right font-bold icon-zuojiantou " ></i></view>
