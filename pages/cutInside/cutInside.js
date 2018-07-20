@@ -30,7 +30,7 @@ Page({
     this.wecropper.touchStart(e)
   },
   touchMove (e) {
-    console.log(e)
+    // console.log(e)
     this.wecropper.touchMove(e)
   },
   touchEnd (e) {

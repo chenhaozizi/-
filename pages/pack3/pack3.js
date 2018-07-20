@@ -264,7 +264,7 @@ Page({
   ,
   //将截图绘制到canvas的固定
   setCutimg: function (context) {
-    context.drawImage(self.data.tempfp, 20, 13, 114, 193);
+    context.drawImage(this.data.tempfp, 20, 13, 114, 193);
   },
   createNewImg: function () {
     wx.showToast({
@@ -290,8 +290,6 @@ Page({
         }
       }
     })
-   
-   
     context.draw();
     //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
     setTimeout(function () {
