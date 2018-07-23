@@ -204,9 +204,9 @@ Page({
   },
   // 参数选择  样式改变
   type_change: function(e) {
-    var that=this;
+    var that = this;
     var type = e.currentTarget.dataset.type;
-    if (e.currentTarget.dataset.price && e.currentTarget.dataset.brand!==2) {
+    if (e.currentTarget.dataset.price && e.currentTarget.dataset.brand !== 2) {
       this.setData({
         sp_price: e.currentTarget.dataset.price
       })
@@ -221,9 +221,9 @@ Page({
         flavour_change: e.currentTarget.dataset.num
       })
     } else if (type == 2) {
-      wly_degree = e.currentTarget.dataset.degree;//五粮液
+      wly_degree = e.currentTarget.dataset.degree; //五粮液
       that.wly_pri();
-      
+
       this.setData({
         deree_change: e.currentTarget.dataset.num
       })
@@ -232,7 +232,7 @@ Page({
         vinosity_change: e.currentTarget.dataset.num
       })
     } else if (type == 4) {
-      wly_family = e.currentTarget.dataset.family;//五粮液
+      wly_family = e.currentTarget.dataset.family; //五粮液
       that.wly_pri();
       this.setData({
         family_change: e.currentTarget.dataset.num
@@ -246,6 +246,9 @@ Page({
   },
   def: function() {
     var that = this;
+    wly_degree = '';
+    wly_family = '';
+    wly_price = '';
     this.setData({
       parameter_show: "none",
       maskFlag: true,
@@ -278,9 +281,9 @@ Page({
     if (wly_degree == '52' && wly_family == '金樽') {
       wly_price = 288
     }
-    if(wly_price!==""){
+    if (wly_price !== "") {
       this.setData({
-        sp_price:wly_price
+        sp_price: wly_price
       })
     }
   }
