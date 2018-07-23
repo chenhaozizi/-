@@ -7,6 +7,7 @@
       </view>
       <view wx:if="{{orderInfo.shipStatus==1}}">卖家未发货</view>
       <view wx:elif="{{orderInfo.shipStatus==2}}">卖家已发货</view> 
+       <view wx:elif="{{orderInfo.shipStatus==3}}">已完成</view> 
       <view wx:else>待付款</view>
     </view>
   </view>

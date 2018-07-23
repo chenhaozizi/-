@@ -1,9 +1,7 @@
 <!--pages/ent/ent.wxml-->
 <view class='container'>
   <view class='top'>
-
     <view wx:for="{{tab}}" class="{{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="swichNav">{{item}}</view>
-    
   </view>
   <view class='top1'></view>
   <!--待付款  -->
@@ -141,7 +139,7 @@
         <text class='zt'>已完成</text>
       </view>
       <view class='goods_info'>
-        <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
+        <view >
          <view class='img'>
                <image src='{{item.compositeImg}}'></image>
             </view>
@@ -158,7 +156,7 @@
             </view>
             <view class='gg'>{{item.netContent}}ml</view>
           </view>
-        </navigator>
+        </view>
         <view class='total'>
           <view>共{{item.num}}件商品</view>
           <view>实付款: ¥{{item.totalAmount}}</view>
