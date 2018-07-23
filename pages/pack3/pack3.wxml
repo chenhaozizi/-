@@ -87,7 +87,7 @@
     </view>
 </view>
 
- <view class='contact-box'>
+ <view class='contact-box' style='bottom:35%'>
   <contact-button     type="default-light" class='cont-btn'     size="20"    >
   </contact-button>
    <image class='con-img' src='/images/msg.png'  />

@@ -22,7 +22,7 @@ class FindTradeRecordsPage {
    */
   load = (e) => {
     if(e){
-      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: e.pages, pageSize: 4, tradeTypeCode:e.recordid})
+      this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: e.pages, pageSize: 5, tradeTypeCode:e.recordid})
     }else{
       // this.http.post("/RsTradeRecord/FindTradeRecordsPage", { memberId: wx.getStorageSync("memberId"), pageNumber: self.data.pages, pageSize: 4})
     }
@@ -64,8 +64,9 @@ class PageController {
     comp.jw = new ymdDatejw(app);
   }
   bindPickerChange = (e) => {
-    console.log('picker发送选择改变，携带值为', e.detail.value,e)
+    console.log('picker发送选择改变，携带值为', e.detail.value, e, self.data.array[e.detail.value].id)
     self.setData({result:[]})
+
     if (e.detail.value == 0){
       self.setData({
         index: e.detail.value,
@@ -79,6 +80,7 @@ class PageController {
         pages: 1
       })
     }
+    console.log(self.data)
     comp.FindTradeRecordsPage.load(self.data);
   }
   moreinfo = (e) => {
@@ -104,15 +106,13 @@ class PageController {
   }
 
   FindTradeRecordsPage_callback = (res) => {
-    console.log(res)
+    console.log(res, res.data.code)
     if (res.data.code == 200) {
-      console.log(res.data.data)
       for (let i = 0; i < res.data.data.length; i++){
         res.data.data[i].createDate = self.jw.fmtDate(res.data.data[i].createDate)
+        console.log(res.data.data[i])
       }
-      
       self.setData({ result: self.data.result.concat(res.data.data) })
-      console.log(self.data.result)
     }
   }
 

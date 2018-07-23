@@ -139,14 +139,34 @@ class PageController {
     items: [],
     pages:1,
     vidid:0,
-    sharemsg:''
+    sharemsg:'',
+    searchLoading: false, //"上拉加载"的变量，默认false，隐藏
+    searchLoadingComplete: false,  //“没有数据”的变量，默认false，隐藏
   }
 
   FindPage_callback = (res) => {
     console.log(res, res.data.code)
     if (res.data.code == 200) {
-      self.setData({ items: self.data.items.concat(res.data.data)  })
+      if (res.data.data.length > 0) {
+      self.setData({ 
+        items: self.data.items.concat(res.data.data),
+        searchLoading: true 
+      })
+      if (res.data.data.length < 3) {
+        self.setData({
+          searchLoadingComplete: true, //把“没有数据”设为true，显示
+          searchLoading: false  //把"上拉加载"的变量设为false，隐藏
+        });
+      }
+          //把"上拉加载"的变量设为false，显示  })
       console.log(self.data)
+      }
+    } else {
+      console.log("没数据了")
+      self.setData({
+        searchLoadingComplete: true, //把“没有数据”设为true，显示
+        searchLoading: false  //把"上拉加载"的变量设为false，隐藏
+      });
     }
   }
 

@@ -9,7 +9,9 @@ page {
   align-items: flex-start;
   height: auto;
 }
-
+.mybtn{position: absolute;bottom: 0rpx;right: 0}
+.ok-pick{position: relative;top:-0rpx;background: none;color:#fff;line-height: 100rpx;height: 100rpx }button[disabled]:not([type]){background:none;color: #fff}
+.ok-pick::after{border:none}
 /*商品详情 */
 
 .goods_info {
@@ -166,6 +168,7 @@ page {
   left: 0;
   right: 0;
   text-align: right;
+  padding-right: 314rpx
 }
 
 .footer view {

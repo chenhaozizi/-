@@ -199,7 +199,7 @@ page {
 .contact-box {
   position: absolute;
   right: 40rpx;
-  bottom: 16%;
+  bottom: 33%;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50rpx;
@@ -306,3 +306,34 @@ page {
   margin: 0 10rpx !important;
 }
 
+.loading{
+  padding: 10rpx;
+  text-align: center;
+ 
+}
+.loadeimg{  animation: rotate 1s linear infinite;width: 64rpx;height: 64rpx;position: relative;top:32rpx;right:10rpx}
+@keyframes rotate
+{
+from { transform: rotate(0deg);}
+           
+to { transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);}
+}
+
+.loading:before{
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  /* background: url(../../../images/load.png) no-repeat;
+  background-size: contain; */
+ 
+}
+.loading.complete:before{
+  display: none;
+}

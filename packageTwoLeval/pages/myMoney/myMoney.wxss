@@ -6,7 +6,7 @@ page{background: #EBEBEB}
    background-size: 100% 203rpx;
 }
  .header{
-  position: fixed;
+  position: relative;
   z-index: 99;
   width: 100%;
 } 
@@ -41,7 +41,7 @@ page{background: #EBEBEB}
   display: flex;
   justify-content: space-between;
   align-items:center;
-  margin-bottom: 22rpx;
+  
 }
 .left{
   /* width: 40%; */
