@@ -368,13 +368,29 @@ Page({
       if (app.globalData.parameter.family == "金樽" || app.globalData.parameter.family == 2){
         that.setData({
           brand: "五粮液·金樽",
-          price: 188
         })
+        if (app.globalData.parameter.degree==42){
+          that.setData({
+            price: 268
+          })
+        } else if (app.globalData.parameter.degree == 52){
+          that.setData({
+            price: 288
+          })
+        }
       } else if (app.globalData.parameter.family == "银坛" || app.globalData.parameter.family == 1){
         that.setData({
           brand: "五粮液·银坛",
-          price: 188
-        })
+        });
+        if (app.globalData.parameter.degree == 42) {
+          that.setData({
+            price: 188
+          })
+        } else if (app.globalData.parameter.degree == 52) {
+          that.setData({
+            price: 208
+          })
+        }
       }
       
     } else if (app.globalData.parameter.brand == 3) {
@@ -386,12 +402,12 @@ Page({
       } else if (app.globalData.parameter.family == "鉴赏级" || app.globalData.parameter.family == 2){
         that.setData({
           brand: "贵州茅台·鉴赏级",
-          price: 198
+          price: 298
         })
       } else if (app.globalData.parameter.family == "尊享级" || app.globalData.parameter.family == 3) {
         that.setData({
           brand: "贵州茅台·尊享级",
-          price: 198
+          price: 398
         })
       }
      

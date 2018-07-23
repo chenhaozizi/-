@@ -1,6 +1,9 @@
 // pages/parameter/parameter.js
 var v = {};
 var app = getApp();
+var wly_degree = '',
+  wly_family = '',
+  wly_price = '';
 Page({
   /**
    * 页面的初始数据
@@ -12,11 +15,11 @@ Page({
       'https://mingjiu-api.conpanda.cn/upload/2018/07/19/dc488f0155ff4591a2b7963c1d01cf4c.jpg',
       'https://mingjiu-api.conpanda.cn/upload/2018/07/19/1486c625ae5944d6a6656ed3039be662.jpg',
     ],
-    indicatorDots: true,//控点
+    indicatorDots: true, //控点
     autoplay: true,
-    interval: 4000,//自动播放间隔
-    duration: 300,//过渡时间
-    indicatorActiveColor:"#A314B0",
+    interval: 4000, //自动播放间隔
+    duration: 300, //过渡时间
+    indicatorActiveColor: "#A314B0",
     family_change: '', //酒体
     vinosity_change: '', //酒质
     deree_change: '', //度数
@@ -78,7 +81,7 @@ Page({
             wx.navigateTo({
               url: '../pack2/pack2'
             })
-          }else if (v.family == "金樽" || v.family == 2) {
+          } else if (v.family == "金樽" || v.family == 2) {
             wx.navigateTo({
               url: '/pagesA/pack2_1/pack2_1'
             })
@@ -141,12 +144,12 @@ Page({
           degree: [52],
           family: [{
             name: '99系列',
-            price: '268/瓶(6瓶/件)',
+            price: '268',
             img: '/images/qx_99.jpg'
           }],
           info: ['四川六朵金花之一，距今已有二百多年的历史，酒香醇甜、爽口尾净。']
         },
-        sp_price: '268/瓶(6瓶/件)',
+        sp_price: '268',
         img_show: '/images/qx_99.jpg'
       });
     } else if (n == 2) {
@@ -158,11 +161,11 @@ Page({
           degree: [42, 52],
           family: [{
             name: '银坛',
-            price: '188/瓶(6瓶/件)',
+            price: '',
             img: '/images/wly_yt.jpg'
           }, {
             name: '金樽',
-            price: '188/瓶(6瓶/件)',
+            price: '',
             img: '/images/wly_hs.jpg'
           }],
           info: ['中国最高档白酒之一，酒体醇厚，入口甘美，入喉净爽，酒味全面。']
@@ -178,15 +181,15 @@ Page({
           degree: [53], //酒精度
           family: [{
             name: '品味级',
-            price: '198/瓶(6瓶/件)',
+            price: '198',
             img: '/images/mt_pwj.jpg'
           }, {
             name: '鉴赏级',
-            price: '待定1',
+            price: '298',
             img: '/images/mt_jsj.jpg'
           }, {
             name: '尊享级',
-            price: '待定2',
+            price: '398',
             img: '/images/mt_zxj.jpg'
           }], //酒质
           info: ['世界三大蒸馏名酒之一，至今已有800多年的历史，酱香突出，优雅细腻，酒体醇厚。']
@@ -194,27 +197,16 @@ Page({
         img_show: '/images/mt_pwj.jpg'
       });
     } else if (n == 4) {
-      this.setData({
-        parameter: {
-          flavour: [2],
-          degree: [38, 53],
-          price: ['待定']
-        }
-      });
+
     } else if (n == 5) {
-      this.setData({
-        parameter: {
-          flavour: [2],
-          degree: [38, 53],
-          price: ['待定']
-        }
-      });
+
     }
   },
   // 参数选择  样式改变
   type_change: function(e) {
+    var that=this;
     var type = e.currentTarget.dataset.type;
-    if (e.currentTarget.dataset.price) {
+    if (e.currentTarget.dataset.price && e.currentTarget.dataset.brand!==2) {
       this.setData({
         sp_price: e.currentTarget.dataset.price
       })
@@ -229,6 +221,9 @@ Page({
         flavour_change: e.currentTarget.dataset.num
       })
     } else if (type == 2) {
+      wly_degree = e.currentTarget.dataset.degree;//五粮液
+      that.wly_pri();
+      
       this.setData({
         deree_change: e.currentTarget.dataset.num
       })
@@ -237,6 +232,8 @@ Page({
         vinosity_change: e.currentTarget.dataset.num
       })
     } else if (type == 4) {
+      wly_family = e.currentTarget.dataset.family;//五粮液
+      that.wly_pri();
       this.setData({
         family_change: e.currentTarget.dataset.num
       })
@@ -259,6 +256,32 @@ Page({
       flavour_change: '',
       sp_price: '请选择酒类型',
     })
-
+  },
+  //品牌4.5的提示
+  wait: function() {
+    wx.showToast({
+      title: '敬请期待',
+      duration: 1000,
+      icon: 'loading'
+    })
+  },
+  wly_pri: function() {
+    if (wly_degree == '42' && wly_family == '银坛') {
+      wly_price = 188
+    }
+    if (wly_degree == '52' && wly_family == '银坛') {
+      wly_price = 208
+    }
+    if (wly_degree == '42' && wly_family == '金樽') {
+      wly_price = 268
+    }
+    if (wly_degree == '52' && wly_family == '金樽') {
+      wly_price = 288
+    }
+    if(wly_price!==""){
+      this.setData({
+        sp_price:wly_price
+      })
+    }
   }
 })

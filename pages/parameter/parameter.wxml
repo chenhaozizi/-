@@ -29,11 +29,11 @@
           </label>
           <label>
             <radio value="4" />
-            <image data-num="4" src='/images/logo_lz.jpg' class="list-menu4 {{_num==4?' light':' '}}"></image>
+            <image data-num="4" src='/images/logo_lz.jpg'  bindtap='wait' class="list-menu4 {{_num==4?' light':' '}}"></image>
           </label>
           <label>
             <radio value="5" />
-            <image data-num="5" src='/images/logo_sd.jpg' class="list-menu5 {{_num==5?' light':' '}}"></image>
+            <image data-num="5" src='/images/logo_sd.jpg'  bindtap='wait' class="list-menu5 {{_num==5?' light':' '}}"></image>
           </label>
         </radio-group>
       </view>
@@ -70,7 +70,7 @@
           <view class="title">度数</view>
           <view class='radio_box1'>
             <radio-group name="degree">
-              <label wx:for="{{ parameter.degree}}" wx:key="degree" bindtap="type_change" data-type="2" data-num='{{index+1}}' class="{{deree_change==index+1?'active':''}} {{parameter.degree.length==1?'active':''}}">
+              <label wx:for="{{ parameter.degree}}" wx:key="degree" bindtap="type_change" data-type="2" data-num='{{index+1}}' class="{{deree_change==index+1?'active':''}} {{parameter.degree.length==1?'active':''}}" data-degree="{{item}}" data-brand="{{ parameter.brand}}">
                 <radio value="{{item}}" checked='{{parameter.degree.length==1}}' />{{item}}</label>
             </radio-group>
           </view>
@@ -86,21 +86,8 @@
             </block>
             <view class='radio_box1'>
               <radio-group name="family">
-                <label wx:for="{{parameter.family}}" wx:key="family" bindtap="type_change" data-type="4" data-num='{{index+1}}' class="{{family_change==index+1?'active':''}} {{parameter.family.length==1?'active':''}}" data-price="{{item.price}}" data-imgsrc="{{item.img}}">
+                <label wx:for="{{parameter.family}}" wx:key="family" bindtap="type_change" data-type="4" data-num='{{index+1}}' class="{{family_change==index+1?'active':''}} {{parameter.family.length==1?'active':''}}" data-price="{{item.price}}" data-imgsrc="{{item.img}}"  data-family="{{item.name}}" data-brand="{{ parameter.brand}}">
                   <radio value="{{item.name}}" checked='{{parameter.family.length==1}}' />{{item.name}}</label>
-              </radio-group>
-            </view>
-          </view>
-        </block>
-
-        <!--酒质  -->
-        <block wx:if="{{parameter.vinosity}}">
-          <view class="section1">
-            <view class="title">酒质</view>
-            <view class='radio_box1'>
-              <radio-group name="vinosity">
-                <label wx:for="{{parameter.vinosity}}" wx:key="vinosity" bindtap="type_change" data-type="3" data-num='{{index+1}}' class="{{vinosity_change==index+1?'active':''}} {{parameter.vinosity.length==1?'active':''}}" data-price="{{item.price}}" data-imgsrc="{{item.img}}">
-                  <radio value="{{item.name}}" checked='{{parameter.vinosity.length==1}}' />{{item.name}}</label>
               </radio-group>
             </view>
           </view>
@@ -110,8 +97,9 @@
           <view class="title">价格</view>
           <view class='radio_box1'>
             <radio-group name="price">
-              <label style='width:61%;background:#fff' wx:key="price">
+              <label style='width:61%;background:#fff' wx:key="price" >
                 <radio disabled='true' checked='che' value='{{sp_price}}' /> {{sp_price}}
+                <block wx:if="{{sp_price!=='请选择酒类型'}}">/瓶(6瓶/件)</block>
               </label>
             </radio-group>
           </view>
