@@ -3,7 +3,7 @@ page{background: #eee;color:#4e4e4e }
 .container{align-items: stretch;overflow-y: auto;padding-bottom: 40rpx}
 .top{background:#fff;position: fixed;top: 0;left: 0;right: 0; }
 .top1{width: 100%;height: 1rpx;overflow: hidden;display: block;margin-bottom: 88rpx}
-.top view{display: inline-block;width: 33.3%;text-align: center;padding: 20rpx 0;border-bottom: 1px solid #fff;transition: all 300ms}
+.top view{display: inline-block;width: 25%;text-align: center;padding: 20rpx 0;border-bottom: 1px solid #fff;transition: all 300ms}
 .active{color:#d74a3c;border-color:#d74a3c!important; }
 .goods_list{background: #fff;font-size: 34rpx;margin-top: 24rpx;}
 .goods_box{width: 94%;margin: 0 auto}

@@ -6,14 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tab:['待付款','待发货','已发货'],
+    tab:['待付款','待发货','已发货','已完成'],
     currentTab: 0,
     hidden1: '',
     hidden2: 'hidden',
     hidden3: 'hidden',
     unpayArr: '',//待付款
     pay:"",//待发货
-    send:''//已发货
+    send:'',//已发货
+    finish:""//已完成
   },
   /**
    * 生命周期函数--监听页面加载
@@ -36,6 +37,41 @@ Page({
     //   url: '/pages/index/index'
     // })
   },
+  confirmGet:function(e){
+    var that = this;
+    var cur = e.target.dataset.current;
+    wx.showModal({
+      title: '提示',
+      content: '确认收货吗',
+      success: function (res) {
+        if (res.confirm) {
+    wx.request({
+      method: 'POST',
+      url: 'https://mingjiu-api.conpanda.cn/front_v1/EsCustomizationOrder/confirmReceipt', //仅为示例，并非真实的接口地址
+      data: {
+        memberId: wx.getStorageSync("memberId"),
+        cuzOrderId: cur
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+          if(res.data.code == 200)
+            wx.showToast({
+              title: res.data.data,
+            })
+            setTimeout(function(){
+              that.setData({
+                currentTab: 3
+              })
+              that.getOrderList(2, 3);
+            },1000)
+      }
+    }) }
+      }
+    })
+  },
   swichNav: function (e) {
     var cur = e.target.dataset.current;
     this.setData({
@@ -47,6 +83,8 @@ Page({
       this.getOrderList(2, 1);
     } else if (cur == 2) {
       this.getOrderList(2, 2);
+    } else if (cur == 3) {
+      this.getOrderList(2, 3);
     }
     console.log(cur);
     if (this.data.currentTaB == cur) { return false; }
@@ -77,6 +115,8 @@ Page({
           that.setData({ pay: res.data.data })//待发货
         } else if (payStatus == 2 && shipStatus == 2) {
           that.setData({ send: res.data.data })//已发货
+        } else if (payStatus == 2 && shipStatus == 3) {
+          that.setData({ finish: res.data.data })//已完成
         }
           console.log(res.data,that.data)
       }
