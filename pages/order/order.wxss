@@ -4,7 +4,7 @@ page {
   background: white;
   color: #4e4e4e;
 }
-
+.unable{background: #ccc !important}
 .container {
   align-items: flex-start;
   height: auto;
@@ -142,7 +142,8 @@ page {
 }
 
 .dzts {
-  color: #cfcccc;
+  color: #d74a3c;
+  font-size: 32rpx
 }
 
 .dispatch {
