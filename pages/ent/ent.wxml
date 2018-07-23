@@ -42,8 +42,7 @@
           </navigator>
           <view class='edit'>
             <view data-current="{{item.cuzOrderId}}" bindtap="delOrder">删除订单</view>
-             <view data-current="{{item.cuzOrderId}}" bindtap="confirmPay" class='active'>确认付款</view> 
-             <button style='border:none;banckground:#fff'>分享</button>
+             <view data-current="{{item.cuzOrderId}}" bindtap="confirmPay" class='active'>确认付款</view>
           </view>
         </view>
       </view>

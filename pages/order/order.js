@@ -271,16 +271,16 @@ Page({
         var cuzOrderId = dd.cuzOrderId;
         console.log(dd);
         console.log("订单号", cuzOrderId);
-        // 调试收益
-        setTimeout(function () {
-          wx.redirectTo({
-            url: '../ent/ent?currentTab=1',
-          })
-          that.setData({
-            btnflag: false
-          })
-        }, 1000)
-        // that.pay(dd.cuzOrderId);
+        // // 调试收益
+        // setTimeout(function () {
+        //   wx.redirectTo({
+        //     url: '../ent/ent?currentTab=1',
+        //   })
+        //   that.setData({
+        //     btnflag: false
+        //   })
+        // }, 1000)
+        that.pay(dd.cuzOrderId);
       }
     })
    

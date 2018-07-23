@@ -123,7 +123,7 @@
     </view>
   </form>
 </view>
-<view class='contact-box' hidden='{{maskFlag2}}'>
+<view class='contact-box' hidden='{{maskFlag2}}' style='bottom:16%'>
   <contact-button type="default-light" class='cont-btn' size="20">
   </contact-button>
   <image class='con-img' src='/images/msg.png' />

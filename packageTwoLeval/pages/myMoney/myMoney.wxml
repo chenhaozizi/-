@@ -21,8 +21,8 @@
     </view>
   </view>
  </view> 
-
- <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:98vh' class='list-content' >
+<view style='position:relative;height:calc(100vh - 278rpx)'>
+ <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='position:absolute;bottom:0;left:0;right:0;top:0;'  class='list-content' >
   <view class='everyone' wx:for="{{result}}" wx:key="index" bindtap="moreinfo" data-everyone="{{index}}">
     <view class='up'>
       <view class='one'>￥{{item.amount}}</view>
@@ -34,3 +34,4 @@
     </view>
   </view>
 </scroll-view>
+</view>
