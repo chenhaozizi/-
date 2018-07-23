@@ -195,11 +195,10 @@ page {
 .zfy i {
   color: #666;
 }
-
 .contact-box {
   position: absolute;
   right: 40rpx;
-  bottom: 33%;
+  bottom: 36%;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50rpx;

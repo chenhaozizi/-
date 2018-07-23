@@ -122,14 +122,50 @@
           <view>实付款: ¥{{item.totalAmount}}</view>
         </view>
         <view class='edit'>
+         <view data-current="{{item.cuzOrderId}}" bindtap="confirmGet" class='active'>确认收货</view>
           <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
             <view>查看物流</view>
           </navigator>
+          
         </view>
       </view>
     </view>
   </view>
-
+  <!--已完成  -->
+  <view hidden="{{currentTab!=3}}" wx:for="{{finish}}" wx:key="paied" wx:for-index="id" wx:for-item="item" class='goods_list' >
+    <view class='goods_box'  hidden='{{currentTab !=3}}'>
+      <view class='title'>
+        <text wx:if="{{item.brand==1}}">全兴大曲名酒定制</text>
+         <text wx:elif="{{item.brand==2}}"> 五粮液名酒定制</text>
+          <text wx:elif="{{item.brand==3}}"> 茅台名酒定制</text>
+        <text class='zt'>已完成</text>
+      </view>
+      <view class='goods_info'>
+        <navigator url="/pages/ent_info/ent_info?cuzOrderId={{item.cuzOrderId}}" hover-class="navigator-hover">
+         <view class='img'>
+               <image src='{{item.compositeImg}}'></image>
+            </view>
+          <view class='bt_box'>
+            <view class='bt'>
+              <text>{{item.name}}</text>
+              <text>箱装</text>
+              <text class='price'>¥{{item.price}}</text>
+            </view>
+            <view class='xx'>
+              <i wx:if="{{item.flavor==1}}">浓香型</i>
+              <i wx:elif="{{item.flavor==2}}">酱香型</i>
+              {{item.alcohol}}°
+            </view>
+            <view class='gg'>{{item.netContent}}ml</view>
+          </view>
+        </navigator>
+        <view class='total'>
+          <view>共{{item.num}}件商品</view>
+          <view>实付款: ¥{{item.totalAmount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
 
 <view class='contact-box'>
