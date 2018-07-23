@@ -170,6 +170,11 @@ class PageController {
     self.setData({ pages: self.data.pages + 1 })
     comp.FindPage.load(self.data.pages);
   }
+  onReachBottom = function() {
+    console.log("上拉2")
+    self.setData({ pages: self.data.pages + 1 })
+    comp.FindPage.load(self.data.pages);
+  }
 }
 
 Page(new PageController());
