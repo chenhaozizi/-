@@ -20,7 +20,7 @@ class MemberAuthSelectOneDao {
    * 加载接口
    */
   load = () => {
-    this.http.post("/EsMemberIdcard/FindByMemeberId", { memberId:10308})
+    this.http.post("/EsMemberIdcard/FindByMemeberId", { memberId: wx.getStorageSync("memberId")})
   }
 }
 /*
@@ -40,7 +40,7 @@ class MemberAuthAddDao {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/EsMemberIdcard/save", { memberId: 10308,...e })
+    this.http.post("/EsMemberIdcard/save", { memberId: wx.getStorageSync("memberId"),...e })
   }
 }
 

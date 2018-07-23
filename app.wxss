@@ -162,9 +162,8 @@ page {
   font-size: 30rpx;
   letter-spacing: 5rpx;
 }
-
 .zdy_text {
-  width: 90%;
+  width: calc(90% - 8rpx);
   border: 1px solid #c6c6c6;
   margin: 20rpx auto;
   border-radius: 10rpx;
@@ -181,6 +180,7 @@ page {
   color: #999;
   padding: 15rpx 0;
   background: #fff;
+  width: calc(100% - 8rpx)
 }
 
 .modalDlg .next_step {
