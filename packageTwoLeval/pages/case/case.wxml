@@ -1,6 +1,5 @@
 <!--pages/case/case.wxml-->
-<view style='position:relative;height:calc(100vh )'>
- <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='position:absolute;bottom:0;left:0;right:0;top:0;' class='content-view' >
+<view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:98vh' class='content-view' >
   <view wx:for="{{items}}" wx:key="id">
     <view class='video-container' data-id="{{item.id}}" bindtap='videoplay'>
       <video wx:if="{{curr_id == item.id}}" src='{{item.videoUrl}}' poster='{{item.coverUrl}}' objectFit='cover' autoplay></video>
@@ -15,8 +14,8 @@
 
     <view class='everyone'>
       <view class='left'>
-        <view class='fz30 text-showell'>{{item.title}}</view>
-        <view class='fz26 grey text-showell'>{{item.content}}</view>
+        <view class='fz30'>{{item.title}}</view>
+        <view class='fz26 grey'>{{item.content}}</view>
       </view>
       <view class='right'>
         <view data-index ='{{index}}'  class="{{item.isFavor == 0 ? 'iconfont icon-buoumaotubiao16 tap-grey':'iconfont icon-buoumaotubiao16 tap-red'}}"  bindtap='zan'></view>
@@ -28,9 +27,6 @@
       </view>
     </view>
   </view>
- <view class="loading font-md" hidden="{{!searchLoading}}"><image class='loadeimg' src='../../../images/load.png'></image>正在载入更多...</view>
-      <view class="loading complete font-md" hidden="{{!searchLoadingComplete}}">已加载全部</view>
-</scroll-view>
 </view>
 
 <view class='contact-box' bindtap='startmake'>
@@ -40,4 +36,3 @@
    <view class='cont-text lin2'>定制</view> 
   <!-- <image src='../../../../images/ks.png' class='lastimg'></image> -->
 </view>
-
