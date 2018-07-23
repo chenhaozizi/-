@@ -18,7 +18,7 @@ class FindPage {
    * 加载接口
    */
   load = (e) => {
-    this.http.post("/Video/FindPage", { memberId: wx.getStorageSync("memberId"),pageNumber : e ,pageSize: 5 })
+    this.http.post("/Video/FindPage", { memberId: wx.getStorageSync("memberId"),pageNumber : e ,pageSize: 3 })
   }
 }
 
@@ -167,6 +167,11 @@ class PageController {
   // 上拉事件
   searchScrollLower = function () {
     console.log("上拉")
+    self.setData({ pages: self.data.pages + 1 })
+    comp.FindPage.load(self.data.pages);
+  }
+  onReachBottom = function() {
+    console.log("上拉2")
     self.setData({ pages: self.data.pages + 1 })
     comp.FindPage.load(self.data.pages);
   }
