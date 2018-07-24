@@ -283,3 +283,6 @@ checkbox-group {
   text-align: center;
   padding: 4rpx 0 0 4rpx;
 }
+.contact-box{
+  bottom: 14%!important;
+}

@@ -13,7 +13,7 @@
     <view class='blessing' bindtap="submit">{{blessing}}</view>
      <!--预览图2 -->
 
-    <view class='preview preview1'   style="z-index:9999">
+    <view class='preview preview1'    bindtap='change_cover' style="z-index:9999">
        <image src='{{tempfp}}' style="{{tempfp=='/images/add.png'?'height:44%;width:91%;margin-top:50%;':''}}"></image> 
     </view>
 
@@ -94,8 +94,8 @@
     </view>
 </view>
 
- <view class='contact-box'>
-  <contact-button     type="default-light" class='cont-btn'     size="20"    >
+ <view class='contact-box' style="top:2%">
+  <contact-button     type="default-light" class='cont-btn'     size="18"    >
   </contact-button>
    <image class='con-img' src='/images/msg.png'  />
   <view class='cont-text'>客服</view>

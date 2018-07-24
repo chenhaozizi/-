@@ -88,8 +88,8 @@
   </view>
 </view>
 
-<view class='contact-box'>
-  <contact-button type="default-light" class='cont-btn' size="20">
+<view class='contact-box' style="top:2%">
+  <contact-button type="default-light" class='cont-btn' size="18">
   </contact-button>
   <image class='con-img' src='/images/msg.png' />
   <view class='cont-text'>客服</view>
