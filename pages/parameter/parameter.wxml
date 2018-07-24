@@ -98,7 +98,7 @@
           <view class='radio_box1'>
             <radio-group name="price">
               <label style='width:61%;background:#fff' wx:key="price" >
-                <radio disabled='true' checked='che' value='{{sp_price}}' /> {{sp_price}}
+                <radio disabled='true' checked='che' value='{{sp_price}}' /><block wx:if="{{sp_price!=='请选择酒类型'}}">¥</block> {{sp_price}}
                 <block wx:if="{{sp_price!=='请选择酒类型'}}">/瓶(6瓶/件)</block>
               </label>
             </radio-group>

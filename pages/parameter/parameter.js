@@ -221,9 +221,10 @@ Page({
         flavour_change: e.currentTarget.dataset.num
       })
     } else if (type == 2) {
-      wly_degree = e.currentTarget.dataset.degree; //五粮液
-      that.wly_pri();
-
+      if(e.currentTarget.dataset.brand==2){
+        wly_degree = e.currentTarget.dataset.degree; //五粮液
+        that.wly_pri();
+      };
       this.setData({
         deree_change: e.currentTarget.dataset.num
       })
@@ -232,8 +233,10 @@ Page({
         vinosity_change: e.currentTarget.dataset.num
       })
     } else if (type == 4) {
-      wly_family = e.currentTarget.dataset.family; //五粮液
-      that.wly_pri();
+      if (e.currentTarget.dataset.brand == 2) {
+        wly_family = e.currentTarget.dataset.family; //五粮液
+        that.wly_pri();
+      }
       this.setData({
         family_change: e.currentTarget.dataset.num
       })
@@ -249,7 +252,7 @@ Page({
     wly_degree = '';
     wly_family = '';
     wly_price = '';
-    this.setData({
+    that.setData({
       parameter_show: "none",
       maskFlag: true,
       maskFlag2: false,
