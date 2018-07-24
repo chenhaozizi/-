@@ -1,5 +1,5 @@
 import HttpUtil from '../../../lib/trilobite/core/httputil.js'
-let comp,self;
+let comp, self, fordata={};
 const app = getApp();
 /*
  * 会员认证查询
@@ -71,7 +71,47 @@ class PageController {
     update2:false
    // update:false
   }
-
+  getidname = (e) =>{
+    console.log()
+    if (JSON.stringify(self.data.result) == "{}" || !(self.data.result.name)){
+      fordata.name=e.detail.value;
+      self.setData({
+        result: fordata
+      })
+    }else{
+      var setname = 'result.name';
+      self.setData({
+        [setname]: e.detail.value
+      })
+    }
+  }
+  getidno = (e) => {
+    if (!(self.data.result.idcardNo) || JSON.stringify(self.data.result) == "{}") {
+      fordata.idcardNo = e.detail.value;
+      console.log(e.detail.value)
+      self.setData({
+        result: fordata
+      })
+    }else{
+      var setidcardNo ='result.idcardNo';
+      self.setData({
+        [setidcardNo]: e.detail.value
+      })
+    } 
+  }
+  gettel = (e) => {
+    if (!(self.data.result.tel) || JSON.stringify(self.data.result) == "{}") {
+      fordata.tel = e.detail.value
+      self.setData({
+        result: fordata
+      })
+    }else{
+      var settel = 'result.tel';
+      self.setData({
+        [settel]: e.detail.value
+      })
+    }
+  }
   memberAuthSelectOneDao_callback=(res)=>{
     console.log(res)
     if (res.data.data[0]){
@@ -126,16 +166,17 @@ class PageController {
       comp.showMessage("身份证姓名不能为空")
       return;
     }
+    var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+    if (reg.test(info.idcardNo) === false) {
+      comp.showMessage("身份证输入不合格")
+      return;
+    }
     console.log(info.idcardNo, info.tel,info)
     if (info.tel === "" || info.tel.length < 11) {
       comp.showMessage("请填写正确的手机号码")
       return;
     }
    
-    if (info.idcardNo === "" || info.idcardNo.length<18) {
-      comp.showMessage("请输入正确的身份证号")
-      return;
-    }
     if (info.idcartFront === "") {
       comp.showMessage("身份证正面未进行上传")
       return;

@@ -91,7 +91,7 @@ class PageController {
       })
     } else if (self.data.result[e.currentTarget.dataset.everyone].tradeName == '提成'){
       var opdata = {
-        tradeRecordId: 204,
+        tradeRecordId: self.data.result[e.currentTarget.dataset.everyone].id,
         name:"提成"
       }
       wx.navigateTo({
@@ -99,7 +99,7 @@ class PageController {
       })
     } else if (self.data.result[e.currentTarget.dataset.everyone].tradeName == '返利'){
       var opdata = {
-        tradeRecordId: self.data.result[e.currentTarget.dataset.everyone].targetId,
+        tradeRecordId: self.data.result[e.currentTarget.dataset.everyone].id,
         name : "返利"
       }
       wx.navigateTo({

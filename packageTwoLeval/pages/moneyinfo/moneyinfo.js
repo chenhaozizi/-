@@ -32,7 +32,11 @@ class PageController {
     comp.FindFinanceDetail.callback = this.FindFinanceDetail_callback;
   }
   FindFinanceDetail_callback = (res) =>{
-      console.log(res)
+      if(res.data.code == 200){
+        self.setData({
+          result:res.data.data
+        })
+      }
   }
   data = {
     userInfo: '',

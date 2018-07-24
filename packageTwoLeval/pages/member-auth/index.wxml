@@ -2,15 +2,15 @@
   <form class="form-panel" bindsubmit="onSave">
    <view class="form-item">
       <label>身份证姓名：</label>
-      <input name="name"  placeholder='请输入身份证姓名' value="{{result.name}}" ></input>
+      <input name="name"  placeholder='请输入身份证姓名' bindblur='getidname' value="{{result.name}}" ></input>
    </view>
    <view class="form-item">
       <label>身份证号码：</label>
-      <input name="idcardNo" type="idcard" value="{{result.idcardNo}}" placeholder='请输入身份证号码'></input>
+      <input name="idcardNo" type="idcard" value="{{result.idcardNo}}" bindblur='getidno'  placeholder='请输入身份证号码'></input>
    </view>
    <view class="form-item">
       <label>手机号码：</label>
-      <input name="tel" type="number" value="{{result.tel}}" placeholder='请输入手机号码'></input>
+      <input name="tel" type="number" value="{{result.tel}}" bindblur='gettel' placeholder='请输入手机号码'></input>
    </view>
    <view class="form-item">
       <label>认证状态：</label>

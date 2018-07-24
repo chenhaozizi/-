@@ -1,21 +1,21 @@
 <!--packageTwoLeval/pages/moneyinfo/moneyinfo.wxml-->
 <view class='color-28'>
   <view class='list mt35 mb20'> 
-    <view class='  font-md2 '> <text>当前收益：</text></view>
+    <view class='  font-md2 '> <text>当前收益:</text></view>
     <view class='color-78'>
-      <text class='font-md mr10'>￥100.0</text><text class='font-sm'>(收益时间：2018-08-06 00:00:00)</text>
+      <text class='font-md mr10'>￥{{result.amount}}</text><text class='font-sm'>(收益时间：{{result.createDate}})</text>
     </view>
   </view>
   <view class='list mb20'>
-    <view class='  font-md2 '> <text>当前收益：</text></view>
+    <view class='  font-md2 '> <text>收益来源:</text></view>
     <view class='color-78'>
-      <text class='font-md mr10'>￥100.0</text><text class='font-sm'>(收益时间：2018-08-06 00:00:00)</text>
+      <text class='font-md mr10'>{{result.incomeSource}}</text>
     </view>
   </view>
   <view class='list mb20' style='min-height:484rpx'>
-    <view class='  font-md2 '> <text>详细说明</text></view>
+    <view class='  font-md2 '> <text>详细说明:</text></view>
     <view class='color-78'>
-      <text class='font-md mr10'>返利比例为提成的30%，当前还剩余¥19970未能返利</text>
+      <text class='font-md mr10'>{{result.detailDescription}}</text>
     </view>
   </view>
 
