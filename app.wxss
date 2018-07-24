@@ -222,9 +222,9 @@ page {
 }
 
 .con-img {
-  width: 50rpx;
-  height: 50rpx;
-  margin-top: 8rpx;
+  width: 45rpx;
+  height: 45rpx;
+  margin-top: 6rpx;
 }
 
 /*定制界面公共  */
