@@ -1,0 +1,5 @@
+/* packageTwoLeval/pages/moneyinfo/moneyinfo.wxss */
+@import '/lib/common.wxss';
+page{background: #EBEBEB;font-family: 'PingFang-SC-Regular'}
+.list{box-sizing:border-box;padding: 45rpx 45rpx 45rpx 32rpx;}
+.list view{ line-height: 50rpx}

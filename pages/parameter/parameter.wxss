@@ -98,7 +98,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .show_box image{width: 100%;}
 .form_box{text-align: center;}
 .radio_box label{display: inline-block;width: 25%;text-align: center;margin-bottom: 40rpx}
-.parameter{position: fixed;width:94%;height: 93%;top:20rpx;left:3%;background:#fff;border-radius: 23rpx;overflow: hidden;z-index: 99999999999}
+.parameter{position: fixed;width:94%;height: 97%;top:20rpx;left:3%;background:#fff;border-radius: 23rpx;overflow: hidden;z-index: 99999999999}
 .parameter_box{padding:10rpx 20rpx}
 .title{width: 110rpx;float: left;color: #474747;letter-spacing: 4rpx;padding: 6rpx 0}
 .info{font-size: 26rpx;color:#ada8a8;margin-bottom: 30rpx}

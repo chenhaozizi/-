@@ -13,6 +13,7 @@
     "pages/ent/ent",
     "pages/cutInside/cutInside",
     "pages/checkAuthorization/checkAuthorization"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +35,8 @@
         "pages/myCode/myCode",
         "pages/withdraw/index",
         "pages/case/case",
-        "pages/CircleFriends/index"
+        "pages/CircleFriends/index",
+        "pages/moneyinfo/moneyinfo"
       ]
     },
     {

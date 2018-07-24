@@ -47,7 +47,7 @@ class FindFinanceStat {
    * 加载接口
    */
   load = () => {
-    this.http.post("/RsMember/FindFinanceStat", { memberId: wx.getStorageSync("memberId")})
+    this.http.post("/RsMember/FindFinanceStat", {  memberId: wx.getStorageSync("memberId")})
   }
 }
 
@@ -84,10 +84,26 @@ class PageController {
     comp.FindTradeRecordsPage.load(self.data);
   }
   moreinfo = (e) => {
-    console.log(self.data.result[e.currentTarget.dataset.everyone].targetId,77777)
+    console.log(self.data.result[e.currentTarget.dataset.everyone].tradeName,77777)
     if(self.data.result[e.currentTarget.dataset.everyone].tradeName == '提现'){
       wx.navigateTo({
         url: '../myMoneyDetails/myMoneyDetails?currentdata=' + self.data.result[e.currentTarget.dataset.everyone].targetId,
+      })
+    } else if (self.data.result[e.currentTarget.dataset.everyone].tradeName == '提成'){
+      var opdata = {
+        tradeRecordId: 204,
+        name:"提成"
+      }
+      wx.navigateTo({
+        url: '../moneyinfo/moneyinfo?opdata=' + JSON.stringify(opdata),
+      })
+    } else if (self.data.result[e.currentTarget.dataset.everyone].tradeName == '返利'){
+      var opdata = {
+        tradeRecordId: self.data.result[e.currentTarget.dataset.everyone].targetId,
+        name : "返利"
+      }
+      wx.navigateTo({
+        url: '../moneyinfo/moneyinfo?opdata=' + JSON.stringify(opdata),
       })
     }
   }
@@ -95,10 +111,11 @@ class PageController {
   /**
    * 页面的初始数据
    */
+  // , { id:2001,name: '提现'}
   data ={
     a: [1, 2, 3],
     index: 0,
-    array: [{ id:0,name: '选择账单类型' }, { id:2002,name: '提成' }, { id:2003,name: '返利' }, { id:2001,name: '提现'}],
+    array: [{ id:0,name: '选择账单类型' }, { id:2002,name: '提成' }, { id:2003,name: '返利' }],
     recordid:'',
     result:[],
     money:[],

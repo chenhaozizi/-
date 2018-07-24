@@ -1,10 +1,16 @@
  <view class='header'> 
   <view class='headjw'>
-    <view class='title'>累计总收益</view>
-    <view class='sum'>￥{{money.earningTotal}}</view>
+    <view class='text-box'>
+    <view class='title'>
+        <text class='font-md color-ff ml0'>累计总收益:</text>
+        <text class='sum'>￥{{money.earningTotal}}</text>
+    </view>
+    
     <view class='both'>
-      <view>余额：￥{{money.balanceTotal}}</view>
+      <view class='mr30'>余额：￥{{money.balanceTotal}}</view>
       <view>提现：￥{{money.withdrawTotal}}</view>
+    </view>
+    <view class='font-xs ' style='color:#FABFFF' >你可以获取的返利<text style='color:#FABFFF'>{{money.fixedRebateTotal}}</text><text style='color:#FABFFF'>(总返利￥{{money.rebateTotal}},剩余：{{money.remainRebateTotal}})</text></view>
     </view>
   </view>
   <view class='history-sel'>
