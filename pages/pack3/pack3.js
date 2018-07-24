@@ -36,7 +36,7 @@ Page({
     tempfp: "/images/add.png",
     showModal: false,
     blessing: "祝福语区域",
-    zy: "",
+    zy: 4,
     style_imgs: [
       { "pack": "/images/mt1.png", "pack_show": "/images/mt1.png" },
       { "pack": "/images/mt2.png", "pack_show": "/images/mt2.png" },
@@ -45,7 +45,7 @@ Page({
     pack_show: '/images/mt1.png',
     bottom1: "450rpx",
     bottom2: "0",
-    _num: '',
+    _num:4,
     crop: ""
   },
 
