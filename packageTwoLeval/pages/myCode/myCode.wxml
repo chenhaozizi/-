@@ -3,7 +3,7 @@
     <image class='head' src='{{userInfo.avatarUrl}}'></image>
     <view class='user-name'>{{userInfo.nickName}}</view>
   </view>
-  <view class='code'>
-    <image src="https://mingjiu-api.conpanda.cn/front_v1/RsMember/QRCode?memberId={{memberId}}"></image>
+  <view class='code' style='margin-top:5vh'>
+    <image mode='widthFix' src="https://mingjiu-api.conpanda.cn/front_v1/RsMember/QRCode?memberId={{memberId}}"></image>
   </view>
 </view>

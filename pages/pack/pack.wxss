@@ -59,7 +59,7 @@ page {
 
 .preview {
   width: 200rpx;
-  height: 190rpx;
+  height: 180rpx;
   position: absolute;
   top: 230rpx;
   left: 136rpx;
@@ -79,7 +79,7 @@ page {
 }
 
 .preview image {
-  width: 100% !important;
-  height: 100% !important;
+  width: 72% !important;
+  height: 72% !important;
 }
 

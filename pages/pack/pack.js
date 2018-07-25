@@ -31,7 +31,7 @@ Page({
     },
     self_word:"",
     hide_canvas: true,//绘图层显示控制变量 
-    tempfp: "/images/default.jpg",
+    tempfp: "/images/add.png",
     showModal: false,
     blessing: "祝福语区域",
     zy: "",

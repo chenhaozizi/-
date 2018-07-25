@@ -14,8 +14,8 @@
 
     <view class='everyone'>
       <view class='left'>
-        <view class='fz30'>{{item.title}}</view>
-        <view class='fz26 grey'>{{item.content}}</view>
+        <view class='fz30 text-showell'>{{item.title}}</view>
+        <view class='fz26 grey text-showell'>{{item.content}}</view>
       </view>
       <view class='right'>
         <view data-index ='{{index}}'  class="{{item.isFavor == 0 ? 'iconfont icon-buoumaotubiao16 tap-grey':'iconfont icon-buoumaotubiao16 tap-red'}}"  bindtap='zan'></view>
@@ -30,8 +30,6 @@
 </view>
 
 <view class='contact-box' bindtap='startmake'>
-  <contact-button type="default-light" class='cont-btn' size="20">
-  </contact-button>
    <view class='cont-text lin1'>开始</view> 
    <view class='cont-text lin2'>定制</view> 
   <!-- <image src='../../../../images/ks.png' class='lastimg'></image> -->
