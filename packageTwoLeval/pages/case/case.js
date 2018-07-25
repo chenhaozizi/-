@@ -87,6 +87,11 @@ class PageController {
     })
     self.videoContext.play()
   }
+  playend = function(){
+    self.setData({
+      curr_id: '',
+    })
+  }
 
   zan = function(e) {
     console.log(e.currentTarget.dataset.index);
