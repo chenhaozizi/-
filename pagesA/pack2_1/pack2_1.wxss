@@ -81,7 +81,7 @@ left:154rpx;
   width: 175rpx;
   height: 50rpx;
   position: absolute;
-  bottom: 156rpx;
+  top: 554rpx;
   right: 135rpx;
   border: 1rpx dashed #b0844a;
   font-size: 15rpx;
@@ -93,7 +93,7 @@ left:154rpx;
 .blessing1 {
 width:212rpx;
 height:38rpx;
-bottom:147rpx;
+top:571rpx;
 left:146rpx;
 }
 

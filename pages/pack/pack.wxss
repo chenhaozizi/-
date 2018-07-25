@@ -68,8 +68,8 @@ page {
   width: 170rpx;
   height: 76rpx;
   position: absolute;
-  bottom: 244rpx;
-  right: 150rpx;
+  top: 438rpx;
+  right: 151rpx;
   border: 1rpx dashed #b0844a;
   font-size: 15rpx;
   z-index: 99;
