@@ -15,7 +15,7 @@
     <view class='everyone'>
       <view class='left'>
         <view class='fz30 text-showell'>{{item.title}}</view>
-        <view class='fz26 grey text-showell'>{{item.content}}</view>
+        <view class='fz26 grey '>{{item.content}}</view>
       </view>
       <view class='right'>
         <view data-index ='{{index}}'  class="{{item.isFavor == 0 ? 'iconfont icon-buoumaotubiao16 tap-grey':'iconfont icon-buoumaotubiao16 tap-red'}}"  bindtap='zan'></view>

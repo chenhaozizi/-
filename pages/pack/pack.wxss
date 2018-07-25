@@ -79,7 +79,7 @@ page {
 }
 
 .preview image {
-  width: 72% !important;
-  height: 72% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 

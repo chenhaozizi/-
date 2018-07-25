@@ -7,7 +7,7 @@
     </view>
     <!--预览图  -->
     <view class='preview' bindtap='change_cover'>
-      <image src='{{tempfp}}' style="{{tempfp=='/images/add.png'?'margin-top:14%':''}}"></image>
+      <image src='{{tempfp}}' style="{{tempfp=='/images/add.png'?'margin-top:14%;width:72% !important;height:72% !important':''}}"></image>
     </view>
     <view class='preview' bindtap='change_cover' style='z-index:9999'>
 

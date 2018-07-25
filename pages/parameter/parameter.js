@@ -10,10 +10,10 @@ Page({
    */
   data: {
     imgUrls: [
-      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/b2e5dc17a8244ba98dec6942063864b8.jpg',
-      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/e3420a4e1d6c47aebec3a91d8aea27d6.jpg',
-      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/dc488f0155ff4591a2b7963c1d01cf4c.jpg',
-      'https://mingjiu-api.conpanda.cn/upload/2018/07/19/1486c625ae5944d6a6656ed3039be662.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/25/81ddf95a4e344ed496027fc6532fa817.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/25/d4148d7c2ce743f8af4950e54aa2f7c2.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/25/22150217c27e4b5eb078c3c3e51bd72b.jpg',
+      'https://mingjiu-api.conpanda.cn/upload/2018/07/25/dacb3272abde4e508f627a3e548a1097.jpg',
     ],
     indicatorDots: true, //控点
     autoplay: true,
@@ -145,12 +145,12 @@ Page({
           family: [{
             name: '99系列',
             price: '268',
-            img: '/images/qx_99.jpg'
+            img: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/427cfe8a8cda4c1a943ed5e464b53a8c.jpg'
           }],
           info: ['四川六朵金花之一，距今已有二百多年的历史，酒香醇甜、爽口尾净。']
         },
         sp_price: '268',
-        img_show: '/images/qx_99.jpg'
+        img_show: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/427cfe8a8cda4c1a943ed5e464b53a8c.jpg'
       });
     } else if (n == 2) {
       // 五粮液
@@ -162,18 +162,18 @@ Page({
           family: [{
             name: '银坛',
             price: '',
-            img: '/images/wly_yt.jpg'
+            img: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/428894a9019c4851846d65458d953bad.jpg.jpg'
           }
           //去掉金樽 2018-7-25
           // , {
           //   name: '金樽',
           //   price: '',
-          //   img: '/images/wly_hs.jpg'
+          //   img: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/d9232000a5bc451c8ca381956014e628.jpg'
           // }
           ],
           info: ['中国最高档白酒之一，酒体醇厚，入口甘美，入喉净爽，酒味全面。']
         },
-        img_show: '/images/wly_yt.jpg'
+        img_show: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/428894a9019c4851846d65458d953bad.jpg'
       });
     } else if (n == 3) {
       // 茅台
@@ -189,13 +189,13 @@ Page({
           }, {
             name: '鉴赏级',
             price: '298',
-            img: '/images/mt_jsj.jpg'
+            img: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/137113de4b0f4e3aa869f9008bae8eb5.jpg'
           }
           //去掉尊享级 2018-7-25
           // , {
           //   name: '尊享级',
           //   price: '398',
-          //   img: '/images/mt_zxj.jpg'
+          //   img: 'https://mingjiu-api.conpanda.cn/upload/2018/07/25/b6ad8df949444c298081e33796d097ca.jpg'
           // }
           ], //酒质
           info: ['世界三大蒸馏名酒之一，至今已有800多年的历史，酱香突出，优雅细腻，酒体醇厚。']

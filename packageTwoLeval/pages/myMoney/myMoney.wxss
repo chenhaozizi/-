@@ -26,7 +26,7 @@ page{background: #EBEBEB}
 text.color-ff{color:#fff !important}
 text.sum{
   color: white;
-  font-size: 80rpx !important;
+  font-size: 1.8rem !important;
   font-weight: 500;
 }
 .text-box{width: 75%;margin: 0 auto;text-align: left}
