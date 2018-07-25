@@ -163,11 +163,14 @@ Page({
             name: '银坛',
             price: '',
             img: '/images/wly_yt.jpg'
-          }, {
-            name: '金樽',
-            price: '',
-            img: '/images/wly_hs.jpg'
-          }],
+          }
+          //去掉金樽 2018-7-25
+          // , {
+          //   name: '金樽',
+          //   price: '',
+          //   img: '/images/wly_hs.jpg'
+          // }
+          ],
           info: ['中国最高档白酒之一，酒体醇厚，入口甘美，入喉净爽，酒味全面。']
         },
         img_show: '/images/wly_yt.jpg'
@@ -187,11 +190,14 @@ Page({
             name: '鉴赏级',
             price: '298',
             img: '/images/mt_jsj.jpg'
-          }, {
-            name: '尊享级',
-            price: '398',
-            img: '/images/mt_zxj.jpg'
-          }], //酒质
+          }
+          //去掉尊享级 2018-7-25
+          // , {
+          //   name: '尊享级',
+          //   price: '398',
+          //   img: '/images/mt_zxj.jpg'
+          // }
+          ], //酒质
           info: ['世界三大蒸馏名酒之一，至今已有800多年的历史，酱香突出，优雅细腻，酒体醇厚。']
         },
         img_show: '/images/mt_pwj.jpg'
@@ -272,18 +278,25 @@ Page({
     })
   },
   wly_pri: function() {
-    if (wly_degree == '42' && wly_family == '银坛') {
+     if (wly_degree == '42' ) {
       wly_price = 188
     }
-    if (wly_degree == '52' && wly_family == '银坛') {
+    if (wly_degree == '52') {
       wly_price = 208
     }
-    if (wly_degree == '42' && wly_family == '金樽') {
-      wly_price = 268
-    }
-    if (wly_degree == '52' && wly_family == '金樽') {
-      wly_price = 288
-    }
+    // 去掉金樽酒质 2018-7-25
+     // if (wly_degree == '42' && wly_family == '银坛') {
+    //   wly_price = 188
+    // }
+    // if (wly_degree == '52' && wly_family == '银坛') {
+    //   wly_price = 208
+    // }
+    // if (wly_degree == '42' && wly_family == '金樽') {
+    //   wly_price = 268
+    // }
+    // if (wly_degree == '52' && wly_family == '金樽') {
+    //   wly_price = 288
+    // }
     if (wly_price !== "") {
       this.setData({
         sp_price: wly_price

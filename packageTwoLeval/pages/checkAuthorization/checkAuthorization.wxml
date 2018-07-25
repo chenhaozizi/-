@@ -11,7 +11,7 @@
       </view>
 
       <view class='stateB textaligncenter'>
-        <view class='fz30' hidden='{{result.commissionRate==null ? true:false}}'>提成比例为：{{result.commissionRate}}%</view>
+        <view class='fz30' style='margin-bottom:20rpx' hidden='{{result.commissionRate==null ? true:false}}'>提成比例为：{{result.commissionRate}}%</view>
         <view class='fz30 marg'  hidden='{{result.rebate_remark==null ? true:false}}'>{{result.rebate_remark}}</view>
       </view>
 
