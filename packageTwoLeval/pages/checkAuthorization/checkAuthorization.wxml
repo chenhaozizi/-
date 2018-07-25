@@ -1,18 +1,26 @@
 <view class='first'>
   <view class='secend border'>
     <view class='third border'>
-      <view class='title'>授权成为{{result.typeName}}</view>
+
+      <view class='title textaligncenter'>授权成为{{result.typeName}}</view>
       <view class='stateA'>
         <view class='fz20' wx:if="{{result.auditState == 1}}">授权状态：已授权</view>
         <view class='fz20' wx:elif="{{result.auditState == 0}}">授权状态：审核中</view>
         <view class='fz20' wx:else>授权状态：审核失败</view>
         <view class='fz20' hidden='{{result.authorizedDate==null ? true:false}}'>授权日期：{{result.authorizedDate}}</view>
       </view>
-      <view class='fz30' hidden='{{result.commissionRate==null ? true:false}}'>提成比例为：{{result.commissionRate}}%</view>
-      <view class='fz30 marg'  hidden='{{result.rebate_remark==null ? true:false}}'>销售业绩累计返利：{{result.rebate_remark}}</view>
-      <view class='fz20 nameState' wx:if="{{result.status == 3}}">是否实名认证：已实名</view>
-      <view class='fz20 nameState' wx:elif="{{result.status == 2}}">备注：{{result.authorizedRemark}}</view>
-      <view class='fz20 reason' wx:else>是否实名认证：待实名</view>
+
+      <view class='stateB textaligncenter'>
+        <view class='fz30' hidden='{{result.commissionRate==null ? true:false}}'>提成比例为：{{result.commissionRate}}%</view>
+        <view class='fz30 marg'  hidden='{{result.rebate_remark==null ? true:false}}'>销售业绩累计返利：{{result.rebate_remark}}</view>
+      </view>
+
+      <view class='stateC'>
+        <view class='fz20 nameState' wx:if="{{result.status == 3}}">是否实名认证：已实名</view>
+        <view class='fz20 nameState' wx:elif="{{result.status == 2}}">备注：{{result.authorizedRemark}}</view>
+        <view class='fz20 reason' wx:else>是否实名认证：待实名</view>
+      </view>
+
     </view>
   </view>
 </view>

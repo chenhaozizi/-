@@ -1,4 +1,4 @@
-// pages/checkAuthorization/checkAuthorization.js
+// pages/subPackagescheckAuthorization/checkAuthorization.js
 Page({
 
   /**
