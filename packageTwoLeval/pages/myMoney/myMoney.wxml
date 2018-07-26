@@ -3,7 +3,7 @@
     <view class='text-box'>
     <view class='title'>
         <text class='font-md color-ff ml0'>累计总收益:</text>
-        <text class='sum'>￥10293876</text>
+        <text class='sum'>￥{{money.earningTotal}}</text>
     </view>
     
     <view class='both'>
