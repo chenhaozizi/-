@@ -66,7 +66,7 @@
     <scroll-view style='height:550rpx;' scroll-y="true">
       <text bindtap='blessing' data-num="1" class="{{zy==1?'act':''}}" data-text="我梦想成真的第一件事就是和你结婚">我梦想成真的第一件事就是和你结婚</text>
       <text bindtap='blessing' data-num="2" class="{{zy==2?'act':''}}" data-text="成长只有一次我们愿意把最好的给你">成长只有一次我们愿意把最好的给你</text>
-      <text bindtap='blessing' data-num="3" class="{{zy==3?'act':''}}" data-text="除了十月怀胎，你不比我妈轻松">除了十月怀胎，你不比我妈轻松</text>
+      
       <text bindtap='blessing' data-num="4" class="{{zy==4?'act':''}}" data-text="我对你的爱比酒还要烈1°">我对你的爱比酒还要烈1°</text>
       <text bindtap='blessing' data-num="5" class="{{zy==5?'act':''}}" data-text="酒，一家人分着喝更暖">酒，一家人分着喝更暖</text>
       <text bindtap='blessing' data-num="6" class="{{zy==6?'act':''}}" data-text="立足新起点，迈上新的征程，开创新的辉煌">立足新起点，迈上新的征程，开创新的辉煌</text>
