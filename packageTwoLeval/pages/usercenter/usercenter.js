@@ -57,7 +57,8 @@ class PageController {
     if(res.data.code == 200){
       self.setData({
         memberType: res.data.data.memberTypeName,
-        memberTypeCode: res.data.data.memberTypeCode
+        memberTypeCode: res.data.data.memberTypeCode,
+        auditState: res.data.data.auditState
       })
     }
   }
@@ -75,7 +76,8 @@ class PageController {
     nickname:'',
     userInfo: '',
     memberType:"",
-    memberTypeCode:""
+    memberTypeCode:"",
+    auditState: ""
   }
   onShow=function(){
     this.getUserInfo();
