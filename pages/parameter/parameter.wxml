@@ -105,7 +105,9 @@
       </view>
     </view>
   </form>
+ 
 </view>
+ <view class='font-sm color-66' style='position:absolute;width:100%;text-align:center;bottom:40rpx'>如有疑问请联系专属定制顾问</view>
 <view class='contact-box' hidden='{{maskFlag2}}' style='bottom:16%'>
   <contact-button type="default-light" class='cont-btn' size="20">
   </contact-button>

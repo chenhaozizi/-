@@ -43,7 +43,7 @@ label image {
 .brand radio {
   display: none;
 }
-
+.font-sm{font-size: 24rpx;color: #202020}
 .light {
   /* border: 1rpx solid #a314b0; */
 }

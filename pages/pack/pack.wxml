@@ -1,6 +1,7 @@
 <!--pages/pack/pack.wxml-->
 <import src="../../lib/we-cropper/we-cropper.wxml" />
 <view class='container'>
+ <view class='toptips' style='position:absolute;width:100%;text-align:center;top:40rpx'>如有疑问请联系专属定制顾问</view>
   <view class='pack_top'>
     <view class='show_box'>
       <image src='{{pack_show}}' class='show_img'></image>

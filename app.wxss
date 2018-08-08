@@ -87,7 +87,7 @@ page {
   right: 10rpx;
   text-align: center;
 }
-
+.toptips{font-size:24rpx;color: #202020}
 #croper-cancel {
   width: 120rpx;
   height: 50rpx;

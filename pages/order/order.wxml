@@ -72,6 +72,8 @@
     </view>
     <!-- <text>存酒窖</text> -->
   </view>
+  <view class='toptips' style='position:absolute;width:100%;text-align:center;top:1044rpx'>如有疑问请联系专属定制顾问</view>
+ 
   <view class='footer'>
     <view class='total_price'>合计：
       <i>¥{{total_price}}</i>
