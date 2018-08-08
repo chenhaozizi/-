@@ -112,6 +112,7 @@ Page({
         // var xx = res.userInfo;
         //console.log("授权后，取数据成功：" +JSON.stringify(res));
         console.log("授权后，取数据成功");
+       
         wx.setStorageSync('nickname', res.userInfo.nickName);
         wx.setStorageSync('sex', res.userInfo.gender);
         wx.setStorageSync('city', res.userInfo.city);

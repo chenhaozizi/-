@@ -265,7 +265,7 @@ Page({
     };
     if (this.data._num === "") {
       warn = "请选择底纹"
-    } else if (this.data.tempfp == "/images/default.jpg") {
+    } else if (this.data.tempfp == "/images/add.png") {
       warn = "请选择自定义图片"
     } else if (this.data.blessing == '祝福语区域') {
       warn = "请填写祝福语"
